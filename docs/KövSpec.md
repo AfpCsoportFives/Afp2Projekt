@@ -32,3 +32,39 @@ A tervezett menürendszer bejelentkezés után admin jogosultággal rendelkező 
 - Jegyek -> Jegytípus hozzáadása, Jegytípus módosítása, Jegyzípus törlése
 - Felhasználók -> felhasználó törlése(végleges kitiltás)
 - Kijelentkezés
+
+## 3. Jelenlegi üzleti folyamatok modellje
+
+A jelenlegi üzleti folyamatok nincsenek, hiszen ez egy újonnan alakuló vállalkozás. A tervek szereint a cégünket megbízó vállalkozás online jegy és bérlet értékesítéssel szeretne foglalkozni, más termékek értékesítést nem tervezik.
+
+## 4. Igényelt üzleti folyamatok modellje
+Üzleti folyamatok: 
+
+Online folyamatok user szintű felhasználó számára:
+Amíg nem jelentkezik be a user szintü felhasználó addig csak az alábbi menürendszer érhetőek el:
+
+- Főmenü
+- Rendezvények listászása
+- Regisztráció
+- Be és kijelentkezés
+
+- Bejelentkezés: bejelentkezés menü => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Jegyvásárlás menüre klikkelve elérhető az az összes esemény és ott a jegyvásárlás gombra kattintva lehet megvásárolni a jegyet/bérletet.
+- Kijelentkezés: bejelentkezés menü => Kijelentkezés gombra kattintás
+
+Online folyamatok a cégünket megbízó vállalkozás alkalmazottainak:
+Az alkalmazottak minden menüpontot és funkciót elérhetnek, amit a vendégek kiegészítve az új rendezvény/esemény felvitele illetve módosítása illetve új jegytípus hozzáadása és módosítása. 
+
+Új esemény felvitele
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Események nyilvántartása menü");
+C("Új esemény menü");
+D("Adatok megadása");
+E("Véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+```
+
