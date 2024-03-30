@@ -68,7 +68,7 @@ A-->B;
 B-->C;
 C-->D;
 D-->E;
-``
+```
 
 Rendezvény adatainak módosítása
 
@@ -99,7 +99,7 @@ A-->B;
 B-->C;
 C-->D;
 D-->E;
-``
+```
 
 Jegy adatainak módosítása
 
