@@ -40,8 +40,8 @@ A jelenlegi üzleti folyamatok nincsenek, hiszen ez egy újonnan alakuló válla
 ## 4. Igényelt üzleti folyamatok modellje
 Üzleti folyamatok: 
 
-Online folyamatok user szintű felhasználó számára:
-Amíg nem jelentkezik be a user szintü felhasználó addig csak az alábbi menürendszer érhetőek el:
+Online folyamatok felhasználó szintű egyének számára:
+Amíg nem jelentkezik be a felhasználó szintü egyén addig csak az alábbi menürendszer érhetőek el:
 
 - Főmenü
 - Rendezvények listászása
@@ -51,10 +51,12 @@ Amíg nem jelentkezik be a user szintü felhasználó addig csak az alábbi men�
 - Bejelentkezés: bejelentkezés menü => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Jegyvásárlás menüre klikkelve elérhető az az összes esemény és ott a jegyvásárlás gombra kattintva lehet megvásárolni a jegyet/bérletet.
 - Kijelentkezés: bejelentkezés menü => Kijelentkezés gombra kattintás
 
-Online folyamatok a cégünket megbízó vállalkozás alkalmazottainak:
+Online folyamatok, a cégünket megbízó vállalkozás alkalmazottainak:
+Ők lesznek az alkalmazott szintü felhasználó.
 Az alkalmazottak minden menüpontot és funkciót elérhetnek, amit a vendégek kiegészítve az új rendezvény/esemény felvitele illetve módosítása illetve új jegytípus hozzáadása és módosítása. 
+Alkalmazott szintü felhasználó regisztrálására csakis az admin szitű jogosultság szükséges.
 
-Új esemény felvitele
+Új rendezvény felvitele
 ```mermaid
 flowchart TD;
 A("*Alkalmazott* jogosultsággal belépés");
@@ -66,5 +68,53 @@ A-->B;
 B-->C;
 C-->D;
 D-->E;
+``
+
+Rendezvény adatainak módosítása
+
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Rendezvény nyilvántartása menü");
+C("Rendezvény listája menü");
+D("Rendezvény neve melletti szerkesztés gombra kattintás");
+E("Adatok megadása");
+F("véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
+```
+
+Új jegy felvitele
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Jegy nyilvántartása menü");
+C("Új jegy menü");
+D("Adatok megadása");
+E("Véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+``
+
+Jegy adatainak módosítása
+
+```mermaid
+flowchart TD;
+A("*Alkalmazott* jogosultsággal belépés");
+B("Jegy nyilvántartása menü");
+C("Jegy listája menü");
+D("Jegy neve melletti szerkesztés gombra kattintás");
+E("Adatok megadása");
+F("véglegesítés");
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+E-->F;
 ```
 
