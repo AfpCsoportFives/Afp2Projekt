@@ -2,26 +2,44 @@
 
 ## 1. Jelenlegi helyzet
 
-A cégünket megbízó jegyértékesítési vállalkozás azzal a feladattal bízott meg minket, hogy készítsünk számára egy olyan 
-weboldalt, ahová regisztrálás, majd bejelentkezés után különböző rendezvényekre lehessen jegyet vásárolni. A megrendelőnek ez egy teljesen új vállalkozása lenne és az lenne a célja, hogy az általunk elkészített weboldalon keresztül lehető legtöbb jegyet értékesítsen. 
+A cégünket megbízó rendezvényszervezői vállalkozás azzal a feladattal bízta meg, hogy készítsünk számára egy olyan 
+weboldalt, ahová regisztrálás, majd bejelentkezés után a felhasználó különböző rendezvényekre foglalhat magának helyet vagy ha már foglalt akkor le is tud róla iratkozni. A megrendelőnek ez egy teljesen új vállalkozása lenne és az lenne a célja, hogy az általunk elkészített weboldalon a lehető legtöbb helyet foglaljanak le. Ezek olyan rendezvények, amelyek mindenki számára ingyenes.
 
 ## 2. Vágyálomrendszer leírása 
 
-A megrendelőnek a jegyértékesítési weboldallal az a célja, hogy Magyaroszágon az ő által üzemeltetett weboldalon keresztül a lehető legtöbb jegyet értékesítse. A weboldalra az admin jogosultsággal rendelkező felhasználó eseményeket tud majd hozzáadni, törölni, módosítani. Minden 
-eseményhez több jegytípust lehetne hozzárendelni, beárazni stb... 
-A megrendelőnek az volt a kérése, hogy egy előzetes regisztráció után lehessen vásárolni a weboldalon, elöbb nem.</br>
+A megrendelő olyan weboldat szeretne, ahol ott regisztrált rendezvényekre a felhasználói jogosultsággal rendelkező már bejelentkezett user egy kattintással tudjon magának helyet foglalni. Ehhez a felhasználónak előbb regisztrálnia kell magát.</br>
+A weboldalon két típusú felhasználó lesz:</br>
+    
+- Admin
+- User</br>
+
+Admin szintü felhasználó jogai:</br>
+
+- Új rendezvény hozzáadása
+- Rendezvény adatainak a módosítása
+- Rendezvény törlése
+- Rendezvény listázása
+
+- Új felhasználó hozzáadása (admin szintű és user szintű)
+- Felhasználó adatainak a módosítása (admin szintű és user szintű)
+- Felhasználó törlése (admin szintű és user szintű)
+- Felhasználók listázása
+
+User szintü felhasználó jogai:</br>
+
+- Összes rendezvény listázása 
+- Egy rendezvény adataina a megjelenítése
+</br>
 A tervezett menürendszer bejelentkezés előtt bármely szintü jogosultággal rendelkező felhasználónak:
 
 - Főmenü
-- Rendezvények listászása
 - Regisztráció
-- Be és kijelentkezés
+- Bejelentkezés
 
-A tervezett menürendszer bejelentkezés után bármely user jogosultággal rendelkező felhasználónak:
+A tervezett menürendszer bejelentkezés után user jogosultággal rendelkező felhasználónak:
 
 - Főmenü
 - Rendezvények listászása
-- Jegyvásárlás
 - Kijelentkezés
   
 A tervezett menürendszer bejelentkezés után admin jogosultággal rendelkező felhasználónak:
@@ -29,22 +47,21 @@ A tervezett menürendszer bejelentkezés után admin jogosultággal rendelkező 
 - Főmenü
 - Rendezvények listászása
 - Rendezvények -> Rendezvény hozzáadása, Rendezvény módosítása,Rendezvény törlése,
-- Jegyek -> Jegytípus hozzáadása, Jegytípus módosítása, Jegyzípus törlése
-- Felhasználók -> felhasználó törlése(végleges kitiltás)
+- Felhasználók -> Új felhasználó hozzáadása, Felhasználó adatainak a módosítása, Felhasználó törlése
+- Felhasználók listázása
 - Kijelentkezés
 
 ## 3. Jelenlegi üzleti folyamatok modellje
 
-A jelenlegi üzleti folyamatok nincsenek, hiszen ez egy újonnan alakuló vállalkozás. A tervek szereint a cégünket megbízó vállalkozás online jegy és bérlet értékesítéssel szeretne foglalkozni, más termékek értékesítést nem tervezik.
+A jelenlegi üzleti folyamatok nincsenek, hiszen a cégünket megbízó vállalkozás teljesen újonnan alakult. 
 
 ## 4. Igényelt üzleti folyamatok modellje
 Üzleti folyamatok: 
 
-Online folyamatok felhasználó szintű egyének számára:
-Amíg nem jelentkezik be a felhasználó szintü egyén addig csak az alábbi menürendszer érhetőek el:
+Online folyamatok user szintű egyének számára:
+Amíg nem jelentkezik be a user vagy admin szintü felhasználó addig csak az alábbi menürendszer érhetőek el:
 
 - Főmenü
-- Rendezvények listászása
 - Regisztráció
 - Be és kijelentkezés
 
