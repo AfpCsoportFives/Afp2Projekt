@@ -119,6 +119,12 @@ E-->F;
 ```
 ## 5 A rendszerre vonatkozó pályázat, törvények, rendeletek, szabványok és ajánlások felsorolása rész kidolgozása
 
+Általános adatvédelmi rendelet (Általános adatvédelmi rendelet). Adatkezelési tájékoztató.
+
+Szerzői jogi törvény ( http://www.sztnh.gov.hu/hu/szakmai-oldalak/jogforrasok-0 )
+
+Polgári törvénykönyv ( http://uvegkep.hu/ptk.pdf )
+
 Európai uniós rendeletek, irányelvek, ajánlások AZ EURÓPAI PARLAMENT ÉS A TANÁCS (EU) 2019/790 IRÁNYELVE (2019. április 17.) a digitális egységes piacon a szerzői és szomszédos jogokról, valamint a 96/9/EK és a 2001/29/ EK irányelv módosításáról
 
 AZ EURÓPAI PARLAMENT ÉS A TANÁCS (EU) 2017/1563 RENDELETE (2017. szeptember 13.) a szerzői és a szomszédos jogi védelemben részesülő egyes művek és más teljesítmények elérhető formátumú példányainak a vakok, látáskárosultak és nyomtatott szöveget egyéb szolgáló eszközöket használnak, határokon átnyúló, az Unió és harmadik országok közötti cseréjéről
@@ -172,4 +178,25 @@ Törvények
 2012. évi CLII. törvény a muzeális intézményekről, a nyilvános könyvtári ellátásról és a közművelődésről szóló 1997. évi CXL. törvény módosításáról
 
 2015. évi CXLIII. törvény a közbeszerzésekről
+
+## 6 Követelménylista 
+
+ID	Verzió	Név                     	          Kifejtés
+K01	V1.0	User adminisztrációja	              User regisztrálása, törlése az igényelt üzleti folyamatokban leírtak szerint.
+K02	V1.0	Rendezvények adminisztrációja	      Rendezvények létrehozása, törlése az igényelt üzleti folyamatokban leírtak szerint.
+K03	V1.0	Foglalás adminisztrációja	          Foglalás folyamatának kezelése a szükséges üzleti folyamatokban leírtak szerint.
+K04	V1.0	Felhasználói fiókok kezelése	      Bejelentkezés, felhasználói adatok módosítása, meghívók rögzítése az 
+                                                  adatbázisban, listák és kimutatások elkészítése a szükséges üzleti folyamatokban leírtak szerint.
+K05	V1.0	Egyszerűen használható 
+            kezelőfelület                         A legelterjedtebb internet böngészőkből használható felület megvalósítása az  
+                                                  admin számára
+K06	V1.0	Online elérhető nyilvános
+            rendezvnyek listája 	              Bárki számára elérhető online felület készítése, amin keresztül elérhető, böngészhető 
+                                                  és kereshető a könyvtárkatalógus tartalma.
+K07	V1.0	Platformfüggetlen, robusztus működés  Szabványos, az iparágban folyamatosan bevált operációs rendszertől független 
+                                                  technológiák használata: Php, Apache HTTP , MySQL.
+K08	V1.0	Költséghatékony üzemeltetés           A szabványos és elterjedt technológiák használatát biztosítja.
+
+K09 V1.0	Bővíthetőség                          A kezelt adatok mennyiségének, valamint a felhasználók számának bővíthetősége és 
+                                                  utólag újabb funkciók hozzáadásának lehetőségének biztosítása.
 
