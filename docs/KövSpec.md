@@ -65,20 +65,42 @@ Amíg nem jelentkezik be a user vagy admin szintü felhasználó addig csak az a
 - Regisztráció
 - Be és kijelentkezés
 
-- Bejelentkezés: bejelentkezés menü => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Jegyvásárlás menüre klikkelve elérhető az az összes esemény és ott a jegyvásárlás gombra kattintva lehet megvásárolni a jegyet/bérletet.
-- Kijelentkezés: bejelentkezés menü => Kijelentkezés gombra kattintás
+User szintü felhasználó:
+</br>
+Helyfoglalás:</br>
+- Bejelentkezés: bejelentkezés gomb => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Egy addott esemény részletek gombjára klikkelve megjelenik 1 gomb feliratkozás</br>
+</br>
+Rendezvényről való leiratkozás:</br>
+- Bejelentkezés: bejelentkezés menü => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Egy addott esemény részletek gombjára klikkelve megjelenik leiratkozás gomb ha a felhasználó már feliratkozott.
 
-Online folyamatok, a cégünket megbízó vállalkozás alkalmazottainak:
-Ők lesznek az alkalmazott szintü felhasználó.
-Az alkalmazottak minden menüpontot és funkciót elérhetnek, amit a vendégek kiegészítve az új rendezvény/esemény felvitele illetve módosítása illetve új jegytípus hozzáadása és módosítása. 
-Alkalmazott szintü felhasználó regisztrálására csakis az admin szitű jogosultság szükséges.
+Admin szintü felhasználó:
+</br>
+Uj felhasználó hozzáadása:</br>
+- Bejelentkezés: bejelentkezés gomb => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Felhasználók menü => Új felhasználó hozzáadása</br>
+Felhasználó adatainak a módosítása:</br>
+- Bejelentkezés: bejelentkezés gomb => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Felhasználók menü => Felhasználók listázása => A kiválasztott felhasználóra kattintva => módosítás</br>
+Felhasználó törlése:</br>
+- Bejelentkezés: bejelentkezés gomb => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Felhasználók menü => Felhasználók listázása => A kiválasztott felhasználóra kattintva => törlés</br>
+Felhasználók listázása:</br>
+- Bejelentkezés: bejelentkezés gomb => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Felhasználók menü => Felhasználó listázása</br>
+
+Uj rendezvény hozzáadása:</br>
+- Bejelentkezés: bejelentkezés gomb => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Rendezvények menü => Új rendezvény hozzáadása</br>
+Rendezvény adatainak a módosítása:</br>
+- Bejelentkezés: bejelentkezés gomb => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Rendezvények listázása => R Módosítani kívánt rendezvény kiválasztása => rendezvény adatainak módosítása gomb => módosítása</br>
+Rendezvény adatainak a törlése
+- Bejelentkezés: bejelentkezés gomb => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Rendezvények listázása => R Módosítani kívánt rendezvény kiválasztása => rendezvény adatainak módosítása gomb => törlés</br>
+Felhasználók listázása:</br>
+- Bejelentkezés: bejelentkezés gomb => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Rendezvények menü => Rendezvény listázása</br>
+
+
 
 Új rendezvény felvitele
 ```mermaid
 flowchart TD;
-A("*Alkalmazott* jogosultsággal belépés");
-B("Események nyilvántartása menü");
-C("Új esemény menü");
+A("*Admin* jogosultsággal belépés");
+B("Rendezvény menü");
+C("Új esemény hozzáadása menü");
 D("Adatok megadása");
 E("Véglegesítés");
 A-->B;
@@ -91,9 +113,9 @@ Rendezvény adatainak módosítása
 
 ```mermaid
 flowchart TD;
-A("*Alkalmazott* jogosultsággal belépés");
-B("Rendezvény nyilvántartása menü");
-C("Rendezvény listája menü");
+A("*Admin* jogosultsággal belépés");
+B("Rendezvény menü");
+C("Rendezvény  menü");
 D("Rendezvény neve melletti szerkesztés gombra kattintás");
 E("Adatok megadása");
 F("véglegesítés");
