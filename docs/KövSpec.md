@@ -200,3 +200,20 @@ K08	V1.0	Költséghatékony üzemeltetés           A szabványos és elterjedt 
 K09 V1.0	Bővíthetőség                          A kezelt adatok mennyiségének, valamint a felhasználók számának bővíthetősége és 
                                                   utólag újabb funkciók hozzáadásának lehetőségének biztosítása.
 
+
+## 7 Fogalomtár
+
+User:  rendezvényen résztvevő, aki előzetesn reisztrál, a regisztráció során megadja a különböző statisztikák leszűréséhez szükséges 
+       adatokat
+
+Admin: kezeli a User adatokat, javítja az estleges hibás regisztrációkat, kezeli a rendezvényekkel kapcsolatos válzozásokat, elvégzi az 
+       új rendezvények létrehozását, leszűri a kívánt statisztikákat
+
+Rendezvény: meghírdetett esemény, amelyen előzetes regisztrációval lehet részt venni
+
+Statisztika: a regisztrált résztvevők által megadott adatokból, különböző lekérdezések által létrehozott kimutatások
+
+
+
+
+
