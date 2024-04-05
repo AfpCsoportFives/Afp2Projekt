@@ -194,7 +194,7 @@ K06	V1.0	Online elérhető nyilvános
             rendezvnyek listája 	              Bárki számára elérhető online felület készítése, amin keresztül elérhető, böngészhető 
                                                   és kereshető a könyvtárkatalógus tartalma.
 K07	V1.0	Platformfüggetlen, robusztus működés  Szabványos, az iparágban folyamatosan bevált operációs rendszertől független 
-                                                  technológiák használata: Php, Apache HTTP , MySQL.
+                                                  technológiák használata: Php, React, Node js, MySQL.
 K08	V1.0	Költséghatékony üzemeltetés           A szabványos és elterjedt technológiák használatát biztosítja.
 
 K09 V1.0	Bővíthetőség                          A kezelt adatok mennyiségének, valamint a felhasználók számának bővíthetősége és 

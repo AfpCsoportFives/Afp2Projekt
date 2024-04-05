@@ -30,3 +30,11 @@ meghivo:
 - meghivottEmail
 - createdDate
 - jovahagyott
+
+
+## 8 Implementációs terv
+
+- Visual Studio kód
+- MySQL Workbench
+- React
+- Node js
