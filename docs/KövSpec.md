@@ -133,13 +133,22 @@ A 2014/26/EU európai parlamenti és tanácsi irányelv a szerzői és szomszéd
 
 2012/417/EU (2012. július 17.) ajánlása a tudományos információkhoz való hozzáférésről és azok megőrzéséről;
 
-2006/115/EK irányelv a bérleti jogról és a haszonkölcsönzési jogról, valamint a szellemi tulajdon területén a szerzői joggal szomszédos bizonyos jogokról
+AZ EURÓPAI PARLAMENT ÉS A TANÁCS 2016. április 27-i (EU) 2016/679 RENDELETE a természetes személyeknek a személyes adatok kezelése tekintetében történő védelméről és az ilyen adatok szabad áramlásáról, valamint a 95/46/EK irányelv hatályon kívül helyezéséről (általános adatvédelmi rendelet)
+
+1992. évi LXIII. törvény a személyes adatok védelméről és a közérdekű adatok nyilvánosságáról
+
+1999. évi LXXVI. törvény a szerzői jogról
+
+2021. évi XXXVII. törvény a szerzői jogról szóló 1999. évi LXXVI. törvény és a szerzői jogok és a szerzői joghoz kapcsolódó jogok közös kezeléséről szóló 2016. évi XCIII. törvény jogharmonizációs célú módosításáról
+
 
 A Bizottság 2011/711/EU ajánlása (2011. október 27.) a kulturális anyagok digitalizálásáról és online hozzáférhetőségéről, valamint a digitális megőrzésről
 
 98/34/EK európai parlamenti és tanácsi irányelv a műszaki szabványok és szabályok, valamint az információs társadalom szolgáltatásaira vonatkozó szabályok információszolgáltatási eljárás megállapításáról (a 98/48/EK európai parlamenti és tanácsi irányelvvel módosított)
 
 96/9/EK irányelv (1996. március 11.) az adatbázisok jogi védelméről
+
+23/2011. (III. 8.) Korm. rendelet a zenés, táncos rendezvények működésének biztonságosabbá tételéről
 
 
 ## 6 Követelménylista 
