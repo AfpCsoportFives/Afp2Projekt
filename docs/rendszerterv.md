@@ -192,6 +192,45 @@ E-->F
 
 ```
 
+#### 5.2.5 Rendezvény hozzáadása
+
+```mermaid
+flowchart LR;
+A(("Start"));
+B("Adatok felvétele");
+C{"A rendezvény adatok
+ megfelelőek?"};
+D("Véglegesítés");
+E(("Stop"));
+
+A-->B;
+B-->C;
+
+C-- Igen -->D
+C-- Nem -->B
+D-->E
+
+```
+
+#### 5.2.6 Rendezvény módosítása
+
+```mermaid
+flowchart LR;
+A(("Start"));
+B("Adatok módosítása");
+C{"A módosító adatok
+ megfelelőek?"};
+D("módosítás");
+E(("Stop"));
+
+A-->B;
+B-->C;
+C-- Igen -->D
+C-- Nem -->B
+D-->E
+
+```
+
 
 ## 6. Fizikai környezet
 
