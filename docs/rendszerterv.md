@@ -271,6 +271,25 @@ C-- Nem -->B;
 D-->E;
 ```
 
+#### 5.2.9 Rendeezvény jelentkezés törlése
+
+```mermaid
+flowchart LR;
+A(("Start"));
+B("Rendezvény jelentkezés kiválasztása");
+C{"A kiválasztot 
+rendezvény jelentkezés 
+kell törölni?"};
+D("Törlés");
+E(("Stop"));
+
+A-->B
+B-->C
+C-- Igen -->D
+C-- Nem -->B
+D-->E
+
+```
 
 ## 6. Fizikai környezet
 
