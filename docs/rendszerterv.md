@@ -21,6 +21,30 @@ Az alkalmazásnak intuitív és felhasználóbarát felhasználói felülettel k
 A felhasználóknak könnyen hozzáférhető navigációs rendszerrel kell rendelkezniük a funkciókhoz és menükhöz.
 
 
+## 6. Fizikai környezet
+
+Fizikai környezet
+Frontend felületet React, a backend felületet NodeJS biztosítja.
+
+1. Vásárolt szoftverkomponensek és külső rendszerek
+Nincsenek vásárolt szoftverkomponensek.
+2. Hardver és hálózati topológia
+Az alkalmazás webplatformra készül, bármilyen oprendszeren futtatható.
+Internet böngészőn keresztül érhető el a felhasználó felület.
+Szerverhez interneten keresztül lehet csatlakozni.
+3. Fizikai alrendszerek
+Webszerver: 80-as porton elérhető HTTP szolgáltatás
+Mysql adatbázis szerver
+Kliens gépek: a követelményeknek megfelelő internet böngésző futtatására alkalmas PC-k.
+4. Fejlesztő eszközök
+Visual Studio Code
+Notepad++
+Git
+JUnit 
+Selenium
+5. Keretrendszer
+React, NodeJS, Mysql
+
 ## 7. Adatbázis terv
 
 A projekt adatbázisaként mysql fog szolgálni, amiben a következőképpen alakulnak a táblák:
