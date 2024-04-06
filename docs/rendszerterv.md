@@ -69,6 +69,13 @@ Website	Tesztelés
 A prototipus bemutatása
 Az elkészült szoftver átadása
 
+## 3. Üzleti folyamatok modellje
+3.1 Üzleti szereplők
+A rendszert kizárólag regisztrálás után lehet használni. Ekkor a látogató a kezdőlapot tudja elérni, azon belül a keresés és részletes keresés menüpontokhoz van hozzáférése. Regisztrált üzleti szereplők tehát a felhasználók, és az adminisztrátorok.
+
+3.2 Üzleti folyamatok
+Bejelentkezés mindenki számára ugyanolyan lefutású: A ’Belépés’ menüpontra kattintva megjelenik a ’Felhasználó név’ és ’Jelszó’ beviteli űrlap. A mezők kitöltése után a ’Belépés’ gombra kattint a felhasználó. Ha az azonosítás sikeres, akkor a felhasználó belépett és megjelenik a jogosultságának megfelelő menüsor. Ha nem sikerül az azonosítás, hibaüzenet jelenik meg.
+
 ## 4. Követelmények
 
 4.1 Funkcionális követelmények
