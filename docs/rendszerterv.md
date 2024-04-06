@@ -291,6 +291,16 @@ D-->E
 
 ```
 
+### 5.3 Menühierarchiák
+
+A menürendszert egy, a weboldal fejléce alatt található navigációs sávban építettük fel.
+
+A rendszerbe való bejelentkezés előtt nincs megjelenített kezdőlap, csak bejelentkezés után érhető el az oldal
+
+Felhasználként belépve a menüben található a "Rendezvények", "Saját rendezvények", "Profilom", Kijelentkezés.
+
+Adminisztrátorként belépve a menüben található a "Rendezvények", "Profilok", "Statisztika", "Kijelentkezés"
+
 ## 6. Fizikai környezet
 
 Fizikai környezet
