@@ -107,6 +107,91 @@ Az alkalmazásnak kompatibilisnek kell lennie a különböző böngészőkkel é
 4.2.6 Hibatűrés
 Az alkalmazásnak képesnek kell lennie a hibák kezelésére és azok helyreállítására anélkül, hogy azok jelentősen befolyásolnák a felhasználói élményt.
 
+## 4. Funkcionális terv
+
+### 5.1 Rendszerszereplők
+
+A rendszerünkben két rendszerszereplő csoportot különböztetünk meg. Az egyik a Rendezvényekre jelentkeznek felhasználók csoportja. A másik a rendezvényi adminisztrációt végző adminok csoportja. A felhasználók igénybe veszik a rendezvényi kezelő szolgáltatásait, míg adminok ezt nyilvántarták, rendezvényeket hoznak létre/szerkesztik és kiszolgálják a felhasználókat. Az adminok több jogosultsággal rendelkeznek mint a felhasználók. Az ő feladatuk még az felhasználók értesítése problémák esetén, pl. Rendezvény elmaradás. 
+
+### 5.2 Rendszerhasználati esetek és lefutásaik
+
+#### 5.2.1 Rendezvények listázása
+```mermaid
+flowchart LR;
+A("Start");
+B("Rendezvények lekérdezése adatbázisból");
+C("Rendezvény megjelenítése");
+D("STOP");
+
+A-->B;
+B-->C;
+C-->D;
+
+```
+
+#### 5.2.2 Feléhasználó saját adatainak módosítása
+
+```mermaid
+flowchart LR;
+A("Start");
+B("Belépés");
+C("Adatok módosítása");
+D{"A módosító adatok
+ megfelelőek?"};
+E("módosítás");
+F("Stop");
+
+A-->B;
+B-->C;
+C-->D;
+D-- Igen -->E
+D-- Nem -->C
+E-->F
+
+```
+
+#### 5.2.3 Új felhasználó regisztrálása
+
+```mermaid
+flowchart LR;
+A("Start");
+B("Adatok felvétele");
+C{"A módosító adatok
+ megfelelőek?"};
+D("Véglegesítés");
+E("Stop");
+
+A-->B;
+B-->C;
+
+C-- Igen -->D
+C-- Nem -->B
+D-->E
+
+```
+
+#### 5.2.4 Felhasználó törlése
+
+```mermaid
+flowchart LR;
+A("Start");
+B("Adatok megadása");
+C("Felhasználó kiválasztása");
+D{"A kiválasztot 
+felhasználót 
+kell törölni?"};
+E("Törlés");
+F("Stop");
+
+A-->B
+B-->C
+C-->D
+D-- Igen -->E
+D-- Nem -->C
+E-->F
+
+```
+
 
 ## 6. Fizikai környezet
 
