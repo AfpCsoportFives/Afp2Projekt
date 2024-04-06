@@ -301,6 +301,14 @@ Felhasználként belépve a menüben található a "Rendezvények", "Saját rend
 
 Adminisztrátorként belépve a menüben található a "Rendezvények", "Profilok", "Statisztika", "Kijelentkezés"
 
+### 5.4 Képernyőtervek
+
+Főbb oldalak:
+
+Felhasználó felület, amely a felhasználó bejelentkezése után jelenik meg.
+
+Admin felület, amely az adminisztrátor belépése utén jelenik meg.
+
 ## 6. Fizikai környezet
 
 Fizikai környezet
