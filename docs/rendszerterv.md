@@ -20,6 +20,55 @@ A felhasználók adatait biztonságosan kell tárolni és kezelni.
 Az alkalmazásnak intuitív és felhasználóbarát felhasználói felülettel kell rendelkeznie.
 A felhasználóknak könnyen hozzáférhető navigációs rendszerrel kell rendelkezniük a funkciókhoz és menükhöz.
 
+## 2. Projektterv
+
+2.1. Projektszerepkörök
+Scrum master: Lecza Tamás
+Product owner
+Üzleti szereplők
+Megrendelő
+
+2.2 Projektmunkások és felelőségeik
+Frontend: (Feladatuk weboldal kinézetének az elkészítése, illetve a megrendelő által igényelt funkciók megvalósítása)
+Bakos Zsolt
+Lecza Tamás
+Backend: (Feladatuk az adatbázis kialakítása illetve abból az adatok kiszolgálása a frontend számára)
+Andorfer katalin
+Bezdán Anita
+Kalmár János
+Spengler András
+Tesztelés:
+Andorfer katalin
+Bakos Zsolt
+Bezdán Anita
+Kalmár János
+Lecza Tamás
+Spengler András
+
+2.3 Ütemterv
+
+Követelmény specifikáció	
+Funkcionális specifikáció
+Rendszerterv
+Adatmodell megtervezése	
+Adatbázis megvalósítása a szerveren
+Backend: Route & controllers elkészítése
+Backend: Adatbázis kapcsolat megvalósítása	
+Backend: Adatfeladolgozó funkciók megvalósítása
+Website	Képernyőtervek elkészítése
+Website	Prototípus elkészítése
+Website	Adatbázis létrehozása
+Website	Menüstruktúra elkészítése
+Website	Kezdőlap funkciók elkészítése	
+Website	Felhasználói felület elkészítése
+Website	Alkalmazottak felület elkészítése
+Website	Adminisztrátori felület elkészítése
+Website	Tesztelés
+
+2.4 Mérföldkövek
+A prototipus bemutatása
+Az elkészült szoftver átadása
+
 
 ## 6. Fizikai környezet
 
