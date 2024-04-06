@@ -4,19 +4,19 @@
 ## 1. Rendszer célja
 A jegykezelő alkalmazás célja, hogy lehetővé tegye a rendezvényszervezői vállalkozásnak a rendezvények hatékony kezelését és a felhasználók számára egyszerű és gyors jegyfoglalást. Az alkalmazásnak az alábbi fő célokat kell teljesítenie:
 
-1. Felhasználói regisztráció és bejelentkezés
+1.1 Felhasználói regisztráció és bejelentkezés
 A felhasználóknak lehetőséget kell biztosítani a regisztrációra és bejelentkezésre.
 A bejelentkezett felhasználóknak különböző jogosultságokat kell biztosítani az alkalmazás használatához.
-2. Rendezvények kezelése
+1.2 Rendezvények kezelése
 A rendszer lehetővé kell tennie új rendezvények hozzáadását, meglévő rendezvények módosítását és törlését.
 A rendezvényeket különböző tulajdonságokkal, például címmel, dátummal, helyszínnel és részletekkel kell rendelkezniük.
-3. Jegyfoglalás
+1.3 Jegyfoglalás
 A felhasználóknak lehetőséget kell biztosítani a rendezvényekre való jegyfoglalásra.
 A foglalásoknak tartalmazniuk kell a felhasználó nevét és a rendezvény adatait.
-4. Felhasználók kezelése
+1.4 Felhasználók kezelése
 Az adminisztrátoroknak lehetőséget kell biztosítani új felhasználók hozzáadására, meglévő felhasználók módosítására és törlésére.
 A felhasználók adatait biztonságosan kell tárolni és kezelni.
-5. Felhasználói felület
+1.5 Felhasználói felület
 Az alkalmazásnak intuitív és felhasználóbarát felhasználói felülettel kell rendelkeznie.
 A felhasználóknak könnyen hozzáférhető navigációs rendszerrel kell rendelkezniük a funkciókhoz és menükhöz.
 
@@ -113,23 +113,23 @@ Az alkalmazásnak képesnek kell lennie a hibák kezelésére és azok helyreál
 Fizikai környezet
 Frontend felületet React, a backend felületet NodeJS biztosítja.
 
-1. Vásárolt szoftverkomponensek és külső rendszerek
+6.1 Vásárolt szoftverkomponensek és külső rendszerek
 Nincsenek vásárolt szoftverkomponensek.
-2. Hardver és hálózati topológia
+6.2 Hardver és hálózati topológia
 Az alkalmazás webplatformra készül, bármilyen oprendszeren futtatható.
 Internet böngészőn keresztül érhető el a felhasználó felület.
 Szerverhez interneten keresztül lehet csatlakozni.
-3. Fizikai alrendszerek
+6.3 Fizikai alrendszerek
 Webszerver: 80-as porton elérhető HTTP szolgáltatás
 Mysql adatbázis szerver
 Kliens gépek: a követelményeknek megfelelő internet böngésző futtatására alkalmas PC-k.
-4. Fejlesztő eszközök
+6.4 Fejlesztő eszközök
 Visual Studio Code
 Notepad++
 Git
 JUnit 
 Selenium
-5. Keretrendszer
+6.5 Keretrendszer
 React, NodeJS, Mysql
 
 ## 7. Adatbázis terv
