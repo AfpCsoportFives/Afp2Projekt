@@ -231,6 +231,46 @@ D-->E
 
 ```
 
+#### 5.2.7 Rendeezvény törlése
+
+```mermaid
+flowchart LR;
+A(("Start"));
+B("Adatok megadása");
+C("Rendezvény kiválasztása");
+D{"A kiválasztot 
+rendezvényt 
+kell törölni?"};
+E("Törlés");
+F(("Stop"));
+
+A-->B
+B-->C
+C-->D
+D-- Igen -->E
+D-- Nem -->C
+E-->F
+
+```
+
+#### 5.2.8 Rendeezvényre Jelentkezés
+
+```mermaid
+flowchart LR;
+A(("Start"));
+B("Rendezvény kiválasztása");
+C{"A kiválasztot 
+rendezvényre kell jelentkezni?"};
+D("Törlés");
+E(("Stop"));
+
+A-->B;
+B-->C;
+C-- Igen -->D;
+C-- Nem -->B;
+D-->E;
+```
+
 
 ## 6. Fizikai környezet
 
