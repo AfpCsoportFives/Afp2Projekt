@@ -69,6 +69,37 @@ Website	Tesztelés
 A prototipus bemutatása
 Az elkészült szoftver átadása
 
+## 4. Követelmények
+
+4.1 Funkcionális követelmények
+4.1.1 Felhasználói regisztráció és bejelentkezés
+A felhasználóknak lehetőséget kell biztosítani regisztrációra a weboldalon.
+A regisztrált felhasználók bejelentkezhetnek az alkalmazásba az e-mail címük és jelszavuk megadásával.
+4.1.2 Rendezvények böngészése és keresése
+A felhasználóknak lehetőséget kell biztosítani a rendezvények böngészésére és keresésére különböző szempontok alapján, például dátum, helyszín vagy kategória szerint.
+4.1.3 Jegyfoglalás és vásárlás
+A felhasználóknak lehetőséget kell biztosítani a jegyek foglalására és vásárlására a kiválasztott rendezvényekre.
+A felhasználóknak meg kell adniuk a szükséges információkat (pl. név, kapcsolattartási adatok) a jegyfoglalás és vásárlás során.
+4.1.4 Felhasználói profilkezelés
+A felhasználóknak lehetőséget kell biztosítani a profiljuk szerkesztésére és a beállítások módosítására.
+A felhasználóknak lehetőségük kell legyen a korábbi foglalásaik és vásárlásaik megtekintésére a profiljukban.
+4.1.5 Rendezvények kezelése (admin felületen)
+Az adminisztrátoroknak lehetőséget kell biztosítani új rendezvények hozzáadására, meglévő rendezvények szerkesztésére és törlésére.
+Az adminisztrátoroknak lehetőségük kell legyen a jegyárak, rendelkezésre álló helyek és más rendezvény-adatok kezelésére.
+4.2 Nem funkcionális követelmények
+4.2.1 Felhasználóbarát felhasználói felület
+Az alkalmazásnak egyszerű és intuitív felhasználói felülettel kell rendelkeznie, amely könnyen kezelhető még kevésbé technikailag jártas felhasználók számára is.
+4.2.2 Teljesítmény
+Az alkalmazásnak gyorsan kell válaszolnia a felhasználói interakciókra és meg kell felelnie a várt teljesítményi szinteknek még nagy forgalom esetén is.
+Biztonság:
+4.2.3 Az alkalmazásnak megfelelő biztonsági intézkedésekkel kell rendelkeznie az adatvédelem és az ügyféladatak védelme érdekében, például titkosított adatkapcsolatok, jelszóvédelem stb.
+4.2.4 Skálázhatóság
+Az alkalmazásnak képesnek kell lennie a könnyű skálázódásra, hogy kezelni tudja a növekvő felhasználói forgalmat és a különböző események időszakos igényeit.
+4.2.5 Kompatibilitás
+Az alkalmazásnak kompatibilisnek kell lennie a különböző böngészőkkel és eszközökkel, hogy a felhasználók széles körének nyújtson hozzáférést és élményt.
+4.2.6 Hibatűrés
+Az alkalmazásnak képesnek kell lennie a hibák kezelésére és azok helyreállítására anélkül, hogy azok jelentősen befolyásolnák a felhasználói élményt.
+
 
 ## 6. Fizikai környezet
 
