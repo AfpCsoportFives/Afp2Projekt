@@ -93,7 +93,18 @@ Rendezvény adatainak a törlése
 Felhasználók listázása:</br>
 - Bejelentkezés: bejelentkezés gomb => felhasználó név és jelszó megadása => Bejelentkezési oldal megjelenése. => Rendezvények menü => Rendezvény listázása</br>
 
+Rendezvény Listázása
 
+```mermaid
+flowchart TD;
+A("*Bármely* jogosultsággal belépés");
+B("Rendezvény menü");
+C("Rendezvény  listázása");
+
+A-->B;
+B-->C;
+
+```
 
 Új rendezvény felvitele
 ```mermaid
@@ -115,7 +126,7 @@ Rendezvény adatainak módosítása
 flowchart TD;
 A("*Admin* jogosultsággal belépés");
 B("Rendezvény menü");
-C("Rendezvény  menü");
+C("Rendezvény listázása menü");
 D("Rendezvény neve melletti szerkesztés gombra kattintás");
 E("Adatok megadása");
 F("véglegesítés");
@@ -126,12 +137,44 @@ D-->E;
 E-->F;
 ```
 
-Új jegy felvitele
+Rendezvény törlése
+
 ```mermaid
 flowchart TD;
-A("*Alkalmazott* jogosultsággal belépés");
-B("Jegy nyilvántartása menü");
-C("Új jegy menü");
+A("*Admin* jogosultsággal belépés");
+B("Rendezvény menü");
+C("Rendezvény listázása  menü");
+D("Törölendő rendezvényre klikkelés");
+E("Törlés gomb");
+
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+
+```
+
+
+Felhasználó Listázása
+
+```mermaid
+flowchart TD;
+A("*Admin* jogosultsággal belépés");
+B("Felhasználók menü");
+C("Felhasználók listázása");
+
+A-->B;
+B-->C;
+
+```
+
+Új felhasználó hozzáadása
+
+```mermaid
+flowchart TD;
+A("*Admin* jogosultsággal belépés");
+B("Felhasználók menü");
+C("Új felhasználó hozzáadása menü");
 D("Adatok megadása");
 E("Véglegesítés");
 A-->B;
@@ -140,21 +183,53 @@ C-->D;
 D-->E;
 ```
 
-Jegy adatainak módosítása
+Új felhasználó hozzáadása user szint
 
 ```mermaid
 flowchart TD;
-A("*Alkalmazott* jogosultsággal belépés");
-B("Jegy nyilvántartása menü");
-C("Jegy listája menü");
-D("Jegy neve melletti szerkesztés gombra kattintás");
-E("Adatok megadása");
-F("véglegesítés");
+A("Regisztráció ");
+B("Adatok megadása");
+C("Véglegesítés");
+A-->B;
+B-->C;
+
+```
+
+Felhasználó  adatainak módosítása
+
+```mermaid
+flowchart TD;
+A("*Admin* jogosultsággal belépés");
+B("Felhasználók menü");
+C("Felhasználók listázása menü");
+D("Modosítandó felhasználóra kattintás");
+E("Módosítás gomb");
+F("Adatok megadása");
+G("véglegesítés");
 A-->B;
 B-->C;
 C-->D;
 D-->E;
 E-->F;
+F-->G
 ```
-test
+
+Felhasználó törlése
+
+```mermaid
+flowchart TD;
+A("*Admin* jogosultsággal belépés");
+B("Felhasználó menü");
+C("Felhasználó listázása  menü");
+D("Törölendő Fehasználóra klikkelés");
+E("Törlés gomb");
+
+A-->B;
+B-->C;
+C-->D;
+D-->E;
+
+```
+
+
 
