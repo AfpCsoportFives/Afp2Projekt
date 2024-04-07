@@ -460,9 +460,11 @@ például. Teszt #01 | Regisztráció | A felhasználó az adatok megadásával 
 
 ## 12. Telepítési terv
 
-### 12.1 Fizikai telepítési terv
+#### Fizikai telepítési terv 
+Szükség van egy adatbázis szerverre, amely közvetlenül csatlakozik a webszerververhez. -A webszerverre közvetlenül az internetről kapcsolódnak rá a kliensek.
 
-### 12.2 Szoftver telepítési terv
+#### Szoftver telepítési terv 
+A szoftver webes felületéhez csak egy ajánlott a böngésző telepítése szükséges ( Google Chrome, Firefox, Opera, Edge) külön szoftver nem kell hozzá.
 
 ## 13. Karbantartási terv
 
