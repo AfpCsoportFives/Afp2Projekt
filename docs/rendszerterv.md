@@ -43,8 +43,6 @@ A felhasználóknak könnyen hozzáférhető navigációs rendszerrel kell rende
 | ------- | ------- | ----------| ------------- | ---------------------- | ---------------- | ----------------- |
 | ....... | ....... | ......... | ............. | ...................... | ................ | ................. |
 
-2.3 Ütemterv
-
 * Követelmény specifikáció	
 * Funkcionális specifikáció
 * Rendszerterv
@@ -63,7 +61,7 @@ A felhasználóknak könnyen hozzáférhető navigációs rendszerrel kell rende
 * Website	Adminisztrátori felület elkészítése
 * Website	Tesztelés
 
-2.4 Mérföldkövek
+*** 2.4 Mérföldkövek
 * A prototipus bemutatása
 * Az elkészült szoftver átadása
 
