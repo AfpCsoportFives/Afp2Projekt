@@ -285,7 +285,7 @@ Admin oldali statisztika
 | K012 | Bővíthetőség | Adatbáziskezelő rendszer használata, a tervezésnél figyelembe vesszük a későbbi bővítési igényeket, továbbá fontos az utólagos újabb funkciók hozzáadása. |
 
 
-## 11 Fogalomszótár
+## 11. Fogalomszótár
 
 * Felhasználó: Rendezvényen résztvevő, aki előzetesn regisztrál, a regisztráció során megadja a különböző statisztikák leszűréséhez szükséges adatokat, mint lakóhely, életkor, legmagasabb iskolai végzettség valamint foglalkozás.
 
@@ -296,3 +296,11 @@ Admin oldali statisztika
 * Rendezvény: Meghirdetett esemény, amelyen előzetes regisztrációval lehet részt venni.
 
 * Statisztika: A regisztrált résztvevők által megadott adatokból, különböző lekérdezések által létrehozott kimutatások.
+
+* SQL: Az SQL a Strukturált Lekérdezési Nyelv rövidítése. Egy speciális nyelv, amelyet relációs adatbázisokkal való kommunikációra használnak az adatok létrehozásához, olvasásához, frissítéséhez és törléséhez.
+
+* HTML: A HTML a HyperText Markup Language rövidítése. Ez egy olyan jelölőnyelv, amelyet weboldalak tartalmának és szerkezetének leírására használnak.
+
+* PHP: A PHP a Hypertext Preprocessor rövidítése. Szerveroldali szkriptnyelv, weboldalak dinamikus tartalmának generálására használják. Beágyazható HTML-be, és adatbázisokkal, fájlkezeléssel és más funkciókkal is képes kommunikálni.
+
+* CSS: A CSS a Cascading Style Sheets rövidítése. Ez egy stíluslap nyelv, melyet weboldalak megjelenésének definiálására használnak. Leválasztja a tartalmat (HTML) a megjelenítéstől, lehetővé téve a weboldalak kinézetének könnyű módosítását anélkül, hogy a tartalom módosulna.
