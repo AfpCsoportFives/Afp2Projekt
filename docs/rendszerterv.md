@@ -468,4 +468,26 @@ A szoftver webes felületéhez csak egy ajánlott a böngésző telepítése sz�
 
 ## 13. Karbantartási terv
 
-Fontos ellenőrizni:
+* Rendszeres frissítések
+Az alkalmazás kódjának és függőségeinek rendszeres frissítése, hogy biztosítsuk a biztonságot és a kompatibilitást az új böngészőkkel és eszközökkel.
+* Adatbázis karbantartás
+Rendszeres adatbázis mentések és karbantartások végrehajtása annak érdekében, hogy az adatok integritása és rendelkezésre állása megőrizhető legyen.
+* Teljesítményoptimalizálás
+   * Időnkénti teljesítményvizsgálatok végrehajtása az alkalmazás sebességének optimalizálása érdekében.
+   * Gondoskodás arról, hogy az adatbázis lekérések és más szerveroldali műveletek hatékonyak és gyorsak legyenek.
+* Felhasználói visszajelzések figyelembevétele
+Rendszeres időközönként felülvizsgálni a felhasználók által beküldött visszajelzéseket, és prioritást adni a jelentős hibajelentéseknek és funkciók kéréseknek.
+* Hibajavítás
+   * Azonnali reakció a felhasználók által jelentett hibákra, és azok gyors kijavítása.
+   * A hibajavítási folyamat során prioritást kell adni a működési hibáknak és a felhasználói élményt érintő problémáknak.
+* Dizájnfrissítések
+    * Időről időre frissíteni és felülvizsgálni az alkalmazás kinézetét és dizájnját annak érdekében, hogy modern és vonzó maradjon a felhasználók számára.
+* Rendszermonitorozás és hibakeresés
+   * Folyamatos rendszermonitorozás végrehajtása annak érdekében, hogy azonnal észleljük a rendszerhibákat vagy teljesítményproblémákat.
+   * Rendszeres hibakeresés és naplózási fájlok elemzése az esetleges problémák azonosítása és azok orvoslása érdekében.
+* Kompatibilitásellenőrzések
+   * Rendszeres kompatibilitási tesztek végrehajtása különböző böngészőkben és eszközökön annak biztosítása érdekében, hogy az alkalmazás megfelelően működjön minden platformon.
+* Rendszerarchitektúra felülvizsgálata
+Időnkénti rendszerarchitektúra felülvizsgálata annak érdekében, hogy az alkalmazás könnyen karbantartható és kibővíthető maradjon.
+* Felhasználói dokumentáció frissítése
+   * Biztosítani a felhasználók számára naprakész dokumentációt az alkalmazás használatáról és funkcióiról, beleértve a frissítéseket és új funkciókat is.
