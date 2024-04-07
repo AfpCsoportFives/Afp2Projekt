@@ -231,62 +231,55 @@ D-->E;
 
 ```
 
-## 5 A rendszerre vonatkozó pályázat, törvények, rendeletek, szabványok és ajánlások felsorolása rész kidolgozása
+## 5. A rendszerre vonatkozó pályázat, törvények, rendeletek, szabványok és ajánlások felsorolása rész kidolgozása
 
-Általános adatvédelmi rendelet (Általános adatvédelmi rendelet). Adatkezelési tájékoztató.
+* Általános adatvédelmi rendelet (Általános adatvédelmi rendelet). Adatkezelési tájékoztató.
 
-Szerzői jogi törvény ( http://www.sztnh.gov.hu/hu/szakmai-oldalak/jogforrasok-0 )
+* Szerzői jogi törvény ( http://www.sztnh.gov.hu/hu/szakmai-oldalak/jogforrasok-0 )
 
-Polgári törvénykönyv ( http://uvegkep.hu/ptk.pdf )
+* Polgári törvénykönyv ( http://uvegkep.hu/ptk.pdf )
 
-Európai uniós rendeletek, irányelvek, ajánlások AZ EURÓPAI PARLAMENT ÉS A TANÁCS (EU) 2019/790 IRÁNYELVE (2019. április 17.) a digitális egységes piacon a szerzői és szomszédos jogokról, valamint a 96/9/EK és a 2001/29/ EK irányelv módosításáról
+* AZ EURÓPAI PARLAMENT ÉS A TANÁCS 2016. április 27-i (EU) 2016/679 RENDELETE a természetes személyeknek a személyes adatok kezelése tekintetében történő védelméről és az ilyen adatok szabad áramlásáról, valamint a 95/46/EK irányelv hatályon kívül helyezéséről (általános adatvédelmi rendelet
 
-AZ EURÓPAI PARLAMENT ÉS A TANÁCS (EU) 2016/679 RENDELETE (2016. április 27.) a természetes személyeknek a személyes adatok kezelésével kapcsolatos védelméről és az ilyen adatok szabad áramlásáról,
+*     1992. évi LXIII. törvény a személyes adatok védelméről és a közérdekű adatok nyilvánosságáról
 
-A 2014/26/EU európai parlamenti és tanácsi irányelv a szerzői és szomszédos jogokra vonatkozó közös jogkezelésről és a zeneművek belső piacának online felhasználásának több területre kiterjedő hatályú engedélyezéséről szóló 2014. február 26-i A Bizottság 2012/417/EU (2012. július 17.) ajánlása a tudományos információkhoz való hozzáférésről és azok megőrzéséről
+*     1999. évi LXXVI. törvény a szerzői jogról
 
-2012/417/EU (2012. július 17.) ajánlása a tudományos információkhoz való hozzáférésről és azok megőrzéséről;
+*     2021. évi XXXVII. törvény a szerzői jogról szóló 1999. évi LXXVI. törvény és a szerzői jogok és a szerzői joghoz kapcsolódó jogok közös kezeléséről szóló 2016. évi XCIII. törvény jogharmonizációs célú módosításáról
 
-AZ EURÓPAI PARLAMENT ÉS A TANÁCS 2016. április 27-i (EU) 2016/679 RENDELETE a természetes személyeknek a személyes adatok kezelése tekintetében történő védelméről és az ilyen adatok szabad áramlásáról, valamint a 95/46/EK irányelv hatályon kívül helyezéséről (általános adatvédelmi rendelet)
+* 96/9/EK irányelv (1996. március 11.) az adatbázisok jogi védelméről
 
-1992. évi LXIII. törvény a személyes adatok védelméről és a közérdekű adatok nyilvánosságáról
-
-1999. évi LXXVI. törvény a szerzői jogról
-
-2021. évi XXXVII. törvény a szerzői jogról szóló 1999. évi LXXVI. törvény és a szerzői jogok és a szerzői joghoz kapcsolódó jogok közös kezeléséről szóló 2016. évi XCIII. törvény jogharmonizációs célú módosításáról
-
-
-A Bizottság 2011/711/EU ajánlása (2011. október 27.) a kulturális anyagok digitalizálásáról és online hozzáférhetőségéről, valamint a digitális megőrzésről
-
-98/34/EK európai parlamenti és tanácsi irányelv a műszaki szabványok és szabályok, valamint az információs társadalom szolgáltatásaira vonatkozó szabályok információszolgáltatási eljárás megállapításáról (a 98/48/EK európai parlamenti és tanácsi irányelvvel módosított)
-
-96/9/EK irányelv (1996. március 11.) az adatbázisok jogi védelméről
-
-23/2011. (III. 8.) Korm. rendelet a zenés, táncos rendezvények működésének biztonságosabbá tételéről
-
-
-## 6 Követelménylista 
+## 6. Követelménylista 
 
 | ID | Verzió | Név | Kifejtés |
 | :---: | --- | --- | --- |
-| K01 |	V1.0 | User adminisztrációja | User regisztrálása, törlése az igényelt üzleti folyamatokban leírtak szerint. |
-| K02 | V1.0 | Rendezvények adminisztrációja | Rendezvények létrehozása, törlése az igényelt üzleti folyamatokban leírtak szerint.
-| K03 | V1.0 | Foglalás adminisztrációja | Foglalás folyamatának kezelése a szükséges üzleti folyamatokban leírtak szerint. |
-| K04 | V1.0 | Felhasználói fiókok kezelése | Bejelentkezés, felhasználói adatok módosítása, meghívók rögzítése az adatbázisban, listák és kimutatások elkészítése a szükséges üzleti folyamatokban leírtak szerint. |        
-| K05 | V1.0 | Egyszerűen használható kezelőfelület | A legelterjedtebb internet böngészőkből használható felület megvalósítása az admin számára. |
-| K06 | V1.0 | Online elérhető nyilvános rendezvények listája | Online elérhető nyilvános rendezvények listája, de a résztvétel regisztrációhoz kötött. |
-| K07 | V1.0 | Platformfüggetlen, robusztus működés | Szabványos, az iparágban folyamatosan bevált operációs rendszertől független technológiák használata: Php, React, Node js, MySQL. |
-| K08 | V1.0 | Költséghatékony üzemeltetés | A szabványos és elterjedt technológiák használatát biztosítja. |
-| K09 | V1.0 | Bővíthetőség | A kezelt adatok mennyiségének, valamint a felhasználók számának bővíthetősége és utólag újabb funkciók hozzáadásának lehetőségének biztosítása. |
+| K01 |	V1.0 | Felhasználó adminisztrációja | Felhasználó regisztrálása, törlése az igényelt üzleti folyamatokban leírtak szerint. A felhasználó a felhasználói nevének, email címének és jelszavának megadásával tud regisztrálni. A jelszó tárolása kódolva történik az adatbázisban. Hiányos vagy a követelményeknek nem megfelelő adatok megadásakora rendszer értesíti a felhasználót.|
+| K02 | V1.0 | Bejelntkezési felület | Nem megfelelő email cím vagy jelszó megadása esetén, a felhasználó hibaüzenetet kap. |
+| K03 | V1.0 | Felhasználónév módósítása | A felhasználó módosíthatja saját Felhasználónevét, amihez a régi és az új felhasználók megadása szükséges, az új megerősítése, valamint a felhasználó jelszavának megadása. |
+| K04 | V1.0 | Felhasználó jelszavának módosítása | A felhasználó módosítani tudja saját jelszavát, a régi és az új jelszavának megadásával, valamint az új megerősítésével.|
+| K05| V1.0 | Elfelejtett felhasználónév / jelszó | Amikor a felhasználó elfelejti a felhasználónevét, vagy jelszavát akkor ezzel az Adminhoz tud fordulni. |
+| K06 | V1.0 | Rendezvények adminisztrációja | Rendezvények létrehozása, törlése az igényelt üzleti folyamatokban leírtak szerint.
+| K07 | V1.0 | Foglalás adminisztrációja | Foglalás folyamatának kezelése a szükséges üzleti folyamatokban leírtak szerint. | 
+| K08 | V1.0 | Egyszerűen használható kezelőfelület | A legelterjedtebb internet böngészőkből használható felület megvalósítása az admin számára. |
+| K09 | V1.0 | Online elérhető nyilvános rendezvények listája | Online elérhető nyilvános rendezvények listája, de a résztvétel regisztrációhoz kötött. |
+| K010 | V1.0 | Platformfüggetlen, robusztus működés | Szabványos, az iparágban folyamatosan bevált operációs rendszertől független technológiák használata: Php, React, Node js, MySQL. |
+| K011 | V1.0 | Költséghatékony üzemeltetés | A szabványos és elterjedt technológiák használatát biztosítja. |
+| K012 | V1.0 | Bővíthetőség | A kezelt adatok mennyiségének, valamint a felhasználók számának bővíthetősége és utólag újabb funkciók hozzáadásának lehetőségének biztosítása. |
 
-## 7 Fogalomtár
+## 7. Fogalomtár
 
-User:  rendezvényen résztvevő, aki előzetesn reisztrál, a regisztráció során megadja a különböző statisztikák leszűréséhez szükséges 
-       adatokat
+* Felhasználó:
+  Rendezvényen résztvevő, aki előzetesn reisztrál, a regisztráció során megadja a különböző statisztikák leszűréséhez szükséges adatokat
 
-Admin: kezeli a User adatokat, javítja az estleges hibás regisztrációkat, kezeli a rendezvényekkel kapcsolatos válzozásokat, elvégzi az 
-       új rendezvények létrehozását, leszűri a kívánt statisztikákat
+* Admin:
+  Kezeli a Felhasználói adatokat, javítja az estleges hibás regisztrációkat, kezeli a rendezvényekkel kapcsolatos válzozásokat, elvégzi az új rendezvények 
+  létrehozását, leszűri a kívánt statisztikákat
+       
+* Bejelentkezési felület:
+  A felhasználó előzetesen regisztrált felhasználónévvel és jelszóval tud bejelentkezni.
 
-Rendezvény: meghírdetett esemény, amelyen előzetes regisztrációval lehet részt venni
+* Rendezvény:
+  Meghírdetett esemény, amelyen előzetes regisztrációval lehet részt venni
 
-Statisztika: a regisztrált résztvevők által megadott adatokból, különböző lekérdezések által létrehozott kimutatások
+* Statisztika:
+  A regisztrált résztvevők által megadott adatokból, különböző lekérdezések által létrehozott kimutatások
