@@ -209,17 +209,20 @@ D-->E;
 
 ## 5. Követelménylista
 
-| Id | Modul | Név | Leírás |
+| ID | Modul | Név | Leírás |
 | :---: | --- | --- | --- |
-| K01 |	V1.0 | User adminisztrációja | User regisztrálása, törlése az igényelt üzleti folyamatokban leírtak szerint. |
-| K02 | V1.0 | Rendezvények adminisztrációja | Rendezvények létrehozása, törlése az igényelt üzleti folyamatokban leírtak szerint.
-| K03 | V1.0 | Foglalás adminisztrációja | Foglalás folyamatának kezelése a szükséges üzleti folyamatokban leírtak szerint. |
-| K04 | V1.0 | Felhasználói fiókok kezelése | Bejelentkezés, felhasználói adatok módosítása, meghívók rögzítése az adatbázisban, listák és kimutatások elkészítése a szükséges üzleti folyamatokban leírtak szerint. |        
-| K05 | V1.0 | Egyszerűen használható kezelőfelület | A legelterjedtebb internet böngészőkből használható felület megvalósítása az admin számára. |
-| K06 | V1.0 | Online elérhető nyilvános rendezvények listája | Online elérhető nyilvános rendezvények listája, de a résztvétel regisztrációhoz kötött. |
-| K07 | V1.0 | Platformfüggetlen, robusztus működés | Szabványos, az iparágban folyamatosan bevált operációs rendszertől független technológiák használata: Php, React, Node js, MySQL. |
-| K08 | V1.0 | Költséghatékony üzemeltetés | A szabványos és elterjedt technológiák használatát biztosítja. |
-| K09 | V1.0 | Bővíthetőség | A kezelt adatok mennyiségének, valamint a felhasználók számának bővíthetősége és utólag újabb funkciók hozzáadásának lehetőségének biztosítása. |
+| K01 |	Bejelentkezés | Felhasználó adminisztrációja | Felhasználó regisztrálása, törlése az igényelt üzleti folyamatokban leírtak szerint. A felhasználó a felhasználói nevének, email címének és jelszavának megadásával tud regisztrálni. A jelszó tárolása kódolva történik az adatbázisban. Hiányos vagy a követelményeknek nem megfelelő adatok megadásakora rendszer értesíti a felhasználót.|
+| K02 | Felület | Bejelentkezési felület | Nem megfelelő email cím vagy jelszó megadása esetén, a felhasználó hibaüzenetet kap. |
+| K03 | Módosítás/törlés | Felhasználónév módósítása | A felhasználó módosíthatja saját Felhasználónevét, amihez a régi és az új felhasználók megadása szükséges, az új megerősítése, valamint a felhasználó jelszavának megadása. |
+| K04 | Módosítás/törlés | Felhasználó jelszavának módosítása | A felhasználó módosítani tudja saját jelszavát, a régi és az új jelszavának megadásával, valamint az új megerősítésével.|
+| K05| Módosítás/törlés | Elfelejtett felhasználónév / jelszó | Amikor a felhasználó elfelejti a felhasználónevét, vagy jelszavát akkor ezzel az Adminhoz tud fordulni. |
+| K06 | Rendezvények | Rendezvények adminisztrációja | Rendezvények létrehozása, törlése az igényelt üzleti folyamatokban leírtak szerint.
+| K07 | Foglalás | Foglalás adminisztrációja | Foglalás folyamatának kezelése a szükséges üzleti folyamatokban leírtak szerint. | 
+| K08 | Felület | Egyszerűen használható kezelőfelület | A legelterjedtebb internet böngészőkből használható felület megvalósítása az admin számára. |
+| K09 | Rendezvények | Online elérhető nyilvános rendezvények listája | Online elérhető nyilvános rendezvények listája, de a résztvétel regisztrációhoz kötött. |
+| K010 | Funkció | Platformfüggetlen, robusztus működés | Szabványos, az iparágban folyamatosan bevált operációs rendszertől független technológiák használata: Php, React, Node js, MySQL. |
+| K011 | Funkció | Költséghatékony üzemeltetés | A szabványos és elterjedt technológiák használatát biztosítja. |
+| K012 | Funkció | Bővíthetőség | A kezelt adatok mennyiségének, valamint a felhasználók számának bővíthetősége és utólag újabb funkciók hozzáadásának lehetőségének biztosítása. |
 
 ## 6. Használati esetek
 A rendszer használói a következők:
