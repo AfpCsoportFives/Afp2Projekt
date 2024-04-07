@@ -25,6 +25,15 @@ A folyamat problémái:
 
 ## 4. Igényelt üzleti folyamatok modellje
 
+A javasolt megoldás:
+
+Egy új weboldal kifejlesztése, ahol a felhasználók regisztrációt és bejelentkezést követően a különböző rendezvényekre maguknak foglalhatnak helyet, illetve lemondhatják a már foglalt helyeket. A weboldal automatikusan rögzíti a regisztrációs adatokat, és statisztikákat készít a jelentkezőkről.
+
+A javasolt megoldás előnyei:
+
+- Hatékonyabb és megbízhatóbb regisztrációs folyamat.
+- Könnyebb nyomon követni a jelentkezőket és statisztikákat készíteni.
+- A felhasználók kényelmesebben foglalhatnak és mondhatnak le helyeket.
 
 ## 5. Követelménylista
 
