@@ -427,6 +427,8 @@ meghivo:
 
 ## 10. Implementációs terv
 
+A webes felület PHP, HTML, CSS, és JavaScript technológiák felhasználásával készül, a weboldal kinézetének kivitelezése valamint a megrendelő által igényelt funkciók megvalósítása a frontend (Bakos Zsolt, Lecza Tamás) feladata. Az adatbázis kialakítása illetve abból adatok szolgáltatása a frontend részére a backend feladata (Andorfer katalin, Bezdán Anita, Kalmár János, Spengler András), az adatok tárolására MySql adatbázis szervert használunk. A tesztelés kivitelezésében mind a fontend, mind a backend résztvesz.
+
 - Visual Studio kód
 - MySQL Workbench
 - React
