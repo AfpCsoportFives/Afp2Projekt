@@ -267,31 +267,17 @@ A Bizottság 2011/711/EU ajánlása (2011. október 27.) a kulturális anyagok d
 
 ## 6 Követelménylista 
 
-ID	Verzió	Név                     	          Kifejtés
-K01	V1.0	User adminisztrációja	              User regisztrálása, törlése az igényelt üzleti folyamatokban leírtak szerint.
-
-K02	V1.0	Rendezvények adminisztrációja	      Rendezvények létrehozása, törlése az igényelt üzleti folyamatokban leírtak szerint.
-
-K03	V1.0	Foglalás adminisztrációja	          Foglalás folyamatának kezelése a szükséges üzleti folyamatokban leírtak szerint.
-
-K04	V1.0	Felhasználói fiókok kezelése	      Bejelentkezés, felhasználói adatok módosítása, meghívók rögzítése az 
-                                                  adatbázisban, listák és kimutatások elkészítése a szükséges üzleti folyamatokban leírtak szerint.
-                                                  
-K05	V1.0	Egyszerűen használható 
-            kezelőfelület                         A legelterjedtebb internet böngészőkből használható felület megvalósítása az  
-                                                  admin számára
-                                                  
-K06	V1.0	Online elérhető nyilvános
-            rendezvények listája 	              Online elérhető nyilvános rendezvények listája, de a résztvétel regisztrációhoz kötött
-                                                  
-K07	V1.0	Platformfüggetlen, robusztus működés  Szabványos, az iparágban folyamatosan bevált operációs rendszertől független 
-                                                  technológiák használata: Php, React, Node js, MySQL.
-                                                  
-K08	V1.0	Költséghatékony üzemeltetés           A szabványos és elterjedt technológiák használatát biztosítja.
-
-K09 V1.0	Bővíthetőség                          A kezelt adatok mennyiségének, valamint a felhasználók számának bővíthetősége és 
-                                                  utólag újabb funkciók hozzáadásának lehetőségének biztosítása.
-
+| ID | Verzió | Név | Kifejtés |
+| :---: | --- | --- | --- |
+| K01 |	V1.0 | User adminisztrációja | User regisztrálása, törlése az igényelt üzleti folyamatokban leírtak szerint. |
+| K02 | V1.0 | Rendezvények adminisztrációja | Rendezvények létrehozása, törlése az igényelt üzleti folyamatokban leírtak szerint.
+| K03 | V1.0 | Foglalás adminisztrációja | Foglalás folyamatának kezelése a szükséges üzleti folyamatokban leírtak szerint. |
+| K04 | V1.0 | Felhasználói fiókok kezelése | Bejelentkezés, felhasználói adatok módosítása, meghívók rögzítése az adatbázisban, listák és kimutatások elkészítése a szükséges üzleti folyamatokban leírtak szerint. |        
+| K05 | V1.0 | Egyszerűen használható kezelőfelület | A legelterjedtebb internet böngészőkből használható felület megvalósítása az admin számára. |
+| K06 | V1.0 | Online elérhető nyilvános rendezvények listája | Online elérhető nyilvános rendezvények listája, de a résztvétel regisztrációhoz kötött. |
+| K07 | V1.0 | Platformfüggetlen, robusztus működés | Szabványos, az iparágban folyamatosan bevált operációs rendszertől független technológiák használata: Php, React, Node js, MySQL. |
+| K08 | V1.0 | Költséghatékony üzemeltetés | A szabványos és elterjedt technológiák használatát biztosítja. |
+| K09 | V1.0 | Bővíthetőség | A kezelt adatok mennyiségének, valamint a felhasználók számának bővíthetősége és utólag újabb funkciók hozzáadásának lehetőségének biztosítása. |
 
 ## 7 Fogalomtár
 
