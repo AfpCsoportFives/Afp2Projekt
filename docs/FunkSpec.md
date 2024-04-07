@@ -274,3 +274,13 @@ Admin oldali statisztika
 | K4 | ... | ... |
 
 ## 11 Fogalomszótár
+
+* Felhasználó: Rendezvényen résztvevő, aki előzetesn regisztrál, a regisztráció során megadja a különböző statisztikák leszűréséhez szükséges adatokat, mint lakóhely, életkor, legmagasabb iskolai végzettség valamint foglalkozás.
+
+* Admin: Kezeli a felhasználói adatokat, javítja az esetleges hibás regisztrációkat, kezeli a rendezvényekkel kapcsolatos válzozásokat, elvégzi az új rendezvények létrehozását, leszűri a kívánt statisztikákat.
+       
+* Bejelentkezési felület: A felhasználó előzetesen regisztrált felhasználónévvel és jelszóval tud bejelentkezni.
+
+* Rendezvény: Meghirdetett esemény, amelyen előzetes regisztrációval lehet részt venni.
+
+* Statisztika: A regisztrált résztvevők által megadott adatokból, különböző lekérdezések által létrehozott kimutatások.
