@@ -43,25 +43,27 @@ A felhasználóknak könnyen hozzáférhető navigációs rendszerrel kell rende
 | ------- | ------- | ----------| ------------- | ---------------------- | ---------------- | ----------------- |
 | ....... | ....... | ......... | ............. | ...................... | ................ | ................. |
 
-Követelmény specifikáció	
-Funkcionális specifikáció
-Rendszerterv
-Adatmodell megtervezése	
-Adatbázis megvalósítása a szerveren
-Backend: Route & controllers elkészítése
-Backend: Adatbázis kapcsolat megvalósítása	
-Backend: Adatfeladolgozó funkciók megvalósítása
-Website	Képernyőtervek elkészítése
-Website	Prototípus elkészítése
-Website	Adatbázis létrehozása
-Website	Menüstruktúra elkészítése
-Website	Kezdőlap funkciók elkészítése	
-Website	Felhasználói felület elkészítése
-Website	Alkalmazottak felület elkészítése
-Website	Adminisztrátori felület elkészítése
-Website	Tesztelés
+2.3 Ütemterv
 
-### 2.4 Mérföldkövek
+* Követelmény specifikáció	
+* Funkcionális specifikáció
+* Rendszerterv
+* Adatmodell megtervezése	
+* Adatbázis megvalósítása a szerveren
+* Backend: Route & controllers elkészítése
+* Backend: Adatbázis kapcsolat megvalósítása	
+* Backend: Adatfeladolgozó funkciók megvalósítása
+* Website	Képernyőtervek elkészítése
+* Website	Prototípus elkészítése
+* Website	Adatbázis létrehozása
+* Website	Menüstruktúra elkészítése
+* Website	Kezdőlap funkciók elkészítése	
+* Website	Felhasználói felület elkészítése
+* Website	Alkalmazottak felület elkészítése
+* Website	Adminisztrátori felület elkészítése
+* Website	Tesztelés
+
+2.4 Mérföldkövek
 * A prototipus bemutatása
 * Az elkészült szoftver átadása
 
