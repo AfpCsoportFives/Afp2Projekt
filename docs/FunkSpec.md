@@ -250,9 +250,16 @@ Előfeltételek:
 * K09: A kezelt adatokat MYSQL adatbázisban fogjuk tárolni. Az adatbázis használatával biztosítjuk az adatok bővíthetőségét. Az alkalmazást PHP objektum orientált módon valósítjuk meg, amellyel új funkciókat könnyedén tudunk utólag hozzáadni a rendszerhez.
 
 ## 8. Képernyőtervek
+Login screen
 ![alternatív szöveg](https://raw.githubusercontent.com/AfpCsoportFives/Afp2Projekt/main/docs/L%C3%A1tv%C3%A1nyterv/Admin/Login.jpg)
+
+Rendezvények nézet
 ![alternatív szöveg](https://raw.githubusercontent.com/AfpCsoportFives/Afp2Projekt/main/docs/L%C3%A1tv%C3%A1nyterv/User/Rendezv%C3%A9nyek.jpg)
+
+Egy rendezvényről részletesen
 ![alternatív szöveg](https://raw.githubusercontent.com/AfpCsoportFives/Afp2Projekt/main/docs/L%C3%A1tv%C3%A1nyterv/User/Rendezv%C3%A9ny%20b%C5%91vebben.jpg)
+
+Admin oldali statisztika
 ![alternatív szöveg](https://raw.githubusercontent.com/AfpCsoportFives/Afp2Projekt/main/docs/L%C3%A1tv%C3%A1nyterv/Admin/Statisztika%20b%C5%91vebben.jpg)
 
 ## 9. Forgatókönyvek
