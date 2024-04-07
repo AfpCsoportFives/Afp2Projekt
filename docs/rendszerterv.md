@@ -41,6 +41,7 @@ A felhasználóknak könnyen hozzáférhető navigációs rendszerrel kell rende
 
 | Funkció | Feladat | Prioritás | Becslés (nap) | Aktuális becslés (nap) | Eltelt idő (nap) | Becsült idő (nap) |
 | ------- | ------- | ----------| ------------- | ---------------------- | ---------------- | ----------------- |
+| ....... | ....... | ......... | ............. | ...................... | ................ | ................. |
 
 Követelmény specifikáció	
 Funkcionális specifikáció
@@ -113,10 +114,10 @@ Az alkalmazásnak gyorsan kell válaszolnia a felhasználói interakciókra és 
 #### 4.2.3 Biztonság
 Az alkalmazásnak megfelelő biztonsági intézkedésekkel kell rendelkeznie az adatvédelem és az ügyféladatak védelme érdekében, például titkosított adatkapcsolatok, jelszóvédelem stb.
 
-### 4.2.4 Skálázhatóság
+#### 4.2.4 Skálázhatóság
 Az alkalmazásnak képesnek kell lennie a könnyű skálázódásra, hogy kezelni tudja a növekvő felhasználói forgalmat és a különböző események időszakos igényeit.
 
-### 4.2.5 Kompatibilitás
+#### 4.2.5 Kompatibilitás
 Az alkalmazásnak kompatibilisnek kell lennie a különböző böngészőkkel és eszközökkel, hogy a felhasználók széles körének nyújtson hozzáférést és élményt.
 
 #### 4.2.6 Hibatűrés
@@ -327,9 +328,6 @@ Felhasználó felület, amely a felhasználó bejelentkezése után jelenik meg.
 Admin felület, amely az adminisztrátor belépése utén jelenik meg.
 
 ## 6. Fizikai környezet
-
-Fizikai környezet
-
 Frontend felületet React, a backend felületet NodeJS biztosítja.
 
 ### 6.1 Vásárolt szoftverkomponensek és külső rendszerek
@@ -351,16 +349,17 @@ Kliens gépek: a követelményeknek megfelelő internet böngésző futtatásár
 - Git
 - JUnit 
 - Selenium
+
 ### 6.5 Keretrendszer
 React, NodeJS, Mysql
 
 ## 8. Architektúrális terv
 
-### Webszerver
+### 8.1 Webszerver
 
-### Adatbázis rendszer
+### 8.2 Adatbázis rendszer
 
-### A program elérése, kezelése
+### 8.3 A program elérése, kezelése
 
 ## 9. Adatbázis terv
 
@@ -402,13 +401,18 @@ meghivo:
 
 ## 11. Tesztterv
 
-### Tesztesetek
+A tesztelések célja a rendszer és komponensei funkcionalitásának teljes vizsgálata,
+ellenőrzése a rendszer által megvalósított üzleti szolgáltatások verifikálása.
+A teszteléseket a fejlesztői csapat minden tagja elvégzi.
+Egy teszt eredményeit a tagok dokumentálják külön fájlokba.
+
+### 11.1 Tesztesetek
 
 | Teszteset | Elvárt eredmény | 
 |-----------|-----------------| 
 | ... | ... |
 
-### A tesztelési jegyzőkönyv kitöltésére egy sablon
+### 11.2 A tesztelési jegyzőkönyv kitöltésére egy sablon
 
 **Tesztelő:** Vezetéknév Keresztnév
 
