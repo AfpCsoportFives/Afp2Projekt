@@ -1,13 +1,17 @@
 # Funckionális specifickáció
 
 ## 1. Jelenlegi helyzet leírása
-A cégünket megbízó rendezvényszervezői vállalkozás egy olyan weboldalt szeretne, ahol a felhasználók regisztrációt és bejelentkezést követően különböző rendezvényekre foglalhatnak maguknak helyet, illetve lemondhatják a már foglalt helyeket. A megrendelő célja, hogy az általunk elkészített weboldalon a lehető legtöbb helyet foglalják le az ingyenes rendezvényekre.
+A cégünket megbízó rendezvényszervezői vállalkozásban jelenleg használt jelentkezés módja elavult, és nem megbízható. Általában az egyes események saját oldalain történik a regisztráció, azonban a csapatunkat felkérő rendezvényszervezői vállalkozás számára ilyen formán problémás jelentkezők nyomon követése, valamint egyes statisztikák elkészítése. Így egy olyan weboldalt szeretne, ahol a felhasználók regisztrációt és bejelentkezést követően a különböző rendezvényekre maguknak foglalhatnak helyet, illetve lemondhatják a már foglalt helyeket. A megrendelő célja, hogy az általunk elkészített weboldalon a lehető legtöbb helyet foglalják le az ingyenes rendezvényekre.
 
 ## 2. Vágyálomrendszer leírása
+A megrendelő olyan weboldalt vár el csapatunktól, mely felületen a felhasználói regisztráció után az eseményekre és a rendezvényekre való jelentkezés egy kattintással elérhető. Fontos, hogy a jelentkezés minden esetben regisztrációhoz kötött.
+A weboldalon admin jogosultsággal rendelkezők statisztikákat készíthetnek különböző szociográfiai adatokra vonatkozóan, mint lakóhely, életkor, legmagasabb iskolai végzettség valamint foglalkozás. A weboldalon szükség van a jelentkezések módosításának és törlésének lehetőségére is.
 
 ## 3. Jelenlegi üzleti folyamatok modellje
 
+
 ## 4. Igényelt üzleti folyamatok modellje
+
 
 ## 5. Követelménylista
 
