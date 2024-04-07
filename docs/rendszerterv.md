@@ -347,13 +347,11 @@ Kliens gépek: a követelményeknek megfelelő internet böngésző futtatásár
 - Visual Studio Code
 - Notepad++
 - Git
-- JUnit 
-- Selenium
 
 ### 6.5 Keretrendszer
 React, NodeJS, Mysql
 
-## 8. Architektúrális terv
+## 8. Architekturális terv
 
 ### 8.1 Webszerver
 
