@@ -211,7 +211,7 @@ D-->E;
 
 | ID | Modul | Név | Leírás |
 | :---: | --- | --- | --- |
-| K01 |	Bejelentkezés | Felhasználó adminisztrációja | Felhasználó regisztrálása, törlése az igényelt üzleti folyamatokban leírtak szerint. A felhasználó a felhasználói nevének, email címének és jelszavának megadásával tud regisztrálni. A jelszó tárolása kódolva történik az adatbázisban. Hiányos vagy a követelményeknek nem megfelelő adatok megadásakora rendszer értesíti a felhasználót.|
+| K01 | Bejelentkezés | Felhasználó adminisztrációja | Felhasználó regisztrálása, törlése az igényelt üzleti folyamatokban leírtak szerint. A felhasználó a felhasználói nevének, email címének és jelszavának megadásával tud regisztrálni. A jelszó tárolása kódolva történik az adatbázisban. Hiányos vagy a követelményeknek nem megfelelő adatok megadásakora rendszer értesíti a felhasználót.|
 | K02 | Felület | Bejelentkezési felület | Nem megfelelő email cím vagy jelszó megadása esetén, a felhasználó hibaüzenetet kap. |
 | K03 | Módosítás/törlés | Felhasználónév módósítása | A felhasználó módosíthatja saját Felhasználónevét, amihez a régi és az új felhasználók megadása szükséges, az új megerősítése, valamint a felhasználó jelszavának megadása. |
 | K04 | Módosítás/törlés | Felhasználó jelszavának módosítása | A felhasználó módosítani tudja saját jelszavát, a régi és az új jelszavának megadásával, valamint az új megerősítésével.|
@@ -271,7 +271,19 @@ Admin oldali statisztika
 
 | Id | Követelmény | Funkció |
 | :---: | --- | --- |
-| K4 | ... | ... |
+| K01 | Felhasználó adminisztrációja | Felhasználói adminisztráció funkcióinak kialakítása. |
+| K02 | Bejelentkezési felület | A felhasználói felület megvalósítása szabványos html, css és javascript technológiák felhasználásával, a képernyőtervek fejezetben láthatóan módon szerint. |
+| K03 | Felhasználónév módósítása | Felhasználóbarát felület kialakítása. |
+| K04 | Felhasználó jelszavának módosítása | Mind az admin, mind pedig a felhasználói felületen fejlesztendő funkciók. |
+| K05 | Elfelejtett felhasználónév / jelszó | Mind az admin, mind pedig a felhasználói felületen fejlesztendő funkciók. |
+| K06 | Rendezvények adminisztrációja | Rendezvények létrehozásának, törlésének és módosításának funkciói. |
+| K07 | Foglalás adminisztrációja | Foglalási folyamat optimális kialakítása. |
+| K08 | Egyszerűen használható kezelőfelület | A program funkciója a legfontosabb, de az is egy kihagyatlan rész, hogy kinézete és használata is egyszerű, felhasználóbarát legyen. |
+| K09 | Online elérhető nyilvános rendezvények listája | A honlapon elérhető és kereshető lesz az események katalógusa a látogatók számára bejelentkezés nélkül is. |
+| K010 | Platformfüggetlen, robusztus működés | Rendszerfüggetlen használat. |
+| K011 | Költséghatékony üzemeltetés | Szabványos, elterjedt paltformfüggetlen technológiák használata. |
+| K012 | Bővíthetőség | Adatbáziskezelő rendszer használata, a tervezésnél figyelembe vesszük a későbbi bővítési igényeket, továbbá fontos az utólagos újabb funkciók hozzáadása. |
+
 
 ## 11 Fogalomszótár
 
