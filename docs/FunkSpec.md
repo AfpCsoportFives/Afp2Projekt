@@ -9,6 +9,19 @@ A weboldalon admin jogosultsággal rendelkezők statisztikákat készíthetnek k
 
 ## 3. Jelenlegi üzleti folyamatok modellje
 
+A jelenlegi folyamat a következő:
+
+1. A rendezvényszervező cég létrehoz egy eseményt, és közzéteszi a weboldalán.
+2. A felhasználók az esemény oldalára látogatnak, és kitöltik a regisztrációs űrlapot.
+3. A regisztrációs űrlap adatait manuálisan rögzítik a rendezvényszervezők.
+4. A rendezvényszervezők e-mailben értesítik a regisztrált felhasználókat a részletekről.
+5. A felhasználók a rendezvény napján megjelennek a helyszínen.
+
+A folyamat problémái:
+
+- A manuális regisztráció időigényes és hibalehetőségeket hordoz magában.
+- Nehéz nyomon követni a jelentkezőket és statisztikákat készíteni.
+- A regisztráció nem megbízható, a felhasználók bármikor lemondhatják a részvételt e-mailben.
 
 ## 4. Igényelt üzleti folyamatok modellje
 
