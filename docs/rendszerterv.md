@@ -441,11 +441,72 @@ ellenőrzése a rendszer által megvalósított üzleti szolgáltatások verifik
 A teszteléseket a fejlesztői csapat minden tagja elvégzi.
 Egy teszt eredményeit a tagok dokumentálják külön fájlokba.
 
-### 11.1 Tesztesetek
+A tesztelés során olyan hardver konfiguráción lesz tesztelve a szoftver, amilyet későbbiekben a megrendelő is fog használni.
+Az általa használt konfigurációt a cégünkkel tudatta.
+A cégünk a rendszer tesztelése céljából az alábbi bögészökön kívánja tesztelni.</br>
+- Google Chrome
+-  Mozilla Firefox
+-   Microsoft Edge
+  
+A minimum hardverkonfiguráció: Intel Celeron processzor, 4GB RAM, 128GB HDD, a képernyők felbontása: 
+1280x1024, 1920x1080.  
 
-| Teszteset | Elvárt eredmény | 
-|-----------|-----------------| 
-| ... | ... |
+A tesztelés során az üzleti folyamatokhoz tartozó különböző forgatókönyvek eredményét vizsgáljuk.</br>
+Ha valamelyik teszt sikertelen, akkor azt a részt átdolgozzuk, majdan újból teszteljük. Ez a folyamat addig fog ismétlődni míg </br>
+át nem megy a teszten.
+
+A rendszer tesztelésére létrehozunk a mysql workbanch adatbázis kezelő segítségével egy admin szintű felhasználót, és azzal a felhasználóval 
+teszteljük az admin funkcióit a renszerben.
+
+### 11.1 Tesztelt üzleti folyamatok adminisztátor szintű felhasználó:  
+
+**A) Belépés a rendszerbe:**  
+A kezdőoldalról be tud lépni a rendszerbe, majdan belépés után megjelenik minden funkció, amit előzőleg rögzítettünk.   
+
+**Tesztesetek:**  
+1. Nem regisztrált felhasználónév-jelszó esetében az elvárt eredmény, hogy a rendszer hibaüzenetben jelzi, és meg is jeleníti ezt a felhasználó számára.
+2. Regisztrált felhasználónév-jelszó esetében az elvárt eredmény, hogy a rendszer belépteti az admin joggal rendelkező felhasználót, és navigációs sáv megváltozik.  
+
+
+**B) Új rendezvény regisztrálása:**  
+A teszteléshez az új rendezvények hozzáadása menüpontra kell kattintani, majd megjelenik az admin számára az űrlap különböző rublikákkal. 
+
+||Űrlap mező|Követelmények||
+|-|---------|-------------|-|
+||Name|1. Kötelező 2. Nem lehet egy már regisztrált rendezvény név 3. Minimum 5 karakter hosszú legyen, betűk és számok szerepelhetnek benne ||
+||Date|1. Kötelező 2. Pontosan 10 karakter hosszú, nem lehet a rendszeridő előtti időre, és aznapra beállítani||
+||Description|1. Kötelező 2. Nem talmazhat számjegyet, nagybetűvel kezdődik, ||
+
+További követelmény, hogy két azonos rendezvényt nem lehet felvinni, így a rendezvény név az egyedinek kell lennie, és a description rész biztonsági okokból szűrve sql injection típusú támadás ellen.
+
+**Tesztesetek:**  
+1. Bevitt adatok helyesek, megfelelnek a követelményeknek.  
+Elvárt eredmény:  
+a) A felvitt rendezvény megjelenik a rendezvények listázási gombra kattintva.  
+ 
+2. Bevitt adatok között szerepelnek a fenti követelményeknek nem megfelelő adatok.  
+Elvárt eredmény: a rendszer hibaüzenetben jelzi a felhasználó számára a hibákat és a rendezvények listázása menüpontra kattintva nem jelenik meg a hibás adatokkal felvitt rendezvény. 
+Ellenőrzés az 1. pont szerint.   
+
+
+**C) Rendezvény adatainak módosítása:**  
+
+Adatok módosítása úgy lehetséges, hogy a rendezvények listázása menüpontra kattintva megjeniki az összes már eddig felvitt rekord. A rekordal egysorba az 
+adatok módosításra kell kattintania. Ezután megjelenik számára az adott rekord összes adata. Ezután van lehetősés a módosításra
+
+Adatok módosítása esetén az adminisztrátor először lekéri a könyvtáros 'adatlapját', melyet a könyvtáros felhasználói nevének megadása után 
+tud megtenni, vagy a személynév beírását követően egy találati listából választja ki a lakcím, születési dátum adatok alapján. 
+Az űrlap megegyezik a regisztrációnál megjelenő űrlappal, csak a Felhasználó név és Jelszó mezők nem szerepelnek. 
+Ezekből kifolyólag a bevitt adatoknak ugyanazoknak a formai követelményeknek kell megfelelniük, 
+melyek a fenti táblázatban szerepelnek. Ugyanakkor nem minden személyes adat módosítható természetüknél fogva, ezek az űrlapon nem módosítható
+mezőkként szerepelnek. A módosítható adatok listája:  
+
+||Űrlap mező||
+|-|---------|-|
+||Name||
+||Date||
+||Description||  
+
 
 ### 11.2 A tesztelési jegyzőkönyv kitöltésére egy sablon
 
