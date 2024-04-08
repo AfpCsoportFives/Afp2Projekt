@@ -508,6 +508,31 @@ mezőkként szerepelnek. A módosítható adatok listája:
 ||Description||  
 
 
+**Tesztesetek:**  
+1. Adatmódosítás helyes adatokkal. Elvárt eredmény: a megfelelő rekord módosul a Rendezvény táblában.
+Az adatok módosítása űrlap újbóli megjelenítésével ellenőrizhető a módosítás. A rendezvény aminek az adatai módosítva lettek, annak a rendezvények listázása után megjelenik a rendezvény a módosított adatokkal.  
+2. Adatmódosítás követelményeknek nem megfelelő adatokkal: A rendezvény adatai nem frissülnek. Ha még eszer ráklikkenek a rendezvények listázás menüpontra ott nem frissül a rekord. Ellenőrzés az 1. pont szerint.
+
+**D) Rendezvény törlése:**  
+
+Egy már meglévő regisztrált rendezvény töléséhez rá kell klikkelni a rendzvények listázása menüre.
+
+**Tesztesetek:**  
+1. A rendezvények listázása után minden rekordhoz tartozik egy törlés gomb. A törlés gombra kattintva az oldal frissül, és a törölt rekord már nem jelenik meg.
+2. A rendezvények listázása után minden rekordhoz tartozik egy törlés gomb. A törlés gombra kattintva az oldal frissül, és a törölt rekord megjelenik jelenik. Ekkor vissza kell küldeni ezt a funckiót a fejlesztőhöz.
+Ellenőrzés: Rendezvény listázássa.
+
+**E) Új admin és user jogkörrel rendelkező user regisztrálása:**  
+A teszteléshez az új tag hozzáadása menüpontra kell kattintani, majd megjelenik az admin számára az űrlap különböző rublikákkal. 
+
+||Űrlap mező|Követelmények||
+|-|---------|-------------|-|
+||Name|1. Kötelező 2. Lehet 2 ugyan olyan névvel rendelkező név 3. Minimum 5 karakter hosszú legyen, betűk és számok szerepelhetnek benne kötelező megadni ||
+||Email|1. Kötelező 2. Min 5 karakter hosszú 3.Kötelező a @ jel és a pont karakerk||
+||Password|1. Kötelező 2. legalább egy speciális karaktert kell hogy tartalmazzon. ||
+||Connect date| 1. Automatikusan a rendszeridőt állítja be a rendszer  ||
+||Admin|1. Kötelező 2. Pontosan 1 karakter hosszú. ||
+
 ### 11.2 A tesztelési jegyzőkönyv kitöltésére egy sablon
 
 **Tesztelő:** Vezetéknév Keresztnév
