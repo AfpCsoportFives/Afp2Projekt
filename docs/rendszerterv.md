@@ -492,14 +492,7 @@ Ellenőrzés az 1. pont szerint.
 **C) Rendezvény adatainak módosítása:**  
 
 Adatok módosítása úgy lehetséges, hogy a rendezvények listázása menüpontra kattintva megjeniki az összes már eddig felvitt rekord. A rekordal egysorba az 
-adatok módosításra kell kattintania. Ezután megjelenik számára az adott rekord összes adata. Ezután van lehetősés a módosításra
-
-Adatok módosítása esetén az adminisztrátor először lekéri a könyvtáros 'adatlapját', melyet a könyvtáros felhasználói nevének megadása után 
-tud megtenni, vagy a személynév beírását követően egy találati listából választja ki a lakcím, születési dátum adatok alapján. 
-Az űrlap megegyezik a regisztrációnál megjelenő űrlappal, csak a Felhasználó név és Jelszó mezők nem szerepelnek. 
-Ezekből kifolyólag a bevitt adatoknak ugyanazoknak a formai követelményeknek kell megfelelniük, 
-melyek a fenti táblázatban szerepelnek. Ugyanakkor nem minden személyes adat módosítható természetüknél fogva, ezek az űrlapon nem módosítható
-mezőkként szerepelnek. A módosítható adatok listája:  
+adatok módosításra kell kattintania. Ezután megjelenik számára az adott rekord összes adata. Ezután van lehetőség az adatok módosításra.
 
 ||Űrlap mező||
 |-|---------|-|
@@ -532,6 +525,46 @@ A teszteléshez az új tag hozzáadása menüpontra kell kattintani, majd megjel
 ||Password|1. Kötelező 2. legalább egy speciális karaktert kell hogy tartalmazzon. ||
 ||Connect date| 1. Automatikusan a rendszeridőt állítja be a rendszer  ||
 ||Admin|1. Kötelező 2. Pontosan 1 karakter hosszú. ||
+
+További követelmény, hogy két azonos fehasználót nem lehet felvinni, így a felhasználó e-mail címének egyedinek kell lennie. Minden egyes mező biztonsági okokból szűrve van sql injection típusú támadás ellen.
+Kötelező megadni a jogosultsági szintet. Egy fehasználóról egyértelműen el lehet majd dönteni a jogosultsági szintjét.
+
+**Tesztesetek:**  
+1. Bevitt adatok helyesek, megfelelnek a követelményeknek.  
+Elvárt eredmény:  
+a) A felvitt user megjelenik a userek listázási gombra kattintva.  
+ 
+2. Bevitt adatok között szerepelnek a fenti követelményeknek nem megfelelő adatok.  
+Elvárt eredmény: a rendszer hibaüzenetben jelzi a felhasználó számára a hibákat és a userek listázása menüpontra kattintva nem jelenik meg a hibás adatokkal felvitt user. 
+Ellenőrzés az 1. pont szerint.   
+
+**F) Felhasználó adatainak módosítása:**  
+
+Adatok módosítása úgy lehetséges, hogy a felhasználók listázása menüpontra kattintva megjelenik az összes már eddig felvitt rekord. A rekordal egysorba az 
+adatok módosításra kell kattintania. Ezután megjelenik számára az adott rekord összes adata. Ezután van lehetősés az adatok módosításra. A connect date mezőt nem lehet majd módosítani.
+ 
+
+||Name||
+||Email||
+||Password||
+||Admin||
+
+**Tesztesetek:**  
+1. Adatmódosítás helyes adatokkal. Elvárt eredmény: a megfelelő rekord módosul a user táblában.
+Az adatok módosítása űrlap újbóli megjelenítésével ellenőrizhető a módosítás. Annak a felhasználónak akinek az adatai módosítva lettek, annak a felhasználók listázása után megjelenik a módosított adatok.  
+2. Adatmódosítás követelményeknek nem megfelelő adatokkal: A felhasználó adatai nem frissülnek. Ha még eszer ráklikkenek a felhasználók listázás menüpontra ott nem frissül a rekord. Ellenőrzés az 1. pont szerint.
+
+**G) Felhasználó törlése:**  
+
+Egy már meglévő regisztrált felhasználó töléséhez rá kell klikkelni a felhasználók listázása menüre.
+
+**Tesztesetek:**  
+1. A felhasználók listázása után minden rekordhoz tartozik egy törlés gomb. A törlés gombra kattintva az oldal frissül, és a törölt rekord már nem jelenik meg.
+2. A felhasználók listázása után minden rekordhoz tartozik egy törlés gomb. A törlés gombra kattintva az oldal frissül, és a törölt rekord megjelenik jelenik. Ekkor vissza kell küldeni ezt a funckiót a fejlesztőhöz.
+Ellenőrzés: Rendezvény listázássa.
+
+
+
 
 ### 11.2 A tesztelési jegyzőkönyv kitöltésére egy sablon
 
