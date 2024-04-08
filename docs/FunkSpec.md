@@ -267,6 +267,50 @@ Admin oldali statisztika
 
 ## 9. Forgatókönyvek
 
+A weboldalnak két szereplője van a Felhasználó és az admin. 
+
+**Felhasználó:**
+
+A **_Bejelentkező képernyőre_** talál minden felhasználó legelőször, amelyen a rendezvényszervező cég logója, a már regisztrált felhasználók számára a bejelentkezési felület (Felhasználó név, jelszó, bejelentkezés) illetve az újonnan regisztrálni kívánó felhasználók számára a regisztrációs gomb található.
+
+Amennyiben a Felhasználó az által bejelentkezéskor megadott e-mail cím vagy jelszó helytelen, azaz a bejelentkezés sikertelen a felhasználó hibaüzenetet kap. 
+
+A **_Regisztráció_** során a Felhasználó kitölti a szükséges adatokat: Felhasználónév, e-mail cím, jelszó, lakhely, nem, foglalkozás, születési dátum, iskolai végzettség.  
+
+Ha a regisztráció során valamelyik adat hiányzik vagy nem felel meg a követelményeknek, akkor a rendszer értesíti erről a Felhasználót. 
+
+Ha a regisztrált Felhasználó elfelejti a felhasználónevét vagy jelszavát akkor ezzel az Admint kell megkeresnie.
+
+A Felhasználó számára a sikeres bejelentkezés vagy regisztráció után láthatóvá válik a **_Rendezvények képernyő_**, amelynek a navigációs sávja a Rendezvényeken kívül tartalmazza a Saját rendezvényeim, Profilom, Kijelentkezés menüpontokat.
+
+* **Rendezvények**: azoknak a rendezvényeknek a listája, amely megrendezésre fognak kerülni, amelyekre lehet jelentkezni és amelyek részletes leírása a rendezvény nevére kattintva érhető el.
+* **Saját rendezvényeim**: tartalmazza azokat a rendezvényeket amire a Felhasználó már jelentkezett, itt van mód a lejelentkezni azokról a rendezvényekről, amikre előzőleg már jelentkezett a Felhasználó
+* **Profilom**: azokat az adatokat tartalmazza, amelyeket a Felhasználó regisztráció során megadott, ebben a menüpontban tudja a Felhasználó módosítani a regisztráció során megadott adatait, felhasználónevét, jelszavát
+* **Kijelentkezés**: kilépés a saját profilból
+  
+A Rendezvények nevére kattintva megjelennek a rendezvényre vonatkozó részletes adatok:
+* Előadó
+* Téma címszó
+* Rendezvény dátuma
+* Rendezvény megrendezésének módja
+* Rövid leírás a rendezvény témájáról
+  
+**Admin:**
+
+Ugyan az a Bejelentkező képernyő, mint a Felhasználó esetében, bejelentkezni az Admin felhasználónévvel és jelszóval tud.
+Az Adminnak van jogosultsága a Felhasználók adatainak módosítására, Felhasználók törlésére, a Felhasználók listázására, új rendezvények létrehozására, a meglévő rendezvények adatainak módosításra, rendezvények törlésére, rendezvények listázására, a rendezvényre jelentkező, a rendezvényen részvevők adataiból különböző statisztikák készítésére
+
+_**Statisztikák:**_
+
+* rendezvényre jelentkezők száma
+
+* rendezvényen részvevők szám
+
+* regisztrált Felhasználók adataiból készült statisztikák: életkori, lakhely szerinti, iskolai végzettségre vonatkozó, nem szerinti, foglalkozás szerinti
+
+* rendezvényen résztvevő Felhasználók adataiból készült statisztikák: életkori, lakhely szerinti, iskolai végzettségre vonatkozó, nem szerinti, foglalkozás szerinti
+
+
 ## 10. Funkció - követelmény megfeleltetése
 
 | Id | Követelmény | Funkció |
