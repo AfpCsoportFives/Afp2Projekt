@@ -543,7 +543,8 @@ Ellenőrzés az 1. pont szerint.
 Adatok módosítása úgy lehetséges, hogy a felhasználók listázása menüpontra kattintva megjelenik az összes már eddig felvitt rekord. A rekordal egysorba az 
 adatok módosításra kell kattintania. Ezután megjelenik számára az adott rekord összes adata. Ezután van lehetősés az adatok módosításra. A connect date mezőt nem lehet majd módosítani.
  
-
+||Űrlap mező||
+|-|---------|-|
 ||Name||
 ||Email||
 ||Password||
