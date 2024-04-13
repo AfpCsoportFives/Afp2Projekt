@@ -400,15 +400,19 @@ A projekt adatbázisaként mysql fog szolgálni, amiben a következőképpen ala
 
 user:
 - id
+- fullname
 - email
 - password
 - active
 - connectDate
-- admin
+- cookie
+- isCookieExpired
+- userRole
 
 rendezveny:
 - id
 - name
+- adress
 - date
 - description
 
