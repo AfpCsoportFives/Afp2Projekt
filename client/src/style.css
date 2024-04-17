@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+ /*Kezdő oldal*/
+ * {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+ }
+
+ body{
+   font-family: 'Open Sans', sans-serif;
+   background: #4189A1;
+   line-height: 1.6;
+ }
+
+ ul {
+   list-style: none;
+ }
+
+ a {
+   color: #333;
+   text-decoration: none;
+ }
+ h1, h2 {
+   font-weight: 400;
+   line-height: 1.2;
+   color: white;
+ }
+
+ h4 {
+   font-weight: 200;
+   line-height: 1.2;
+   color: white;
+   margin-top: 30px;
+   margin-bottom: 5px;
+ }
+
+ h5 {
+   font-weight: 5500;
+   line-height: 0.6;
+   color: white;
+   margin-top: 40px;
+   text-align: center;
+ }
+
+p{
+   margin: 10px 0px;
+   color: white;
+   text-align: center;
+}
+
+img {
+   width: 100%;
+}
+/* Navbar */
+
+.navbar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: white;
+   opacity: 0.8;
+   width: 100%;
+   height: 70px;
+   position: fixed;
+   top: 0px;
+   padding: 0 30px;
+}
+
+.navbar a {
+   color: #333;
+   padding: 10px 20px;
+   margin: 0 5px;
+}
+
+.navbar a:hover {
+   border-bottom: #74C0FC 2px solid;
+}
+
+.navbar ul {
+   display: flex;
+}
+
+.navbar .logo {
+   font-weight: 400;
+}
+
+.hero {
+   background-color: rgba(0, 0, 0, 0.5);
+   background-image: url('https://assets-global.website-files.com/61f29c609f84a86e418fbcfb/63ecdf6e6df724eab1f0e8ca_20230215T0132-25bece5c-5ab8-4c33-98c7-60ad2668054b.webp');
+   background-blend-mode: color-burn;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
+   height: 100vh;
+   position: relative;
+   color: #333;
+}
+
+.hero .content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   height: 100%;
+   padding: 0 20px;
+}
+
+.hero .content p {
+   font-size: 23px;
+   max-width: 800px;
+   margin: 20px 0 30px;
+   font-weight: 300;
+}
+
+.hero::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.3)
+}
+
+.hero * {
+   z-index: 5;
+}
+
