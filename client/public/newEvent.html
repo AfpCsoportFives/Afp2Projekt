@@ -7,7 +7,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/utilities.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Regisztráció</title>
+    <title>Új esemény</title>
 </head>
 <body id="registration">
     <div class="reg-wrapper">
@@ -16,10 +16,26 @@
             <p>Kérjük adja meg a rendezvény adatait</p>
             <div class="input-box">
                 <input type="text" id="eventName" name="eventName" placeholder="Rendezvény neve">
-                <i class="fa-solid fa-masks-theater"></i>
+                <i class="fa-solid fa-id-card"></i>
             </div>
             <div class="input-box">
-                <input type="password" id="addressOfEvent" name="addresOfEvent" placeholder="Rendezvény címe">
+                <input type="text" id="eventTheme" name="eventTheme" placeholder="Rendezvény támája">
+                <i class="fa-solid fa-clipboard"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" id="eventHost" name="eventHost" placeholder="Előadó neve és titulusa">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="input-box-dropdown">
+                <select name="gender" id="event-type">
+                    <option value="" selected disabled hidden>Rendezvény típusa</option>
+                    <option value="szemelyes">Személyes</option>
+                    <option value="online">Online</option>
+                </select>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="input-box">
+                <input type="text" id="addressOfEvent" name="addresOfEvent" placeholder="Rendezvény helyszíne (vagy online link)">
                 <i class="fa-solid fa-map-location-dot"></i>
             </div>
             <div class="input-box">
@@ -27,7 +43,7 @@
             </div>
             <h5>Rendezvény időpontja</h5>
             <div class="input-box-date">
-                <input type="date" id="dateOfEvent" name="dateOfEvent" placeholder="Rendezvény időpontja">
+                <input type="datetime-local" id="dateOfEvent" name="dateOfEvent" placeholder="Rendezvény időpontja">
                 <i class="fa-solid fa-calendar-alt"></i>
             </div>
             <br>
