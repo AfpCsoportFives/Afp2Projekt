@@ -61,11 +61,11 @@ app.post("/createEvent",async (req,res)=>{
 
 //Rendezvény frissítése
 app.post("/updateEvent",(req,res)=>{
-    
+    res.json({success:true});
 })
 //Rendezvény törlése
 app.delete("/deleteEvent",(req,res)=>{
-    
+    res.json({success:true});
 })
 
 
