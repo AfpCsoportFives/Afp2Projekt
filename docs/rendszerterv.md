@@ -337,7 +337,7 @@ React, NodeJS, Mysql
 
 A projekt adatbázisaként mysql fog szolgálni, amiben a következőképpen alakulnak a táblák:
 
-user:
+user (Felhasználó tábla):
 - id
 - email
 - password
@@ -345,24 +345,19 @@ user:
 - connectDate
 - admin
 
-rendezveny:
+event (Rendezvbény tábla):
 - id
 - name
 - date
 - description
+- creatorUserId
 
-foglalas:
+apply (Rendeezvényre jelentkezéseket tárolja):
 - id
 - userId
 - rendezvenyId
 - createdDate
 
-meghivo:
-- id
-- meghivoUserId
-- meghivottEmail
-- createdDate
-- jovahagyott
 
 - ## 8 Implementációs terv
 
