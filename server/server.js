@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 
+const User = require('./classes/user.js')
+const Event = require('./classes/event.js')
+
 app.use(express.json());
 
 app.get("/",(req,res)=>{
@@ -9,13 +12,21 @@ app.get("/",(req,res)=>{
 })
 
 //Bejelentkezés
-app.post("/login",(req,res)=>{
-    
+app.post("/login",async (req,res)=>{
+    /*const {email, password}=req.body;
+    const user = new User();
+    const loginRes=await user.login(email,password);
+    if(loginRes.success) res.json(loginRes.response);*/
+    res.json({cookie:"asdjkhbashdjkaskdjm",logintSuccess:true});
 })
 
 //kijelentkezés
-app.post("/logout",(req,res)=>{
-    
+app.post("/logout",async (req,res)=>{
+    /*const {userId}=req.body;
+    const user = new User(userId);
+    const logoutRes=await user.logout();
+    if(logoutRes.success) res.json(logoutRes.response)*/
+    res.json({logoutSuccess:true})
 })
 
 //Regisztráció
