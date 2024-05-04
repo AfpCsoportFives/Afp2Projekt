@@ -1,4 +1,5 @@
-const db = require('./db.js'); // Adb.js modul importálása, amely az adatbázis kapcsolatot kezeli
+const Database = require('./db.js'); 
+const db = new Database(); // Példányosítjuk a Database osztályt
 
 class Event {
     constructor(eventId) {
