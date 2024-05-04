@@ -39,7 +39,7 @@ app.post("/registration",async (req,res)=>{
 })
 
 //Rendezvények listázása
-app.get("/listEvents",async (req,res)=>{
+app.get("/listevents",async (req,res)=>{
     /*const getAllEventRes=await Event.getAllEvent()
     if(getAllEventRes.success) res.json({success:getAllEventRes.success,eventList:getAllEventRes.response});*/
     res.json({success:true,eventList:[
@@ -51,7 +51,7 @@ app.get("/listEvents",async (req,res)=>{
 })
 
 //Rendezvény létrehozása
-app.post("/createEvent",async (req,res)=>{
+app.post("/createevent",async (req,res)=>{
     /*const {name,date,description,userId}=req.body;
     const createEventRes=await Event.createEvent(name,date,description,userId);
     if(createEventRes.success) res.json({eventId:createEventRes.eventId,success:createEventRes.success});*/
