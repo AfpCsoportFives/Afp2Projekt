@@ -17,6 +17,7 @@ app.post("/login",async (req,res)=>{
     const user = new User();
     const loginRes=await user.login(email,password);
     if(loginRes.success) res.json({cookie:loginRes.response.cookie,success:loginRes.success});*/
+    res.statusCode=200;
     res.json({cookie:"asdjkhbashdjkaskdjm",success:true,body:req.body});
 })
 
@@ -26,6 +27,7 @@ app.post("/logout",async (req,res)=>{
     const user = new User(userId);
     const logoutRes=await user.logout();
     if(logoutRes.success) res.json({cookie:logoutRes.response.cookie,success:logoutRes.success});*/
+    res.statusCode=200;
     res.json({success:true,body:req.body})
 })
 
@@ -35,6 +37,7 @@ app.post("/registration",async (req,res)=>{
     const user = new User();
     const regRes=await user.registartion(email,password,firstname,lastname);
     if(regRes.success) res.json({cookie:regRes.response.cookie,success:regRes.success});*/
+    res.statusCode=200;
     res.json({cookie:"asdjkhbashdjkaskdjm",success:true,body:req.body});
 })
 
@@ -42,6 +45,8 @@ app.post("/registration",async (req,res)=>{
 app.get("/listevents",async (req,res)=>{
     /*const getAllEventRes=await Event.getAllEvent()
     if(getAllEventRes.success) res.json({success:getAllEventRes.success,eventList:getAllEventRes.response});*/
+    
+    res.statusCode=200;
     res.json({success:true,eventList:[
         {id:1,name:"Rendezvény 1",date:"2024.05.04 12:00:00",description:"Rendezvény1 leírás"},
         {id:1,name:"Rendezvény 1",date:"2024.05.04 12:00:00",description:"Rendezvény1 leírás"},
@@ -55,6 +60,7 @@ app.post("/createevent",async (req,res)=>{
     /*const {name,date,description,userId}=req.body;
     const createEventRes=await Event.createEvent(name,date,description,userId);
     if(createEventRes.success) res.json({eventId:createEventRes.eventId,success:createEventRes.success});*/
+    res.statusCode=200;
     res.json({eventId:10,success:createEventRes.success,body:req.body});
 
 })
