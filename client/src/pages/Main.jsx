@@ -11,8 +11,8 @@ function Main() {
                     </h1>
                 </div>
                 <div class="content_menu">
-                    <a href="login.html" class="btn"><i class="fas fa-chevron-right"></i> Rendezvények</a>
-                    <a href="login.html" class="btn"><i class="fas fa-chevron-right"></i> Felhasználók</a>
+                    <a href="/events" class="btn"><i class="fas fa-chevron-right"></i> Rendezvények</a>
+                    <a href="/users" class="btn"><i class="fas fa-chevron-right"></i> Felhasználók</a>
                 </div>
             </header>
             <main>

@@ -415,3 +415,10 @@ textarea {
    color: #fff;
    padding: 1.25rem 12rem 1.25rem 1.25rem;
 }
+
+/*Users oldal*/
+
+.card_container {
+   display: flex;
+
+}
