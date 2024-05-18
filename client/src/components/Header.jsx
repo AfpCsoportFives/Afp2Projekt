@@ -13,7 +13,7 @@ function Header() {
                 <p>Nálunk biztos van olyan rendezvény ami érdekelheti önt!</p>
                 <a href="/login" className="btn"><i className="fas fa-chevron-right"></i> Bejelentkezés</a>
                 <h4>Nincs még felhasználói fiókja?</h4>
-                <a href="registration.html" className="btn-little">Regisztráció</a>
+                <a href="./main" className="btn-little">Regisztráció</a>
             </div>
     </header>
   )

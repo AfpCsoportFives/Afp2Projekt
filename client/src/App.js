@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import LoginPage from "./pages/LoginPage"
+import Main from "./pages/Main"
 
 function App() {
     return (
@@ -48,10 +49,9 @@ function App() {
                         <Footer />
                         </>
                     }>
-                    
-                    
                     </Route>
                     <Route path='/login' element={<LoginPage />} />
+                    <Route path='/main' element={<Main />} />
                 </Routes>
             </Router>
         </>
