@@ -43,25 +43,21 @@ app.post("/registration",async (req,res)=>{
 
 //Rendezvények listázása
 app.get("/listevents",async (req,res)=>{
-    /*const getAllEventRes=await Event.getAllEvent()
-    if(getAllEventRes.success) res.json({success:getAllEventRes.success,eventList:getAllEventRes.response});*/
-    
-    res.statusCode=200;
-    res.json({success:true,eventList:[
-        {id:1,name:"Rendezvény 1",date:"2024.05.04 12:00:00",description:"Rendezvény1 leírás"},
-        {id:1,name:"Rendezvény 1",date:"2024.05.04 12:00:00",description:"Rendezvény1 leírás"},
-        {id:1,name:"Rendezvény 1",date:"2024.05.04 12:00:00",description:"Rendezvény1 leírás"},
-        {id:1,name:"Rendezvény 1",date:"2024.05.04 12:00:00",description:"Rendezvény1 leírás"},
-    ],body:req.body});
+    const getAllEventRes=await Event.getAllEvent()
+    if(getAllEventRes.success) res.json({success:getAllEventRes.success,eventList:getAllEventRes.response});
 })
 
 //Rendezvény létrehozása
 app.post("/createevent",async (req,res)=>{
-    /*const {name,date,description,userId}=req.body;
-    const createEventRes=await Event.createEvent(name,date,description,userId);
-    if(createEventRes.success) res.json({eventId:createEventRes.eventId,success:createEventRes.success});*/
-    res.statusCode=200;
-    res.json({eventId:10,success:createEventRes.success,body:req.body});
+    console.log(req.body)
+    try {
+        const {name,date,description,userId}=req.body;
+        const createEventRes=await Event.createEvent(name,date,description,userId);
+        if(createEventRes.success) res.json({eventId:createEventRes.eventId,success:createEventRes.success});    
+    } catch (error) {
+        console.log(error)
+    }
+    
 
 })
 
