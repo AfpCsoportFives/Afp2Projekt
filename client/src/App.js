@@ -4,6 +4,8 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import LoginPage from "./pages/LoginPage"
 import Main from "./pages/Main"
+import Evets from "./pages/Events"
+import Users from "./pages/Users"
 
 function App() {
     return (
@@ -52,6 +54,8 @@ function App() {
                     </Route>
                     <Route path='/login' element={<LoginPage />} />
                     <Route path='/main' element={<Main />} />
+                    <Route path='/users' element={<Users />} />
+                    <Route path='/events' element={<Evets />} />
                 </Routes>
             </Router>
         </>
