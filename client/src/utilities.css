@@ -32,6 +32,10 @@
     background: #74C0FC;
     color: #fff;
 }
+.btn-delete {
+    background-color: red;
+    color: #333;
+}
 
 .btn-little {
     width: 8%;
