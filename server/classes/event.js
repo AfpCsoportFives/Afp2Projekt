@@ -13,22 +13,32 @@ class Event {
         this.data = rows[0] || null; // Feltételezzük, hogy egyedi azonosítók vannak
     }
 
-    async createEvent(name, date, description, userId) {
-        // Új esemény beszúrása az adatbázisba
-        const [result] = await db.query(
-            'INSERT INTO events (name, date, description, user_id) VALUES (?, ?, ?, ?)',
-            [name, date, description, userId]
-        );
-        return { success: result.affectedRows > 0, eventID: result.insertId };
+    static async createEvent(name, date, description, userId) {
+        if (!name || !date || !description || !userId) {
+            return { success: false, message: 'Minden mező kitöltése kötelező.' };
+        }
+
+        try {
+            // Új esemény beszúrása az adatbázisba
+            const [result] = await db.query(
+                'INSERT INTO events (name, date, description, user_id) VALUES (?, ?, ?, ?)',
+                [name, date, description, userId]
+            );
+            // Visszatérési érték, ha a beszúrás sikeres
+            return { success: result.affectedRows > 0, eventID: result.insertId };
+        } catch (error) {
+            // Hibakezelés: ha hiba történik az adatbázis-művelet kezelése során
+            return { success: false, message: 'Adatbázis hiba: ' + error.message };
+        }
     }
 
-    async deleteEvent(eventId) {
+    static async deleteEvent(eventId) {
         // Esemény törlése az adatbázisból
         const [result] = await db.query('DELETE FROM events WHERE id = ?', [eventId]);
         return { success: result.affectedRows > 0 };
     }
 
-    async updateEvent(eventId, name, date, description) {
+    static async updateEvent(eventId, name, date, description) {
         // Esemény frissítése az adatbázisban
         const [result] = await db.query(
             'UPDATE events SET name = ?, date = ?, description = ? WHERE id = ?',
@@ -37,9 +47,9 @@ class Event {
         return { success: result.changedRows > 0 };
     }
 
-    async getAllEvent() {
+    static async getAllEvent() {
         // Összes esemény lekérdezése az adatbázisból
-        const [rows] = await pool.query('SELECT * FROM events');
+        const [rows] = await db.query('SELECT * FROM events');
         return { success: true, response: rows };
     }
 }
