@@ -1,15 +1,12 @@
 import React from 'react'
 import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
 function Main() {
   return (
     <>
         <body id="home">
             <header class="hero">
-                <div id="navbar" class="navbar">
-                    <h1 class="logo">
-                    <span class="text-primary"> <i class="fa-brands fa-react"></i> Rendezvényszervező</span>
-                    </h1>
-                </div>
+                <Navbar />
                 <div class="content_menu">
                     <a href="/events" class="btn"><i class="fas fa-chevron-right"></i> Rendezvények</a>
                     <a href="/users" class="btn"><i class="fas fa-chevron-right"></i> Felhasználók</a>

@@ -435,8 +435,10 @@ img {
 
 #card_container .card {
    margin: 10px;
-   flex: 1 1 calc(20% - 10px);
-   border: 1px solid red;
+   width: 200px;
+   flex: 200px;
+   border: none;
+   border-radius: 10px;
    background-color: #fff;
 
 }

@@ -1,13 +1,9 @@
 import React from 'react'
-
+import Navbar from './Navbar'
 function Header() {
   return (
     <header className="hero">
-            <div id="navbar" className="navbar">
-                <h1 className="logo">
-                <span className="text-primary"> <i className="fa-brands fa-react"></i> Rendezvényszervező</span>
-                </h1>
-            </div>
+            <Navbar />
             <div className="content">
                 <h1>Fogaljon weboldalunkon keresztül</h1>
                 <p>Nálunk biztos van olyan rendezvény ami érdekelheti önt!</p>
