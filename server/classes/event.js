@@ -9,7 +9,7 @@ class Event {
 
     async loadData() {
         // Lekérdezzük az esemény adatait az adatbázisból
-        const [rows] = await db.query('SELECT * FROM events WHERE id = ?', [this.eventId]);
+        const [rows] = await db.query('SELECT * FROM esemenyek WHERE RendezvenyId = ?', [this.eventId]);
         this.data = rows[0] || null; // Feltételezzük, hogy egyedi azonosítók vannak
     }
 
@@ -21,7 +21,7 @@ class Event {
         try {
             // Új esemény beszúrása az adatbázisba
             const [result] = await db.query(
-                'INSERT INTO events (name, date, description, user_id) VALUES (?, ?, ?, ?)',
+                'INSERT INTO esemenyek (RendezvenyNeve, RendezvenyIdőpontja, RendezvenyLeirasa, felhasznalokId) VALUES (?, ?, ?, ?)',
                 [name, date, description, userId]
             );
             // Visszatérési érték, ha a beszúrás sikeres
@@ -34,14 +34,14 @@ class Event {
 
     static async deleteEvent(eventId) {
         // Esemény törlése az adatbázisból
-        const [result] = await db.query('DELETE FROM events WHERE id = ?', [eventId]);
+        const [result] = await db.query('DELETE FROM esemenyek WHERE RendezvenyId = ?', [eventId]);
         return { success: result.affectedRows > 0 };
     }
 
     static async updateEvent(eventId, name, date, description) {
         // Esemény frissítése az adatbázisban
         const [result] = await db.query(
-            'UPDATE events SET name = ?, date = ?, description = ? WHERE id = ?',
+            'UPDATE esemenyek SET RendezvenyNeve = ?, RendezvenyIdőpontja = ?, RendezvenyLeirasa = ? WHERE RendezvenyId = ?',
             [name, date, description, eventId]
         );
         return { success: result.changedRows > 0 };
@@ -49,7 +49,7 @@ class Event {
 
     static async getAllEvent() {
         // Összes esemény lekérdezése az adatbázisból
-        const [rows] = await db.query('SELECT * FROM events');
+        const [rows] = await db.query('SELECT * FROM esemenyek');
         return { success: true, response: rows };
     }
 }
