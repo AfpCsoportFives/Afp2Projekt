@@ -7,6 +7,7 @@ import Main from "./pages/Main"
 import Evets from "./pages/Events"
 import Users from "./pages/users/Users"
 import AddNewUser from "./pages/users/AddNewUser";
+import UpdateUser from "./pages/users/UpdateUser";
 
 function App() {
     return (
@@ -57,6 +58,7 @@ function App() {
                     <Route path='/main' element={<Main />} />
                     <Route path='/users' element={<Users />} />
                     <Route path='/users/create' element={<AddNewUser />} />
+                    <Route path='/users/update' element={<UpdateUser />} />
                     <Route path='/events' element={<Evets />} />
                 </Routes>
             </Router>
