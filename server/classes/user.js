@@ -1,58 +1,78 @@
-const mysql = require('mysql');
-const pool = mysql.createPool({
-  connectionLimit: 10,
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'fullStackDB'
-});
-
-module.exports = {
-  query: function(query, params, callback) {
-    return pool.query(query, params, callback);
-  }
-};
 const db = require('./db');
 
-login(email, password)
-{ 
-  const query = 'SELECT * FROM users WHERE email = ? AND password = ?';
-  return new Promise((resolve, reject) => {
-    db.query(query, [email, password], (err, result) => {
-      if (err) reject({ success: false });
-      if (result.length > 0) {
-        resolve({ success: true, response: 'cookie-placeholder' });
-      } else {
-        resolve({ success: false });
-      }
-    });
-  });
+class User {
+    constructor(input) {
+        this.db = db;
+        if (typeof input === 'number') {
+            this.userId = input;
+        } else {
+            this.cookie = input;
+            this.validateCookie();
+        }
+    }
+
+    async validateCookie() {
+        // Cookie validálása és felhasználói ID beállítása
+        const query = 'SELECT FelhasznalokId FROM felhasznalok WHERE Cookie = ?';
+        const result = await this.db.query(query, [this.cookie]);
+        if (result.length > 0) {
+            this.userId = result[0].FelhasznalokId;
+        } else {
+            throw new Error('Invalid cookie');
+        }
+    }
+
+    async login(email, password) {
+        const query = 'SELECT * FROM felhasznalok WHERE Email = ? AND Jelszo = ?';
+        const result = await this.db.query(query, [email, password]);
+        if (result.length > 0) {
+            const cookie = 'generated-cookie'; // Ideálisan, itt egy valódi cookie generálás történne
+            // Cookie elmentése az adatbázisba
+            return { success: true, response: cookie };
+        }
+        return { success: false };
+    }
+
+    async register(userData) {
+        const query = 'INSERT INTO felhasznalok (Email, Jelszo, Vezeteknev, Keresztnev) VALUES (?, ?, ?, ?)';
+        const result = await this.db.query(query, [userData.Email, userData.Jelszo, userData.Vezeteknev, userData.Keresztnev]);
+        if (result.affectedRows > 0) {
+            const cookie = 'new-user-cookie'; // Valódi cookie generálás
+            // Cookie elmentése az adatbázisba
+            return { success: true, response: cookie };
+        }
+        return { success: false };
+    }
+
+    async updateUserData(userData) {
+        const query = 'UPDATE felhasznalok SET Email = ?, Vezeteknev = ?, Keresztnev = ? WHERE FelhasznalokId = ?';
+        const result = await this.db.query(query, [userData.Email, userData.Vezeteknev, userData.Keresztnev, this.userId]);
+        return result.affectedRows > 0 ? { success: true } : { success: false };
+    }
+
+    async logout() {
+        const query = 'UPDATE felhasznalok SET Cookie = NULL WHERE Cookie = ?';
+        const result = await this.db.query(query, [this.cookie]);
+        return result.affectedRows > 0 ? { success: true } : { success: false };
+    }
+
+    async applyToEvent(eventId) {
+        const query = 'INSERT INTO foglalasok (FelhasznalokId, RendezvenyId) VALUES (?, ?)';
+        const result = await this.db.query(query, [this.userId, eventId]);
+        return result.affectedRows > 0 ? { success: true } : { success: false };
+    }
+
+    async removeApply(applyId) {
+        const query = 'DELETE FROM foglalasok WHERE FoglalasokId = ?';
+        const result = await this.db.query(query, [applyId]);
+        return result.affectedRows > 0 ? { success: true } : { success: false };
+    }
+
+    async getUserApplies() {
+        const query = 'SELECT * FROM foglalasok WHERE FelhasznalokId = ?';
+        const result = await this.db.query(query, [this.userId]);
+        return { success: true, response: result };
+    }
 }
 
-register(userData)
-{
-  const query = 'INSERT INTO users (email, password, firstName, lastName) VALUES (?, ?, ?, ?)';
-  return new Promise((resolve, reject) => {
-    db.query(query, [userData.email, userData.password, userData.firstName, userData.lastName], (err, result) => { 
-      if (err || result.affectedRows === 0) {
-        reject({ success: false });
-      } else { 
-        resolve({ success: true, response: 'cookie-placeholder' });
-      }
-    });
-  });
-}
-
-updateUserData(userData)
-{ 
-  const query = 'UPDATE users SET email = ?, firstName = ?, lastName = ? WHERE id = ?';
-  return new Promise((resolve, reject) => {
-    db.query(query, [userData.email, userData.firstName, userData.lastName, this.userId], (err, result) => {
-      if (err || result.affectedRows === 0) {
-        reject({ success: false });
-      } else {
-        resolve({ success: true });
-      }
-    });
-  });
-}
+module.exports = User;
