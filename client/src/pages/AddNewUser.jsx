@@ -5,7 +5,7 @@ function AddNewUser() {
     <div id='registration'> 
         <div className="reg-wrapper">
             <form action="#" method="post">
-                <h1>Új felhasznaló hozzáadása</h1>
+                <h1>Regisztráció</h1>
                 <p>Kérjük adja meg az adatait</p>
                 <div className="input-box">
                     <input type="text" id="username" name="username" placeholder="Felhasználónév"/>
