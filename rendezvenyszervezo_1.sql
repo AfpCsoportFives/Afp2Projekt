@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Máj 05. 12:59
+-- Létrehozás ideje: 2024. Máj 07. 14:03
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `rendezvenyszervezo`
 --
+CREATE DATABASE IF NOT EXISTS `rendezvenyszervezo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `rendezvenyszervezo`;
 
 -- --------------------------------------------------------
 
@@ -28,13 +30,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `esemenyek` (
-  `RendezvenyId` bigint(20) NOT NULL,
+  `RendezvenyId` int(10) NOT NULL,
   `RendezvenyNeve` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `RendeznenyIdőpontja` datetime NOT NULL DEFAULT current_timestamp(),
-  `EloadoNeveTitulusa` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `RendezvenyTemaja` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `RendezvenyTipusa` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `RendezvenyHelyszine` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `EloadoNeveTitulusa` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `RendezvenyTemaja` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `RendezvenyTipusa` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `RendezvenyHelyszine` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `RendezvenyLeirasa` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `LetrehozasDatuma` datetime NOT NULL DEFAULT current_timestamp(),
   `UtolsoModosítasDatuma` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
@@ -48,19 +50,19 @@ CREATE TABLE `esemenyek` (
 --
 
 CREATE TABLE `felhasznalok` (
-  `felhasznalokId` bigint(20) NOT NULL,
-  `Vezeteknev` text NOT NULL,
-  `Keresztnev` text NOT NULL,
+  `felhasznalokId` int(10) NOT NULL,
+  `Vezeteknev` varchar(50) NOT NULL,
+  `Keresztnev` varchar(50) NOT NULL,
   `FelhasznaloNev` varchar(50) NOT NULL,
   `Jelszo` varchar(50) NOT NULL,
-  `Email` text NOT NULL,
+  `Email` varchar(100) NOT NULL,
   `SzuletesiDatum` date NOT NULL,
-  `Neme` text NOT NULL,
-  `Iranyitoszam` text NOT NULL,
-  `Varos` text NOT NULL,
-  `UtcaHazszam` text NOT NULL,
-  `Foglalkozasa` text NOT NULL,
-  `IskolaiVegzettsege` text NOT NULL,
+  `Neme` varchar(10) NOT NULL,
+  `Iranyitoszam` varchar(10) NOT NULL,
+  `Varos` varchar(50) NOT NULL,
+  `UtcaHazszam` varchar(100) NOT NULL,
+  `Foglalkozasa` varchar(100) NOT NULL,
+  `IskolaiVegzettsege` varchar(100) NOT NULL,
   `RegisztracioDatuma` datetime NOT NULL,
   `FelhasznaloStatusza` tinyint(1) NOT NULL,
   `Cookie` text NOT NULL,
@@ -74,9 +76,9 @@ CREATE TABLE `felhasznalok` (
 --
 
 CREATE TABLE `jelentkezesek` (
-  `FoglalasokId` bigint(20) UNSIGNED NOT NULL,
-  `FelhasznalokId` bigint(20) NOT NULL,
-  `RendezvenyId` bigint(20) NOT NULL,
+  `FoglalasokId` int(10) UNSIGNED NOT NULL,
+  `FelhasznalokId` int(10) NOT NULL,
+  `RendezvenyId` int(10) NOT NULL,
   `FoglalasDatuma` datetime NOT NULL,
   `FoglalasokSzama` int(100) NOT NULL,
   `UtolsoModositasDatuma` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -101,15 +103,15 @@ ALTER TABLE `esemenyek`
 ALTER TABLE `felhasznalok`
   ADD PRIMARY KEY (`felhasznalokId`),
   ADD UNIQUE KEY `FelhasznaloNev_Egyedi` (`FelhasznaloNev`) USING BTREE,
-  ADD UNIQUE KEY `Email` (`Email`) USING HASH;
+  ADD UNIQUE KEY `Email` (`Email`);
 
 --
 -- A tábla indexei `jelentkezesek`
 --
 ALTER TABLE `jelentkezesek`
   ADD PRIMARY KEY (`FoglalasokId`),
-  ADD KEY `FK_RendezvenyId` (`RendezvenyId`),
-  ADD KEY `FK_FelhasznalokId` (`FelhasznalokId`);
+  ADD KEY `FK_FelhasznalokId` (`FelhasznalokId`),
+  ADD KEY `FK_RendezvenyId` (`RendezvenyId`);
 
 --
 -- A kiírt táblák AUTO_INCREMENT értéke
@@ -119,19 +121,19 @@ ALTER TABLE `jelentkezesek`
 -- AUTO_INCREMENT a táblához `esemenyek`
 --
 ALTER TABLE `esemenyek`
-  MODIFY `RendezvenyId` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `RendezvenyId` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT a táblához `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  MODIFY `felhasznalokId` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `felhasznalokId` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT a táblához `jelentkezesek`
 --
 ALTER TABLE `jelentkezesek`
-  MODIFY `FoglalasokId` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `FoglalasokId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Megkötések a kiírt táblákhoz
