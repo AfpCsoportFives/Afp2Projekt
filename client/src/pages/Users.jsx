@@ -28,6 +28,7 @@ function Users() {
             <Navbar />
             <div className="content">
             <h1>Regisztrált felhasználók</h1>
+              <a href="/users/create" className="btn"><i className="fas fa-chevron-right"></i>Új felhasználó hozzáadása</a>
             </div>
         </header>
         <main>
@@ -48,7 +49,7 @@ function Users() {
                 <p>{felhasznalo.iskolaiVegzettsege}</p>
                 <p>{felhasznalo.regisztracioDatuma}</p>
                 <p>{felhasznalo.felhasznaloStatusza}</p>
-                <a href="">Módosít</a>
+                <a href="/users/create">Módosít</a>
                 <a href="" className='btn-delete'>Töröl</a>
                 <a href="">Részletek</a>
                 </div>

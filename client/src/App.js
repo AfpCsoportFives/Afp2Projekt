@@ -6,6 +6,7 @@ import LoginPage from "./pages/LoginPage"
 import Main from "./pages/Main"
 import Evets from "./pages/Events"
 import Users from "./pages/Users"
+import AddNewUser from "./pages/AddNewUser";
 
 function App() {
     return (
@@ -55,6 +56,7 @@ function App() {
                     <Route path='/login' element={<LoginPage />} />
                     <Route path='/main' element={<Main />} />
                     <Route path='/users' element={<Users />} />
+                    <Route path='/users/create' element={<AddNewUser />} />
                     <Route path='/events' element={<Evets />} />
                 </Routes>
             </Router>
