@@ -4,10 +4,12 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import LoginPage from "./pages/LoginPage"
 import Main from "./pages/Main"
-import Evets from "./pages/Events"
+import Evets from "./pages/events/Events"
 import Users from "./pages/users/Users"
 import AddNewUser from "./pages/users/AddNewUser";
 import UpdateUser from "./pages/users/UpdateUser";
+import AddNewEvent from "./pages/events/AddNewEvent";
+import UpdateEvent from "./pages/events/UpdateEvent";
 
 function App() {
     return (
@@ -60,6 +62,8 @@ function App() {
                     <Route path='/users/create' element={<AddNewUser />} />
                     <Route path='/users/update' element={<UpdateUser />} />
                     <Route path='/events' element={<Evets />} />
+                    <Route path='/events/create' element={<AddNewEvent />} />
+                    <Route path='/events/update' element={<UpdateEvent />} />
                 </Routes>
             </Router>
         </>

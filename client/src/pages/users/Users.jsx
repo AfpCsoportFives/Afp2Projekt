@@ -5,6 +5,28 @@ import { useState, useEffect} from 'react'
 
 
 function Users() {
+  // Statikus felhasználó adat
+  const felhasznalok = [
+    {
+      vezeteknev: 'Kovacs',
+      keresztnev: 'Janos',
+      felhasznaloNev: 'kovacs.janos',
+      jelszo: 'password1',
+      email: 'janos.kovacs@example.com',
+      szuletesiDatum: '1980-01-15',
+      neme: 'Férfi',
+      iranyitoszam: '1234',
+      varos: 'Budapest',
+      utcaHazszam: 'Fo utca 1',
+      foglalkozas: 'Tanár',
+      iskolaiVegzettsege: 'Egyetem',
+      regisztracioDatuma: '2024-01-01 10:00:00',
+      felhasznaloStatusza: 1
+    }
+  ];
+
+
+/*function Users() {
 
     const [felhasznalok, setFelhasznalok] = useState([]);
 
@@ -20,7 +42,8 @@ function Users() {
         };
     
         fetchData();
-      }, []);
+      }, []);*/
+
   return (
     <>
         <body id="home">
@@ -35,23 +58,23 @@ function Users() {
             <div id='card_container'>
             {felhasznalok.map((felhasznalo, index) => (
                 <div className="card" key={index}>
-                <p>{felhasznalo.vezeteknev}</p>
-                <p>{felhasznalo.keresztnev}</p>
-                <p>{felhasznalo.felhasznaloNev}</p>
-                <p>{felhasznalo.jelszo}</p>
-                <p>{felhasznalo.email}</p>
-                <p>{felhasznalo.szuletesiDatum}</p>
-                <p>{felhasznalo.neme}</p>
-                <p>{felhasznalo.iranyitoszam}</p>
-                <p>{felhasznalo.varos}</p>
-                <p>{felhasznalo.utcaHazszam}</p>
-                <p>{felhasznalo.foglalkozas}</p>
-                <p>{felhasznalo.iskolaiVegzettsege}</p>
-                <p>{felhasznalo.regisztracioDatuma}</p>
-                <p>{felhasznalo.felhasznaloStatusza}</p>
-                <a href="/users/create">Módosít</a>
-                <a href="" className='btn-delete'>Töröl</a>
-                <a href="">Részletek</a>
+                  <div className="content">
+                    <p>{felhasznalo.vezeteknev} {felhasznalo.keresztnev}</p>
+                    <p>{felhasznalo.felhasznaloNev}</p>
+                    <p>{felhasznalo.jelszo}</p>
+                    <p>{felhasznalo.email}</p>
+                    <p>{felhasznalo.szuletesiDatum}</p>
+                    <p>{felhasznalo.neme}</p>
+                    <p>{felhasznalo.iranyitoszam} {felhasznalo.varos} {felhasznalo.utcaHazszam}</p>
+                    <p>{felhasznalo.foglalkozas}</p>
+                    <p>{felhasznalo.iskolaiVegzettsege}</p>
+                    <p>{felhasznalo.regisztracioDatuma}</p>
+                  </div>
+                  <div className="buttons">
+                    <a href="/users/create" className="btn">Módosít</a>
+                    <a href="" className='btn-delete'>Töröl</a>
+                    <a href="" className="btn">Részletek</a>
+                  </div>
                 </div>
             ))}
             </div>
