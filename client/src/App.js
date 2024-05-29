@@ -5,8 +5,8 @@ import Footer from "./components/Footer"
 import LoginPage from "./pages/LoginPage"
 import Main from "./pages/Main"
 import Evets from "./pages/Events"
-import Users from "./pages/Users"
-import AddNewUser from "./pages/AddNewUser";
+import Users from "./pages/users/Users"
+import AddNewUser from "./pages/users/AddNewUser";
 
 function App() {
     return (
