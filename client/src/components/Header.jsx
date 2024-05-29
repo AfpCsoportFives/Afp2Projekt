@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 function Header() {
   return (
-    <header className="hero">
+    <header className="herohome">
             <Navbar />
             <div className="content">
                 <h1>Fogaljon weboldalunkon keresztül</h1>
