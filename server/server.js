@@ -51,14 +51,11 @@ app.get("/listevents",async (req,res)=>{
 app.post("/createevent",async (req,res)=>{
     console.log(req.body)
     try {
-        const {name,date,description,userId}=req.body;
-        const createEventRes=await Event.createEvent(name,date,description,userId);
-        if(createEventRes.success) res.json({eventId:createEventRes.eventId,success:createEventRes.success});    
+        const createEventRes=await Event.createEvent(req.body);
+        res.json({eventId:createEventRes.eventId,success:createEventRes.success});    
     } catch (error) {
         console.log(error)
     }
-    
-
 })
 
 //Rendezvény frissítése
