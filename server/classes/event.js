@@ -45,13 +45,18 @@ class Event {
         
     }
 
-    static async updateEvent(eventId, name, date, description) {
+    static async updateEvent(eventData) {
         // Esemény frissítése az adatbázisban
-        const [result] = await db.query(
-            'UPDATE esemenyek SET RendezvenyNeve = ?, RendezvenyIdőpontja = ?, RendezvenyLeirasa = ? WHERE RendezvenyId = ?',
-            [name, date, description, eventId]
-        );
-        return { success: result.changedRows > 0 };
+        try {
+            const result = await db.query(
+                'UPDATE esemenyek SET RendezvenyNeve = ?, RendeznenyIdőpontja = ?, EloadoNeveTitulusa = ?, RendezvenyTemaja = ?, RendezvenyTipusa = ?, RendezvenyHelyszine = ?, RendezvenyLeirasa = ?, SzabadHelyekSzama = ? WHERE RendezvenyId LIKE ?',
+                [eventData.RendezvenyNeve,eventData.RendeznenyIdopontja,eventData.EloadoNeveTitulusa,eventData.RendezvenyTemaja,eventData.RendezvenyTipusa,eventData.RendezvenyHelyszine,eventData.RendezvenyLeirasa,eventData.SzabadHelyekSzama,eventData.RendezvenyId]
+            );    
+            return { success: (result.changedRows > 0)};
+        } catch (error) {
+            console.log(error)
+            return { success: "false"};
+        }
     }
 
     static async getAllEvent() {
