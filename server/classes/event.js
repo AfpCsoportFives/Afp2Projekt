@@ -13,16 +13,16 @@ class Event {
         this.data = rows[0] || null; // Feltételezzük, hogy egyedi azonosítók vannak
     }
 
-    static async createEvent(name, date, description, userId) {
-        if (!name || !date || !description || !userId) {
+    static async createEvent(eventData) {
+        /*if (!name || !date || !description || !userId) {
             return { success: false, message: 'Minden mező kitöltése kötelező.' };
-        }
+        }*/
 
         try {
             // Új esemény beszúrása az adatbázisba
             const [result] = await db.query(
-                'INSERT INTO esemenyek (RendezvenyNeve, RendezvenyIdőpontja, RendezvenyLeirasa, felhasznalokId) VALUES (?, ?, ?, ?)',
-                [name, date, description, userId]
+                'INSERT INTO esemenyek (RendezvenyNeve , RendeznenyIdőpontja , EloadoNeveTitulusa, RendezvenyTemaja,RendezvenyTipusa,RendezvenyHelyszine,RendezvenyLeirasa,SzabadHelyekSzama) VALUES (?, ?, ?, ?,?,?,?,?)',
+                [eventData.RendezvenyNeve,eventData.RendeznenyIdopontja,eventData.EloadoNeveTitulusa,eventData.RendezvenyTemaja,eventData.RendezvenyTipusa,eventData.RendezvenyHelyszine,eventData.RendezvenyLeirasa,eventData.SzabadHelyekSzama]
             );
             // Visszatérési érték, ha a beszúrás sikeres
             return { success: result.affectedRows > 0, eventID: result.insertId };
