@@ -85,6 +85,59 @@ img {
    font-weight: 400;
 }
 
+.herohome {
+   background-color: rgba(0, 0, 0, 0.5);
+   background-image: url('https://assets-global.website-files.com/61f29c609f84a86e418fbcfb/63ecdf6e6df724eab1f0e8ca_20230215T0132-25bece5c-5ab8-4c33-98c7-60ad2668054b.webp');
+   background-blend-mode: color-burn;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
+   height: 80vh;
+   position: relative;
+   color: #333;
+}
+
+.herohome .content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   height: 100%;
+   padding: 0 20px;
+}
+.herohome .content_menu {
+   display: flex;
+   flex-direction:row;
+   align-items:center;
+   justify-content:space-around;
+   text-align:center;
+   height: 100%;
+   padding: 0 20px;
+}
+.herohome .content p {
+   font-size: 23px;
+   max-width: 800px;
+   margin: 20px 0 30px;
+   font-weight: 300;
+}
+
+.herohome::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.3)
+}
+
+.herohome * {
+   z-index: 5;
+}
+
+
 .hero {
    background-color: rgba(0, 0, 0, 0.5);
    background-image: url('https://assets-global.website-files.com/61f29c609f84a86e418fbcfb/63ecdf6e6df724eab1f0e8ca_20230215T0132-25bece5c-5ab8-4c33-98c7-60ad2668054b.webp');
@@ -93,7 +146,7 @@ img {
    background-repeat: no-repeat;
    background-position: center;
    background-attachment: fixed;
-   height: 100vh;
+   height: 50vh;
    position: relative;
    color: #333;
 }
@@ -426,37 +479,87 @@ img {
 
 /*Users oldal*/
 
+/* Card Container */
 #card_container {
    display: flex;
    flex-wrap: wrap;
-   justify-content:space-between;
-   text-align:center;
-}
-
-#card_container .card {
+   justify-content: center;
+   text-align: center;
+ }
+ 
+ /* Card */
+ #card_container .card {
    margin: 10px;
-   width: 200px;
-   flex: 200px;
+   width: 100px;
+   height: 300px;
    border: none;
    border-radius: 10px;
    background-color: #fff;
-
-}
-
-#card_container .card p{
-   display: block;
-   width: 10rem;
-   margin-top: 0.5rem;
-   margin-left: auto;
-   margin-right: auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   padding: 10px; /* Add some padding */
+   position: relative;
+ }
+ 
+ /* Ensure cards wrap after 4 items */
+ /* Card Container */
+#card_container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   text-align: center;
+ }
+ 
+ /* Card */
+ #card_container .card {
+   margin-top: 20px;
+   margin-left: 8px;
+   margin-right: 8px;
+   width: 440px;
+   height: 600px;
+   border: none;
+   border-radius: 10px;
+   background-color: #fff;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between; /* Ensures space between content and buttons */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   padding: 10px; /* Add some padding */
+   box-sizing: border-box;
+ }
+ 
+ /* Card content */
+ #card_container .card .content {
+   flex-grow: 1; /* Allows the content to grow and push the buttons down */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start; /* Align items at the top */
+ }
+ 
+ #card_container .card p {
+   width: 90%;
+   margin: 0.5rem 0;
    color: #000;
-}
-
-#card_container .card a{
+   text-align: center; /* Center the text */
+ }
+ 
+ /* Card buttons */
+ #card_container .card .buttons {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+ }
+ 
+ #card_container .card a {
    display: block;
-   width: 10rem;
-   margin-top: 0.5rem;
-   margin-left: auto;
-   margin-right: auto;
+   width: 90%;
+   margin: 0.5rem 0;
    border-radius: 30px;
-}
+   text-align: center; /* Center the text */
+ }
+ 
