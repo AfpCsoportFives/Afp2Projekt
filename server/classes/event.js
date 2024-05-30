@@ -34,8 +34,15 @@ class Event {
 
     static async deleteEvent(eventId) {
         // Esemény törlése az adatbázisból
-        const [result] = await db.query('DELETE FROM esemenyek WHERE RendezvenyId = ?', [eventId]);
-        return { success: result.affectedRows > 0 };
+        try {
+            const result = await db.query('DELETE FROM esemenyek WHERE RendezvenyId = ?', [eventId]);
+            return { success: result.affectedRows > 0 };    
+        } catch (error) {
+            console.log(error)
+            return { success: "false"};
+            
+        }
+        
     }
 
     static async updateEvent(eventId, name, date, description) {
