@@ -1,14 +1,14 @@
-const db = require('./db');
+const Database = require('./db.js'); 
+const db = new Database(); // Példányosítjuk a Database osztályt
 
 class User {
     constructor(input) {
-        this.db = db;
-        if (typeof input === 'number') {
+        /*if (typeof input === 'number') {
             this.userId = input;
         } else {
             this.cookie = input;
             this.validateCookie();
-        }
+        }*/
     }
 
     async validateCookie() {
@@ -34,8 +34,8 @@ class User {
     }
 
     async register(userData) {
-        const query = 'INSERT INTO felhasznalok (Email, Jelszo, Vezeteknev, Keresztnev) VALUES (?, ?, ?, ?)';
-        const result = await this.db.query(query, [userData.Email, userData.Jelszo, userData.Vezeteknev, userData.Keresztnev]);
+        const query = 'INSERT INTO felhasznalok (Vezeteknev, Keresztnev, FelhasznaloNev , Jelszo,Email,SzuletesiDatum,Neme,Iranyitoszam,Varos,UtcaHazszam,Foglalkozasa,IskolaiVegzettsege,FelhasznaloStatusza ) VALUES (?, ?, ?, ?,?,?,?,?,?,?,?,?,?)';
+        const result = await db.query(query, [userData.Vezeteknev, userData.Keresztnev, userData.FelhasznaloNev, userData.Jelszo, userData.Email, userData.SzuletesiDatum, userData.Neme, userData.Iranyitoszam, userData.Varos, userData.UtcaHazszam, userData.Foglalkozasa, userData.IskolaiVegzettsege, userData.FelhasznaloStatusza]);
         if (result.affectedRows > 0) {
             const cookie = 'new-user-cookie'; // Valódi cookie generálás
             // Cookie elmentése az adatbázisba

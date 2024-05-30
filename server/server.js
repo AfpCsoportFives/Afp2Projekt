@@ -33,45 +33,53 @@ app.post("/logout",async (req,res)=>{
 
 //Regisztráció
 app.post("/registration",async (req,res)=>{
-    /*const {email,password,firstname,lastname}=req.body;
     const user = new User();
-    const regRes=await user.registartion(email,password,firstname,lastname);
-    if(regRes.success) res.json({cookie:regRes.response.cookie,success:regRes.success});*/
+    const regRes=await user.register(req.body);
+    res.json({cookie:regRes.response.cookie,success:regRes.success});
+    /*console.log(req.body);
     res.statusCode=200;
-    res.json({cookie:"asdjkhbashdjkaskdjm",success:true,body:req.body});
+    res.json({cookie:"asdjkhbashdjkaskdjm",success:true,body:req.body});*/
 })
 
 //Rendezvények listázása
 app.get("/listevents",async (req,res)=>{
-    /*const getAllEventRes=await Event.getAllEvent()
-    if(getAllEventRes.success) res.json({success:getAllEventRes.success,eventList:getAllEventRes.response});*/
-    
-    res.statusCode=200;
-    res.json({success:true,eventList:[
-        {id:1,name:"Rendezvény 1",date:"2024.05.04 12:00:00",description:"Rendezvény1 leírás"},
-        {id:1,name:"Rendezvény 1",date:"2024.05.04 12:00:00",description:"Rendezvény1 leírás"},
-        {id:1,name:"Rendezvény 1",date:"2024.05.04 12:00:00",description:"Rendezvény1 leírás"},
-        {id:1,name:"Rendezvény 1",date:"2024.05.04 12:00:00",description:"Rendezvény1 leírás"},
-    ],body:req.body});
+    const getAllEventRes=await Event.getAllEvent()
+    res.json({success:getAllEventRes.success,eventList:getAllEventRes.response});
 })
 
 //Rendezvény létrehozása
 app.post("/createevent",async (req,res)=>{
-    /*const {name,date,description,userId}=req.body;
-    const createEventRes=await Event.createEvent(name,date,description,userId);
-    if(createEventRes.success) res.json({eventId:createEventRes.eventId,success:createEventRes.success});*/
-    res.statusCode=200;
-    res.json({eventId:10,success:createEventRes.success,body:req.body});
-
+    console.log(req.body)
+    try {
+        const createEventRes=await Event.createEvent(req.body);
+        res.json({eventId:createEventRes.eventId,success:createEventRes.success});    
+    } catch (error) {
+        console.log(error)
+    }
 })
 
 //Rendezvény frissítése
-app.post("/updateEvent",(req,res)=>{
-    res.json({success:true,body:req.body});
+app.post("/updateEvent",async (req,res)=>{
+    console.log(req.body)
+    try {
+        const createEventRes=await Event.updateEvent(req.body);
+        res.json({success:createEventRes.success});    
+    } catch (error) {
+        console.log(error)
+    }
 })
+
 //Rendezvény törlése
-app.delete("/deleteEvent",(req,res)=>{
-    res.json({success:true,body:req.body});
+app.delete("/deleteEvent",async (req,res)=>{
+    console.log(req.body)
+    const {RendezvenyId}=req.body;
+    try {
+        const createEventRes=await Event.deleteEvent(RendezvenyId);
+        
+        res.json({success:createEventRes.success});    
+    } catch (error) {
+        console.log(error)
+    }
 })
 
 
