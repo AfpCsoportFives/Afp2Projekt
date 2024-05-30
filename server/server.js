@@ -44,7 +44,7 @@ app.post("/registration",async (req,res)=>{
 //Rendezvények listázása
 app.get("/listevents",async (req,res)=>{
     const getAllEventRes=await Event.getAllEvent()
-    if(getAllEventRes.success) res.json({success:getAllEventRes.success,eventList:getAllEventRes.response});
+    res.json({success:getAllEventRes.success,eventList:getAllEventRes.response});
 })
 
 //Rendezvény létrehozása
