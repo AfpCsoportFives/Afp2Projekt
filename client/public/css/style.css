@@ -117,6 +117,16 @@ textarea {
    padding: 0 20px;
 }
 
+.hero .content_menu {
+   display: flex;
+   flex-direction:row;
+   align-items:center;
+   justify-content:space-around;
+   text-align:center;
+   height: 100%;
+   padding: 0 20px;
+}
+
 .hero .content p {
    font-size: 23px;
    max-width: 800px;
@@ -404,4 +414,11 @@ textarea {
    font-size: 1rem;
    color: #fff;
    padding: 1.25rem 12rem 1.25rem 1.25rem;
+}
+
+/*Users oldal*/
+
+.card_container {
+   display: flex;
+
 }
