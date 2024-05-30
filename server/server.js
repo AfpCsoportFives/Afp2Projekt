@@ -33,12 +33,12 @@ app.post("/logout",async (req,res)=>{
 
 //Regisztráció
 app.post("/registration",async (req,res)=>{
-    /*const {email,password,firstname,lastname}=req.body;
     const user = new User();
-    const regRes=await user.registartion(email,password,firstname,lastname);
-    if(regRes.success) res.json({cookie:regRes.response.cookie,success:regRes.success});*/
+    const regRes=await user.register(req.body);
+    res.json({cookie:regRes.response.cookie,success:regRes.success});
+    /*console.log(req.body);
     res.statusCode=200;
-    res.json({cookie:"asdjkhbashdjkaskdjm",success:true,body:req.body});
+    res.json({cookie:"asdjkhbashdjkaskdjm",success:true,body:req.body});*/
 })
 
 //Rendezvények listázása
@@ -75,4 +75,3 @@ app.delete("/deleteEvent",(req,res)=>{
 app.listen(5000,()=>{
     console.log("listening..");
 })
-
