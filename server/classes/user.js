@@ -92,6 +92,16 @@ class User {
             return { success: "false"};
         }
     }
+    static async deleteUser(userId) {
+        // Felhasználó törlése az adatbázisból
+        try {
+            const result = await db.query('DELETE FROM felhasznalok WHERE FelhasznalokId = ?', [userId]);
+            return { success: result.affectedRows > 0 };    
+        } catch (error) {
+            console.log(error)
+            return { success: "false"};
+        }
+    }
 }
 
 module.exports = User;
