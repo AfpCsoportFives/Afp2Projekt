@@ -4,7 +4,7 @@ const dbConfig = {
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'fullStackDB'
+    database: 'rendezvenyszervezo'
 };
 
 class Database {
