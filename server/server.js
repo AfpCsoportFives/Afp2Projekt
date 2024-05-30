@@ -68,9 +68,18 @@ app.post("/updateEvent",async (req,res)=>{
         console.log(error)
     }
 })
+
 //Rendezvény törlése
-app.delete("/deleteEvent",(req,res)=>{
-    res.json({success:true,body:req.body});
+app.delete("/deleteEvent",async (req,res)=>{
+    console.log(req.body)
+    const {RendezvenyId}=req.body;
+    try {
+        const createEventRes=await Event.deleteEvent(RendezvenyId);
+        
+        res.json({success:createEventRes.success});    
+    } catch (error) {
+        console.log(error)
+    }
 })
 
 
