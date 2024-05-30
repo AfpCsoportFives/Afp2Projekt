@@ -102,7 +102,7 @@ textarea {
    background-repeat: no-repeat;
    background-position: center;
    background-attachment: fixed;
-   height: 100vh;
+   height: 50vh;
    position: relative;
    color: #333;
 }
@@ -113,6 +113,16 @@ textarea {
    align-items: center;
    justify-content: center;
    text-align: center;
+   height: 100%;
+   padding: 0 20px;
+}
+
+.hero .content_menu {
+   display: flex;
+   flex-direction:row;
+   align-items:center;
+   justify-content:space-around;
+   text-align:center;
    height: 100%;
    padding: 0 20px;
 }
@@ -404,4 +414,11 @@ textarea {
    font-size: 1rem;
    color: #fff;
    padding: 1.25rem 12rem 1.25rem 1.25rem;
+}
+
+/*Users oldal*/
+
+.card_container {
+   display: flex;
+
 }

@@ -1,112 +1,107 @@
-const mysql = require('mysql');
+const Database = require('./db.js'); 
+const db = new Database(); // Példányosítjuk a Database osztályt
 
-const dbConfig = db.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'fullStackDB'
-});
+class User {
+    constructor(input) {
+        /*if (typeof input === 'number') {
+            this.userId = input;
+        } else {
+            this.cookie = input;
+            this.validateCookie();
+        }*/
+    }
 
-connection.connect((err) => {
-    if (err) throw err;
-    const query = `SELECT * FROM users WHERE id = ${this.userId}`;
-    connection.query(query, (err, result) => {
-        if (err) throw err;
-        if (result.length === 0) {
-            return;
+    async validateCookie() {
+        // Cookie validálása és felhasználói ID beállítása
+        const query = 'SELECT FelhasznalokId FROM felhasznalok WHERE Cookie = ?';
+        const result = await this.db.query(query, [this.cookie]);
+        if (result.length > 0) {
+            this.userId = result[0].FelhasznalokId;
+        } else {
+            throw new Error('Invalid cookie');
         }
-
-        this.email = result[0].email;
-        this.firstName = result[0].firstName;
-        this.lastName = result[0].lastName;
-    });
-    connection.end();
-});
-  
-  module.exports = connection;
-
-class user {
-    constructor(userIdOrCookie) {
-      if (typeof userIdOrCookie === 'string') {
-
-        this.userId = userIdFromCookie;
-      } else {
-        this.userId = userIdOrCookie;
-      }
-      this.loadUserData();
     }
-  
-    loadUserData() {
 
-      this.email = userData.email;
-      this.firstName = userData.firstName;
-      this.lastName = userData.lastName;
-    }
-  
-    login(email, password) {
-
-  
-      if (loggedIn) {
-
-        return { success: true, response: cookie };
-      } else {
+    async login(email, password) {
+        const query = 'SELECT * FROM felhasznalok WHERE Email = ? AND Jelszo = ?';
+        const result = await this.db.query(query, [email, password]);
+        if (result.length > 0) {
+            const cookie = 'generated-cookie'; // Ideálisan, itt egy valódi cookie generálás történne
+            // Cookie elmentése az adatbázisba
+            return { success: true, response: cookie };
+        }
         return { success: false };
-      }
     }
-  
-    register(userData) {
 
-      if (registered) {
+    async register(userData) {
+        const query = 'INSERT INTO felhasznalok (Vezeteknev, Keresztnev, FelhasznaloNev , Jelszo,Email,SzuletesiDatum,Neme,Iranyitoszam,Varos,UtcaHazszam,Foglalkozasa,IskolaiVegzettsege,FelhasznaloStatusza ) VALUES (?, ?, ?, ?,?,?,?,?,?,?,?,?,?)';
+        const result = await db.query(query, [userData.Vezeteknev, userData.Keresztnev, userData.FelhasznaloNev, userData.Jelszo, userData.Email, userData.SzuletesiDatum, userData.Neme, userData.Iranyitoszam, userData.Varos, userData.UtcaHazszam, userData.Foglalkozasa, userData.IskolaiVegzettsege, userData.FelhasznaloStatusza]);
+        if (result.affectedRows > 0) {
+            const cookie = 'new-user-cookie'; // Valódi cookie generálás
+            // Cookie elmentése az adatbázisba
+            return { success: true, response: cookie };
+        }
+        return { success: false };
+    }
 
-        return { success: true, response: cookie };
-      } else {
-        return { success: false };
-      }
+    async updateUserData(userData) {
+        const query = 'UPDATE felhasznalok SET Email = ?, Vezeteknev = ?, Keresztnev = ? WHERE FelhasznalokId = ?';
+        const result = await this.db.query(query, [userData.Email, userData.Vezeteknev, userData.Keresztnev, this.userId]);
+        return result.affectedRows > 0 ? { success: true } : { success: false };
     }
-  
-    updateUserData(userData) {
 
-      if (updated) {
-        return { success: true };
-      } else {
-        return { success: false };
-      }
+    async logout() {
+        const query = 'UPDATE felhasznalok SET Cookie = NULL WHERE Cookie = ?';
+        const result = await this.db.query(query, [this.cookie]);
+        return result.affectedRows > 0 ? { success: true } : { success: false };
     }
-  
-    logout() {
 
-      if (loggedOut) {
+    async applyToEvent(eventId) {
+        const query = 'INSERT INTO foglalasok (FelhasznalokId, RendezvenyId) VALUES (?, ?)';
+        const result = await this.db.query(query, [this.userId, eventId]);
+        return result.affectedRows > 0 ? { success: true } : { success: false };
+    }
 
-        return { success: true };
-      } else {
-        return { success: false };
-      }
+    async removeApply(applyId) {
+        const query = 'DELETE FROM foglalasok WHERE FoglalasokId = ?';
+        const result = await this.db.query(query, [applyId]);
+        return result.affectedRows > 0 ? { success: true } : { success: false };
     }
-  
-    applyToEvent(userId, eventId) {
-  
-      if (applied) {
-        return { success: true };
-      } else {
-        return { success: false };
-      }
-    }
-  
-    removeApply(applyId) {
-  
-      if (removed) {
-        return { success: true };
-      } else {
-        return { success: false };
-      }
-    }
-  
-    getUserApplies() {
 
-      if (appliesLoaded) {
-        return { success: true, response: appliesData };
-      } else {
-        return { success: false };
-      }
+    async getUserApplies() {
+        const query = 'SELECT * FROM foglalasok WHERE FelhasznalokId = ?';
+        const result = await this.db.query(query, [this.userId]);
+        return { success: true, response: result };
     }
-  }
+
+    static async getAllUser() {
+        // Összes felhasználó lekérdezése az adatbázisból
+        const [rows] = await db.query('SELECT * FROM felhasznalok');
+        return { success: true, response: rows };
+    }
+    static async updateUser(userData) {
+        // Felhasználó frissítése az adatbázisban
+        try {
+            const result = await db.query(
+                'UPDATE felhasznalok SET Vezeteknev = ?, Keresztnev = ?, FelhasznaloNev = ?, Jelszo = ?, Email = ?, SzuletesiDatum = ?, Neme = ?, Iranyitoszam = ?, Varos = ?, UtcaHazszam = ?, Foglalkozasa = ?, IskolaiVegzettsege = ?, FelhasznaloStatusza = ?  WHERE FelhasznalokId LIKE ?',
+                [userData.Vezeteknev,userData.Keresztnev,userData.FelhasznaloNev,userData.Jelszo,userData.Email,userData.SzuletesiDatum,userData.Neme,userData.Iranyitoszam,userData.Varos,userData.UtcaHazszam,userData.Foglalkozasa,userData.IskolaiVegzettsege,userData.FelhasznaloStatusza]
+            );    
+            return { success: (result.changedRows > 0)};
+        } catch (error) {
+            console.log(error)
+            return { success: "false"};
+        }
+    }
+    static async deleteUser(userId) {
+        // Felhasználó törlése az adatbázisból
+        try {
+            const result = await db.query('DELETE FROM felhasznalok WHERE FelhasznalokId = ?', [userId]);
+            return { success: result.affectedRows > 0 };    
+        } catch (error) {
+            console.log(error)
+            return { success: "false"};
+        }
+    }
+}
+
+module.exports = User;

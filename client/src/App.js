@@ -1,7 +1,15 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 import Header from "./components/Header"
+import Footer from "./components/Footer"
 import LoginPage from "./pages/LoginPage"
+import Main from "./pages/Main"
+import Evets from "./pages/events/Events"
+import Users from "./pages/users/Users"
+import AddNewUser from "./pages/users/AddNewUser";
+import UpdateUser from "./pages/users/UpdateUser";
+import AddNewEvent from "./pages/events/AddNewEvent";
+import UpdateEvent from "./pages/events/UpdateEvent";
 
 function App() {
     return (
@@ -43,22 +51,19 @@ function App() {
                                 </div>
                             </div>
                         </section>
-                    </main>
-                    <footer className="footer bg-light">
-                        <div className="social">
-                            <a href="#"><i className="fab fa-facebook fa-2x"></i></a>
-                            <a href="#"><i className="fab fa-twitter fa-2x"></i></a>
-                            <a href="#"><i className="fab fa-youtube fa-2x"></i></a>
-                            <a href="#"><i className="fab fa-linkedin fa-2x"></i></a>
-                        </div>
-                        <p>Copyright &copy; 2024</p>
-                    </footer>
+                        </main>
+                        <Footer />
                         </>
                     }>
-                    
-                    
                     </Route>
                     <Route path='/login' element={<LoginPage />} />
+                    <Route path='/main' element={<Main />} />
+                    <Route path='/users' element={<Users />} />
+                    <Route path='/users/create' element={<AddNewUser />} />
+                    <Route path='/users/update' element={<UpdateUser />} />
+                    <Route path='/events' element={<Evets />} />
+                    <Route path='/events/create' element={<AddNewEvent />} />
+                    <Route path='/events/update' element={<UpdateEvent />} />
                 </Routes>
             </Router>
         </>
