@@ -61,7 +61,8 @@ function App() {
                     <Route path='/main' element={<Main />} />
                     <Route path='/users' element={<Users />} />
                     <Route path='/users/create' element={<AddNewUser />} />
-                    <Route path='/users/update' element={<UpdateUser />} />
+                    <Route path='/users/update/:id' element={<UpdateUser />} />
+                    <Route path='/users/details/:id' element={<EventDetails />} />
                     <Route path='/events' element={<Evets />} />
                     <Route path='/events/create' element={<AddNewEvent />} />
                     <Route path="/events/edit/:id" element={<UpdateEvent />} />

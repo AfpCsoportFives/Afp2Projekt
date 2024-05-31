@@ -66,7 +66,7 @@ function Users() {
                   </div> 
                   <div className="buttons">
                   <Link to={`/users/details/${felhasznalo.felhasznaloId}`} className="btn">Részletek</Link>
-                  <Link to={`/users/edit/${felhasznalo.felhasznaloId}`} className="btn">Módosít</Link>
+                  <Link to={`/users/update/${felhasznalo.felhasznaloId}`} className="btn">Módosít</Link>
                   <button onClick={() => deleteEvent(felhasznalo.felhasznaloId)} className='btn-delete'>Töröl</button>
                   </div>
                 </div>
