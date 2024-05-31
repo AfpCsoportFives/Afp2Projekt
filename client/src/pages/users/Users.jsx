@@ -35,7 +35,7 @@ function Users() {
           });
           const data = await response.json();
           if (data.success) {
-            setUsers(rendezvenyek.filter(event => event.felhasznaloId !== id));
+            setFelhasznalok(felhasznalok.filter(event => event.felhasznaloId !== id));
           } else {
             console.error('Failed to delete user');
           }
@@ -67,7 +67,7 @@ function Users() {
                   <div className="buttons">
                   <Link to={`/users/details/${felhasznalo.felhasznaloId}`} className="btn">Részletek</Link>
                   <Link to={`/users/update/${felhasznalo.felhasznaloId}`} className="btn">Módosít</Link>
-                  <button onClick={() => deleteEvent(felhasznalo.felhasznaloId)} className='btn-delete'>Töröl</button>
+                  <button onClick={() => deleteUser(felhasznalo.felhasznaloId)} className='btn-delete'>Töröl</button>
                   </div>
                 </div>
             ))}
