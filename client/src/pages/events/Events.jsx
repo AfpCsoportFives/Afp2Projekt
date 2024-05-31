@@ -52,7 +52,7 @@ function Events() {
           <div className="content">
             <h1>Rendezvények</h1>
             <a href="/events/create" className="btn">
-              <i className="fas fa-chevron-right"></i>Új rendezvény hozzáadása
+              <i className="fas fa-chevron-right"></i> Új rendezvény hozzáadása
             </a>
           </div>
         </header>
@@ -62,7 +62,7 @@ function Events() {
               <div className="card" key={index}>
                 <div className="content">
                   <p><strong>Rendezvény neve:</strong> {rendezveny.RendezvenyNeve}</p>
-                  <p><strong>Időpont:</strong> {rendezveny.RendeznenyIdopontja}</p>
+                  <p><strong>Időpont:</strong> {rendezveny.RendezvenyIdőpontja}</p>
                   <p><strong>Előadó neve és titulusa:</strong> {rendezveny.EloadoNeveTitulusa}</p>
                   <p><strong>Téma:</strong> {rendezveny.RendezvenyTemaja}</p>
                   <p><strong>Típus:</strong> {rendezveny.RendezvenyTipusa}</p>
@@ -72,7 +72,7 @@ function Events() {
                 <div className="buttons">
                   <Link to={`/events/details/${rendezveny.RendezvenyId}`} className="btn">Részletek</Link>
                   <Link to={`/events/edit/${rendezveny.RendezvenyId}`} className="btn">Módosít</Link>
-                  <button onClick={() => deleteEvent(rendezveny.RendezvenyId)} className='btn-delete'>Töröl</button>
+                  <button onClick={() => deleteEvent(rendezveny.RendezvenyId)} className='btn-del'>Töröl</button>
                 </div>
               </div>
             ))}
