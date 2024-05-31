@@ -136,6 +136,20 @@ app.post("/updateUser", async (req, res) => {
     }
 });
 
+// Rendezvény törlése
+app.delete("/deleteUser", async (req, res) => {
+    console.log(req.body);
+    const { felhasznalokId  } = req.body;
+    console.log(felhasznalokId );
+    try {
+        const deleteUserRes = await User.deleteUser(felhasznalokId);
+        res.json({ success: deleteUserRes.success });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
 app.listen(5000, () => {
     console.log("listening on port 5000..");
 });
