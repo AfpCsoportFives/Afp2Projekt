@@ -20,7 +20,7 @@ class Event {
 
         try {
             // Új esemény beszúrása az adatbázisba
-            const [result] = await db.query(
+            const result = await db.query(
                 'INSERT INTO esemenyek (RendezvenyNeve , RendeznenyIdőpontja , EloadoNeveTitulusa, RendezvenyTemaja,RendezvenyTipusa,RendezvenyHelyszine,RendezvenyLeirasa,SzabadHelyekSzama) VALUES (?, ?, ?, ?,?,?,?,?)',
                 [eventData.RendezvenyNeve,eventData.RendeznenyIdopontja,eventData.EloadoNeveTitulusa,eventData.RendezvenyTemaja,eventData.RendezvenyTipusa,eventData.RendezvenyHelyszine,eventData.RendezvenyLeirasa,eventData.SzabadHelyekSzama]
             );
@@ -29,6 +29,17 @@ class Event {
         } catch (error) {
             // Hibakezelés: ha hiba történik az adatbázis-művelet kezelése során
             return { success: false, message: 'Adatbázis hiba: ' + error.message };
+        }
+    }
+
+    
+    static async getEventById(eventId) {
+        try {
+            const [event] = await db.query('SELECT * FROM esemenyek WHERE RendezvenyId = ?', [eventId]);
+            return event;
+        } catch (error) {
+            console.log(error);
+            throw error;
         }
     }
 
@@ -61,7 +72,7 @@ class Event {
 
     static async getAllEvent() {
         // Összes esemény lekérdezése az adatbázisból
-        const [rows] = await db.query('SELECT * FROM esemenyek');
+        const rows = await db.query('SELECT * FROM esemenyek');
         return { success: true, response: rows };
     }
 }
