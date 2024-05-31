@@ -1,115 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 
 function Events() {
-  // Statikus rendezvény adatok
-  const rendezvenyek = [
-    {
-      RendezvenyNeve: 'Tavaszi Konferencia',
-      RendezvenyIdopontja: '2024-05-10 09:00:00',
-      EloadoNeveTitulusa: 'Dr. Kiss Peter',
-      RendezvenyTemaja: 'Tavaszi fejlesztések',
-      RendezvenyTipusa: 'Konferencia',
-      RendezvenyHelyszine: 'Budapest',
-      RendezvenyLeirasa: 'Egy egész napos konferencia a tavaszi fejlesztésekről.',
-      SzabadHelyekSzama: 100
-    },
-    {
-      RendezvenyNeve: 'Nyári Tábor',
-      RendezvenyIdopontja: '2024-07-20 10:00:00',
-      EloadoNeveTitulusa: 'Dr. Szabo Eva',
-      RendezvenyTemaja: 'Nyári kikapcsolódás',
-      RendezvenyTipusa: 'Tábor',
-      RendezvenyHelyszine: 'Siófok',
-      RendezvenyLeirasa: 'Egy hét nyári tábor gyerekeknek.',
-      SzabadHelyekSzama: 50
-    },
-    {
-        RendezvenyNeve: 'Tavaszi Konferencia',
-        RendezvenyIdopontja: '2024-05-10 09:00:00',
-        EloadoNeveTitulusa: 'Dr. Kiss Peter',
-        RendezvenyTemaja: 'Tavaszi fejlesztések',
-        RendezvenyTipusa: 'Konferencia',
-        RendezvenyHelyszine: 'Budapest',
-        RendezvenyLeirasa: 'Egy egész napos konferencia a tavaszi fejlesztésekről.',
-        SzabadHelyekSzama: 100
-      },
-      {
-        RendezvenyNeve: 'Nyári Tábor',
-        RendezvenyIdopontja: '2024-07-20 10:00:00',
-        EloadoNeveTitulusa: 'Dr. Szabo Eva',
-        RendezvenyTemaja: 'Nyári kikapcsolódás',
-        RendezvenyTipusa: 'Tábor',
-        RendezvenyHelyszine: 'Siófok',
-        RendezvenyLeirasa: 'Egy hét nyári tábor gyerekeknek.',
-        SzabadHelyekSzama: 50
-      },
-      {
-        RendezvenyNeve: 'Tavaszi Konferencia',
-        RendezvenyIdopontja: '2024-05-10 09:00:00',
-        EloadoNeveTitulusa: 'Dr. Kiss Peter',
-        RendezvenyTemaja: 'Tavaszi fejlesztések',
-        RendezvenyTipusa: 'Konferencia',
-        RendezvenyHelyszine: 'Budapest',
-        RendezvenyLeirasa: 'Egy egész napos konferencia a tavaszi fejlesztésekről.',
-        SzabadHelyekSzama: 100
-      },
-      {
-        RendezvenyNeve: 'Nyári Tábor',
-        RendezvenyIdopontja: '2024-07-20 10:00:00',
-        EloadoNeveTitulusa: 'Dr. Szabo Eva',
-        RendezvenyTemaja: 'Nyári kikapcsolódás',
-        RendezvenyTipusa: 'Tábor',
-        RendezvenyHelyszine: 'Siófok',
-        RendezvenyLeirasa: 'Egy hét nyári tábor gyerekeknek.',
-        SzabadHelyekSzama: 50
-      },
-      {
-          RendezvenyNeve: 'Tavaszi Konferencia',
-          RendezvenyIdopontja: '2024-05-10 09:00:00',
-          EloadoNeveTitulusa: 'Dr. Kiss Peter',
-          RendezvenyTemaja: 'Tavaszi fejlesztések',
-          RendezvenyTipusa: 'Konferencia',
-          RendezvenyHelyszine: 'Budapest',
-          RendezvenyLeirasa: 'Egy egész napos konferencia a tavaszi fejlesztésekről.',
-          SzabadHelyekSzama: 100
+  const [rendezvenyek, setRendezvenyek] = useState([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/listevents');
+        const data = await response.json();
+        if (data.success) {
+          setRendezvenyek(data.eventList);
+        } else {
+          console.error('Failed to fetch events');
+        }
+      } catch (error) {
+        console.error('Error fetching events:', error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
+  const deleteEvent = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:5000/deleteEvent`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
         },
-        {
-          RendezvenyNeve: 'Nyári Tábor',
-          RendezvenyIdopontja: '2024-07-20 10:00:00',
-          EloadoNeveTitulusa: 'Dr. Szabo Eva',
-          RendezvenyTemaja: 'Nyári kikapcsolódás',
-          RendezvenyTipusa: 'Tábor',
-          RendezvenyHelyszine: 'Siófok',
-          RendezvenyLeirasa: 'Egy hét nyári tábor gyerekeknek.',
-          SzabadHelyekSzama: 50
-        },
-    // Adj hozzá további rendezvényeket itt
-  ];
-
-/*function Events() {
-
-    const [rendezvenyek, setRendezvenyek] = useState([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await fetch('https://api.example.com/events'); // Cseréld ki az API URL-t a megfelelőre
-            const data = await response.json();
-            setRendezvenyek(data);
-          } catch (error) {
-            console.error('Hiba történt az adatok betöltésekor:', error);
-          }
-        };
-    
-        fetchData();
-      }, []);*/
-
+        body: JSON.stringify({ RendezvenyId: id })
+      });
+      const data = await response.json();
+      if (data.success) {
+        setRendezvenyek(rendezvenyek.filter(event => event.RendezvenyId !== id));
+      } else {
+        console.error('Failed to delete event');
+      }
+    } catch (error) {
+      console.error('Error deleting event:', error);
+    }
+  };
 
   return (
     <>
-      <body id="home">
+      <div id="home">
         <header className="hero">
           <Navbar />
           <div className="content">
@@ -121,22 +58,21 @@ function Events() {
         </header>
         <main>
           <div id='card_container'>
-            {rendezvenyek.map((rendezveny, index) => (
+            {Array.isArray(rendezvenyek) && rendezvenyek.map((rendezveny, index) => (
               <div className="card" key={index}>
                 <div className="content">
                   <p><strong>Rendezvény neve:</strong> {rendezveny.RendezvenyNeve}</p>
-                  <p><strong>Időpont:</strong> {rendezveny.RendezvenyIdopontja}</p>
+                  <p><strong>Időpont:</strong> {rendezveny.RendeznenyIdopontja}</p>
                   <p><strong>Előadó neve és titulusa:</strong> {rendezveny.EloadoNeveTitulusa}</p>
                   <p><strong>Téma:</strong> {rendezveny.RendezvenyTemaja}</p>
                   <p><strong>Típus:</strong> {rendezveny.RendezvenyTipusa}</p>
                   <p><strong>Helyszín:</strong> {rendezveny.RendezvenyHelyszine}</p>
-                  <p><strong>Leírás:</strong> {rendezveny.RendezvenyLeirasa}</p>
                   <p><strong>Szabad helyek száma:</strong> {rendezveny.SzabadHelyekSzama}</p>
                 </div>
                 <div className="buttons">
-                  <a href={`/events/edit`} className="btn">Módosít</a>
-                  <a href={`/events/delete`} className='btn-delete'>Töröl</a>
-                  <a href={`/events/details`} className="btn">Részletek</a>
+                  <Link to={`/events/details/${rendezveny.RendezvenyId}`} className="btn">Részletek</Link>
+                  <Link to={`/events/edit/${rendezveny.RendezvenyId}`} className="btn">Módosít</Link>
+                  <button onClick={() => deleteEvent(rendezveny.RendezvenyId)} className='btn-delete'>Töröl</button>
                 </div>
               </div>
             ))}
@@ -168,7 +104,7 @@ function Events() {
           </section>
         </main>
         <Footer />
-      </body>
+      </div>
     </>
   );
 }
