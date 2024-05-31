@@ -76,7 +76,7 @@ class User {
 
     static async getAllUser() {
         // Összes felhasználó lekérdezése az adatbázisból
-        const [rows] = await db.query('SELECT * FROM felhasznalok');
+        const rows = await db.query('SELECT * FROM felhasznalok');
         return { success: true, response: rows };
     }
     static async updateUser(userData) {

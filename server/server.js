@@ -3,6 +3,7 @@ const cors = require("cors");
 const app = express();
 
 const Event = require('./classes/event.js');
+const Event = require('./classes/user.js');
 
 app.use(cors());
 app.use(express.json());
@@ -16,7 +17,7 @@ app.get("/", (req, res) => {
 app.post("/login", async (req, res) => {
     // Bejelentkezési logika ide
     res.statusCode = 200;
-    res.json({ cookie: "asdjkhbashdjkaskdjm", success: true, body: req.body });
+    res.json({ cookie: "", success: true, body: req.body });
 });
 
 // Kijelentkezés
@@ -28,8 +29,14 @@ app.post("/logout", async (req, res) => {
 
 // Regisztráció
 app.post("/registration", async (req, res) => {
-    // Regisztrációs logika ide
-    res.json({ cookie: "asdjkhbashdjkaskdjm", success: true, body: req.body });
+    // Regisztráció
+    try {
+        const user = new User();
+        const regRes=await user.register(req.body);    
+        res.json({cookie:regRes.response.cookie,success:regRes.success});
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
 });
 
 // Rendezvények listázása
