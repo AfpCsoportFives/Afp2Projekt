@@ -21,8 +21,8 @@ class Event {
         try {
             // Új esemény beszúrása az adatbázisba
             const result = await db.query(
-                'INSERT INTO esemenyek (RendezvenyNeve , RendeznenyIdőpontja , EloadoNeveTitulusa, RendezvenyTemaja,RendezvenyTipusa,RendezvenyHelyszine,RendezvenyLeirasa,SzabadHelyekSzama) VALUES (?, ?, ?, ?,?,?,?,?)',
-                [eventData.RendezvenyNeve,eventData.RendeznenyIdopontja,eventData.EloadoNeveTitulusa,eventData.RendezvenyTemaja,eventData.RendezvenyTipusa,eventData.RendezvenyHelyszine,eventData.RendezvenyLeirasa,eventData.SzabadHelyekSzama]
+                'INSERT INTO esemenyek (RendezvenyNeve , RendezvenyIdőpontja , EloadoNeveTitulusa, RendezvenyTemaja,RendezvenyTipusa,RendezvenyHelyszine,RendezvenyLeirasa,SzabadHelyekSzama) VALUES (?, ?, ?, ?,?,?,?,?)',
+                [eventData.RendezvenyNeve,eventData.RendezvenyIdőpontja,eventData.EloadoNeveTitulusa,eventData.RendezvenyTemaja,eventData.RendezvenyTipusa,eventData.RendezvenyHelyszine,eventData.RendezvenyLeirasa,eventData.SzabadHelyekSzama]
             );
             // Visszatérési érték, ha a beszúrás sikeres
             return { success: result.affectedRows > 0, eventID: result.insertId };
@@ -60,8 +60,8 @@ class Event {
         // Esemény frissítése az adatbázisban
         try {
             const result = await db.query(
-                'UPDATE esemenyek SET RendezvenyNeve = ?, RendeznenyIdőpontja = ?, EloadoNeveTitulusa = ?, RendezvenyTemaja = ?, RendezvenyTipusa = ?, RendezvenyHelyszine = ?, RendezvenyLeirasa = ?, SzabadHelyekSzama = ? WHERE RendezvenyId LIKE ?',
-                [eventData.RendezvenyNeve,eventData.RendeznenyIdopontja,eventData.EloadoNeveTitulusa,eventData.RendezvenyTemaja,eventData.RendezvenyTipusa,eventData.RendezvenyHelyszine,eventData.RendezvenyLeirasa,eventData.SzabadHelyekSzama,eventData.RendezvenyId]
+                'UPDATE esemenyek SET RendezvenyNeve = ?, RendezvenyIdőpontja = ?, EloadoNeveTitulusa = ?, RendezvenyTemaja = ?, RendezvenyTipusa = ?, RendezvenyHelyszine = ?, RendezvenyLeirasa = ?, SzabadHelyekSzama = ? WHERE RendezvenyId LIKE ?',
+                [eventData.RendezvenyNeve,eventData.RendezvenyIdőpontja,eventData.EloadoNeveTitulusa,eventData.RendezvenyTemaja,eventData.RendezvenyTipusa,eventData.RendezvenyHelyszine,eventData.RendezvenyLeirasa,eventData.SzabadHelyekSzama,eventData.RendezvenyId]
             );    
             return { success: (result.changedRows > 0)};
         } catch (error) {

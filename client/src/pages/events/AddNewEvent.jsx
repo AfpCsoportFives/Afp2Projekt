@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function AddNewEvent() {
   const [formData, setFormData] = useState({
     RendezvenyNeve: '',
-    RendeznenyIdopontja: '',
+    RendezvenyIdőpontja: '',
     EloadoNeveTitulusa: '',
     RendezvenyTemaja: '',
     RendezvenyTipusa: '',
@@ -22,7 +23,6 @@ function AddNewEvent() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Konvertáljuk a SzabadHelyekSzama értékét numerikussá, ha lehetséges
     const updatedFormData = {
       ...formData,
       SzabadHelyekSzama: formData.SzabadHelyekSzama ? parseInt(formData.SzabadHelyekSzama) : 0
@@ -40,7 +40,7 @@ function AddNewEvent() {
         alert('Rendezvény sikeresen hozzáadva!');
         setFormData({
           RendezvenyNeve: '',
-          RendeznenyIdopontja: '',
+          RendezvenyIdőpontja: '',
           EloadoNeveTitulusa: '',
           RendezvenyTemaja: '',
           RendezvenyTipusa: '',
@@ -78,9 +78,9 @@ function AddNewEvent() {
           <div className="input-box">
             <input
               type="datetime-local"
-              id="RendeznenyIdopontja"
-              name="RendeznenyIdopontja"
-              value={formData.RendeznenyIdopontja}
+              id="RendezvenyIdőpontja"
+              name="RendezvenyIdőpontja"
+              value={formData.RendezvenyIdőpontja}
               onChange={handleChange}
               placeholder="Rendezvény időpontja"
               required
@@ -131,7 +131,6 @@ function AddNewEvent() {
               value={formData.RendezvenyHelyszine}
               onChange={handleChange}
               placeholder="Rendezvény helyszíne"
-              required
             />
             <i className="fa-solid fa-map-marker-alt"></i>
           </div>
@@ -146,6 +145,8 @@ function AddNewEvent() {
             />
             <i className="fa-solid fa-align-left"></i>
           </div>
+          <br></br>
+          <br></br>
           <div className="input-box">
             <input
               type="number"
@@ -158,7 +159,10 @@ function AddNewEvent() {
             />
             <i className="fa-solid fa-chair"></i>
           </div>
-          <button type="submit" className="btn-reg">Elküld</button>
+          <div className="buttons">
+            <button type="submit" className="btn-reg">Elküld</button>
+            <Link to="/events" className="btn-back">Vissza</Link>
+          </div>
         </form>
       </div>
     </div>

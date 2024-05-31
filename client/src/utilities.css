@@ -21,6 +21,20 @@
     margin: 1rem;
 }
 
+.btn-back {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 30px;
+    color: #1b5788;
+    background-color: #c2ecff;
+    border-radius: 25px;
+    font-weight: 650;
+    margin: 1rem;
+    width: 200px;
+    text-align: center;
+
+}
+
 .btn:hover {
     opacity: 0.8;
 }
@@ -33,10 +47,16 @@
     background: #74C0FC;
     color: #fff;
 }
-.btn-delete {
+.btn-del {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 30px;
+    color: #fff;
+    background-color: #e40000;
+    border-radius: 25px;
     font-weight: 550;
-    background-color: red;
-    color: #333;
+    margin: 1rem;
+    width: 380px;
 }
 
 .btn-little {
