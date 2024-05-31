@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 
 const Event = require('./classes/event.js');
-const Event = require('./classes/user.js');
+const User = require('./classes/user.js');
 
 app.use(cors());
 app.use(express.json());
@@ -93,6 +93,30 @@ app.delete("/deleteEvent", async (req, res) => {
     try {
         const deleteEventRes = await Event.deleteEvent(RendezvenyId);
         res.json({ success: deleteEventRes.success });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+
+// Rendezvények listázása
+app.get("/listuser", async (req, res) => {
+    try {
+        const getAllUserRes = await User.getAllUser();
+        res.json({ success: getAllUserRes.success, userList: getAllUserRes.response });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+// Egy rendezvény lekérdezése ID alapján
+app.get("/listuser/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+        const userobj = await User.getAllUserById(id);
+        res.json({ success: true, userobj });
     } catch (error) {
         console.log(error);
         res.status(500).json({ success: false, message: error.message });
