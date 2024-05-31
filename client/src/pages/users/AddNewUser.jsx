@@ -36,7 +36,7 @@ function AddNewUser() {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/createuser', {
+      const response = await fetch('http://localhost:5000/registration', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -46,7 +46,6 @@ function AddNewUser() {
       if (response.ok) {
         alert('A felhasználó sikeresen hozzáadva!');
         setFormData({
-          felhasznalokId: '',
           Vezeteknev: '',
           Keresztnev: '',
           FelhasznaloNev: '',
@@ -61,11 +60,10 @@ function AddNewUser() {
           IskolaiVegzettsege: '',
           RegisztracioDatuma: '',
           FelhasznaloStatusza: '',
-          Cookie: '',
-          CookieExpire: ''
         });
       } else {
         alert('Hiba történt a felhasználó hozzáadása során.');
+        console.log(formData);
       }
     } catch (error) {
       console.error('Hiba történt:', error);
@@ -207,17 +205,6 @@ function AddNewUser() {
               name="IskolaiVegzettsege"
               placeholder="Iskolai végzettség"
               value={formData.IskolaiVegzettsege}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="input-box">
-            <input
-              type="datetime-local"
-              id="RegisztracioDatuma"
-              name="RegisztracioDatuma"
-              placeholder="Regisztráció dátuma"
-              value={formData.RegisztracioDatuma}
               onChange={handleChange}
               required
             />
