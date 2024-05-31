@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function LoginPage() {
   return (
@@ -17,7 +18,9 @@ function LoginPage() {
                 <div className="forgot-password">
                     <a href="#">Elfelejtette jelszavát ?</a>
                 </div>
-                <button type="submit" class="btn-login">Bejelentkezés</button>
+                <div className="buttons">
+                    <Link to="/main" className="btn-back">Bejelentkezés</Link>
+                </div>
                 <div className="register-link">
                     <p>Nincs még regisztrálva ? <br /> <a href="registration.html">Regisztráció</a></p>
                 </div>
