@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const Database = require('../path/to/Database');  // Frissítsd az útvonalat a tényleges helyre
+const Database = require('../classes/db.js');
 
 jest.mock('mysql', () => ({
   createConnection: jest.fn().mockReturnThis(),
