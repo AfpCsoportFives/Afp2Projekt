@@ -123,6 +123,19 @@ app.get("/listuser/:id", async (req, res) => {
     }
 });
 
+
+// Rendezvény frissítése
+app.post("/updateUser", async (req, res) => {
+    console.log(req.body);
+    try {
+        const updateUserRes = await User.updateUser(req.body);
+        res.json({ success: updateUserRes.success });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
 app.listen(5000, () => {
     console.log("listening on port 5000..");
 });
