@@ -9,8 +9,8 @@ class Event {
 
     async loadData() {
         // Lekérdezzük az esemény adatait az adatbázisból
-        const [rows] = await db.query('SELECT * FROM esemenyek WHERE RendezvenyId = ?', [this.eventId]);
-        this.data = rows[0] || null; // Feltételezzük, hogy egyedi azonosítók vannak
+        const rows = await db.query('SELECT * FROM esemenyek WHERE RendezvenyId = ?', [this.eventId]);
+        this.data = rows || null; // Feltételezzük, hogy egyedi azonosítók vannak
     }
 
     static async createEvent(eventData) {
@@ -71,9 +71,12 @@ class Event {
     }
 
     static async getAllEvent() {
-        // Összes esemény lekérdezése az adatbázisból
-        const rows = await db.query('SELECT * FROM esemenyek');
-        return { success: true, response: rows };
+        try {
+            const rows = await db.query('SELECT * FROM esemenyek');
+            return { success: true, response: rows };    
+        } catch (error) {
+            return { success: false, response: [] };    
+        }
     }
 }
 
