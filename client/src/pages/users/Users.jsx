@@ -1,49 +1,48 @@
-import React from 'react'
-import Footer from '../../components/Footer'
-import Navbar from '../../components/Navbar'
-import { useState, useEffect} from 'react'
-
-
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Footer from '../../components/Footer';
+import Navbar from '../../components/Navbar';
+ 
 function Users() {
-  // Statikus felhasználó adat
-  const felhasznalok = [
-    {
-      vezeteknev: 'Kovacs',
-      keresztnev: 'Janos',
-      felhasznaloNev: 'kovacs.janos',
-      jelszo: 'password1',
-      email: 'janos.kovacs@example.com',
-      szuletesiDatum: '1980-01-15',
-      neme: 'Férfi',
-      iranyitoszam: '1234',
-      varos: 'Budapest',
-      utcaHazszam: 'Fo utca 1',
-      foglalkozas: 'Tanár',
-      iskolaiVegzettsege: 'Egyetem',
-      regisztracioDatuma: '2024-01-01 10:00:00',
-      felhasznaloStatusza: 1
-    }
-  ];
-
-
-/*function Users() {
-
     const [felhasznalok, setFelhasznalok] = useState([]);
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchUsers = async () => {
           try {
-            const response = await fetch('https://api.example.com/users'); // Cseréld ki az API URL-t a megfelelőre
+            const response = await fetch('http://localhost:5000/listusers'); // Cseréld ki az API URL-t a megfelelőre
             const data = await response.json();
-            setFelhasznalok(data);
+            if(data.success) {
+              setFelhasznalok(data.eventList);
+            } else {
+              console.log('Failed to fetch users');
+            }
           } catch (error) {
-            console.error('Hiba történt az adatok betöltésekor:', error);
+            console.error('Error by fetching users:', error);
           }
         };
     
-        fetchData();
-      }, []);*/
-
+        fetchUsers();
+      }, []);
+    
+      const deleteUser = async (id) => {
+        try {
+          const response = await fetch(`http://localhost:5000/deleteEvent`, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ felhasznaloId: id })
+          });
+          const data = await response.json();
+          if (data.success) {
+            setUsers(rendezvenyek.filter(event => event.felhasznaloId !== id));
+          } else {
+            console.error('Failed to delete user');
+          }
+        } catch (error) {
+          console.error('Error deleting event:', error);
+        }
+      };
   return (
     <>
         <body id="home">
@@ -56,24 +55,19 @@ function Users() {
         </header>
         <main>
             <div id='card_container'>
-            {felhasznalok.map((felhasznalo, index) => (
+            {Array.isArray(felhasznalok) && felhasznalok.map((felhasznalo, index) => (
                 <div className="card" key={index}>
                   <div className="content">
-                    <p>{felhasznalo.vezeteknev} {felhasznalo.keresztnev}</p>
-                    <p>{felhasznalo.felhasznaloNev}</p>
-                    <p>{felhasznalo.jelszo}</p>
-                    <p>{felhasznalo.email}</p>
-                    <p>{felhasznalo.szuletesiDatum}</p>
-                    <p>{felhasznalo.neme}</p>
-                    <p>{felhasznalo.iranyitoszam} {felhasznalo.varos} {felhasznalo.utcaHazszam}</p>
-                    <p>{felhasznalo.foglalkozas}</p>
-                    <p>{felhasznalo.iskolaiVegzettsege}</p>
-                    <p>{felhasznalo.regisztracioDatuma}</p>
-                  </div>
+                    <p><strong>Felhasználó neve:</strong>{felhasznalo.Vezeteknev} {felhasznalo.Keresztnev}</p>
+                    <p><strong>E mail cím:</strong>{felhasznalo.Email}</p>             
+                    <p><strong>Neme:</strong>{felhasznalo.Neme}</p>
+                    <p><strong>Címe:</strong>{felhasznalo.Iranyitoszam} {felhasznalo.Varos} {felhasznalo.UtcaHazszam}</p>
+                    <p><strong>Foglalkozás:</strong>{felhasznalo.Foglalkozasa}</p>
+                  </div> 
                   <div className="buttons">
-                    <a href="/users/create" className="btn">Módosít</a>
-                    <a href="" className='btn-delete'>Töröl</a>
-                    <a href="" className="btn">Részletek</a>
+                  <Link to={`/users/details/${felhasznalo.felhasznaloId}`} className="btn">Részletek</Link>
+                  <Link to={`/users/update/${felhasznalo.felhasznaloId}`} className="btn">Módosít</Link>
+                  <button onClick={() => deleteEvent(felhasznalo.felhasznaloId)} className='btn-delete'>Töröl</button>
                   </div>
                 </div>
             ))}
