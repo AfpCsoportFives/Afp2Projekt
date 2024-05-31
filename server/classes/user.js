@@ -76,15 +76,22 @@ class User {
 
     static async getAllUser() {
         // Összes felhasználó lekérdezése az adatbázisból
-        const [rows] = await db.query('SELECT * FROM felhasznalok');
+        const rows = await db.query('SELECT * FROM felhasznalok');
         return { success: true, response: rows };
     }
+
+    static async getAllUserById(id) {
+        // Összes felhasználó lekérdezése az adatbázisból
+        const [rows] = await db.query('SELECT * FROM felhasznalok WHERE felhasznalokId = ?',[id]);
+        return { success: true, response: rows };
+    }
+
     static async updateUser(userData) {
         // Felhasználó frissítése az adatbázisban
         try {
             const result = await db.query(
                 'UPDATE felhasznalok SET Vezeteknev = ?, Keresztnev = ?, FelhasznaloNev = ?, Jelszo = ?, Email = ?, SzuletesiDatum = ?, Neme = ?, Iranyitoszam = ?, Varos = ?, UtcaHazszam = ?, Foglalkozasa = ?, IskolaiVegzettsege = ?, FelhasznaloStatusza = ?  WHERE FelhasznalokId LIKE ?',
-                [userData.Vezeteknev,userData.Keresztnev,userData.FelhasznaloNev,userData.Jelszo,userData.Email,userData.SzuletesiDatum,userData.Neme,userData.Iranyitoszam,userData.Varos,userData.UtcaHazszam,userData.Foglalkozasa,userData.IskolaiVegzettsege,userData.FelhasznaloStatusza]
+                [userData.Vezeteknev,userData.Keresztnev,userData.FelhasznaloNev,userData.Jelszo,userData.Email,userData.SzuletesiDatum,userData.Neme,userData.Iranyitoszam,userData.Varos,userData.UtcaHazszam,userData.Foglalkozasa,userData.IskolaiVegzettsege,userData.FelhasznaloStatusza,userData.felhasznalokId ]
             );    
             return { success: (result.changedRows > 0)};
         } catch (error) {

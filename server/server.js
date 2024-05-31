@@ -3,6 +3,7 @@ const cors = require("cors");
 const app = express();
 
 const Event = require('./classes/event.js');
+const User = require('./classes/user.js');
 
 app.use(cors());
 app.use(express.json());
@@ -16,7 +17,7 @@ app.get("/", (req, res) => {
 app.post("/login", async (req, res) => {
     // Bejelentkezési logika ide
     res.statusCode = 200;
-    res.json({ cookie: "asdjkhbashdjkaskdjm", success: true, body: req.body });
+    res.json({ cookie: "", success: true, body: req.body });
 });
 
 // Kijelentkezés
@@ -28,8 +29,14 @@ app.post("/logout", async (req, res) => {
 
 // Regisztráció
 app.post("/registration", async (req, res) => {
-    // Regisztrációs logika ide
-    res.json({ cookie: "asdjkhbashdjkaskdjm", success: true, body: req.body });
+    // Regisztráció
+    try {
+        const user = new User();
+        const regRes=await user.register(req.body);    
+        res.json({cookie:regRes.response.cookie,success:regRes.success});
+    } catch (error) {
+        res.status(500).json({ success: false, message: error.message });
+    }
 });
 
 // Rendezvények listázása
@@ -86,6 +93,57 @@ app.delete("/deleteEvent", async (req, res) => {
     try {
         const deleteEventRes = await Event.deleteEvent(RendezvenyId);
         res.json({ success: deleteEventRes.success });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+
+// Rendezvények listázása
+app.get("/listuser", async (req, res) => {
+    try {
+        const getAllUserRes = await User.getAllUser();
+        res.json({ success: getAllUserRes.success, userList: getAllUserRes.response });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+// Egy rendezvény lekérdezése ID alapján
+app.get("/listuser/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+        const userobj = await User.getAllUserById(id);
+        res.json({ success: true, userobj });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+
+// Rendezvény frissítése
+app.post("/updateUser", async (req, res) => {
+    console.log(req.body);
+    try {
+        const updateUserRes = await User.updateUser(req.body);
+        res.json({ success: updateUserRes.success });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
+
+// Rendezvény törlése
+app.delete("/deleteUser", async (req, res) => {
+    console.log(req.body);
+    const { felhasznalokId  } = req.body;
+    console.log(felhasznalokId );
+    try {
+        const deleteUserRes = await User.deleteUser(felhasznalokId);
+        res.json({ success: deleteUserRes.success });
     } catch (error) {
         console.log(error);
         res.status(500).json({ success: false, message: error.message });
