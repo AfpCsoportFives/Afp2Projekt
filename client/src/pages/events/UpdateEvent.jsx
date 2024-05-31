@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function UpdateEvent() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     RendezvenyNeve: '',
-    RendeznenyIdopontja: '',
+    RendezvenyIdőpontja: '',
     EloadoNeveTitulusa: '',
     RendezvenyTemaja: '',
     RendezvenyTipusa: '',
@@ -88,9 +89,9 @@ function UpdateEvent() {
           <div className="input-box">
             <input
               type="datetime-local"
-              id="RendeznenyIdopontja"
-              name="RendeznenyIdopontja"
-              value={formData.RendeznenyIdopontja}
+              id="RendezvenyIdőpontja"
+              name="RendezvenyIdőpontja"
+              value={formData.RendezvenyIdőpontja}
               onChange={handleChange}
               placeholder="Rendezvény időpontja"
               required
@@ -141,7 +142,6 @@ function UpdateEvent() {
               value={formData.RendezvenyHelyszine}
               onChange={handleChange}
               placeholder="Rendezvény helyszíne"
-              required
             />
             <i className="fa-solid fa-map-marker-alt"></i>
           </div>
@@ -156,6 +156,8 @@ function UpdateEvent() {
             />
             <i className="fa-solid fa-align-left"></i>
           </div>
+          <br></br>
+          <br></br>
           <div className="input-box">
             <input
               type="number"
@@ -168,7 +170,10 @@ function UpdateEvent() {
             />
             <i className="fa-solid fa-chair"></i>
           </div>
-          <button type="submit" className="btn-reg">Elküld</button>
+          <div className="buttons">
+            <button type="submit" className="btn-reg">Elküld</button>
+            <Link to="/events" className="btn-back">Vissza</Link>
+          </div>
         </form>
       </div>
     </div>
