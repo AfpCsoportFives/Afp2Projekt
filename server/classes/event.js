@@ -20,15 +20,26 @@ class Event {
 
         try {
             // Új esemény beszúrása az adatbázisba
-            const [result] = await db.query(
-                'INSERT INTO esemenyek (RendezvenyNeve , RendeznenyIdőpontja , EloadoNeveTitulusa, RendezvenyTemaja,RendezvenyTipusa,RendezvenyHelyszine,RendezvenyLeirasa,SzabadHelyekSzama) VALUES (?, ?, ?, ?,?,?,?,?)',
-                [eventData.RendezvenyNeve,eventData.RendeznenyIdopontja,eventData.EloadoNeveTitulusa,eventData.RendezvenyTemaja,eventData.RendezvenyTipusa,eventData.RendezvenyHelyszine,eventData.RendezvenyLeirasa,eventData.SzabadHelyekSzama]
+            const result = await db.query(
+                'INSERT INTO esemenyek (RendezvenyNeve , RendezvenyIdőpontja , EloadoNeveTitulusa, RendezvenyTemaja,RendezvenyTipusa,RendezvenyHelyszine,RendezvenyLeirasa,SzabadHelyekSzama) VALUES (?, ?, ?, ?,?,?,?,?)',
+                [eventData.RendezvenyNeve,eventData.RendezvenyIdőpontja,eventData.EloadoNeveTitulusa,eventData.RendezvenyTemaja,eventData.RendezvenyTipusa,eventData.RendezvenyHelyszine,eventData.RendezvenyLeirasa,eventData.SzabadHelyekSzama]
             );
             // Visszatérési érték, ha a beszúrás sikeres
             return { success: result.affectedRows > 0, eventID: result.insertId };
         } catch (error) {
             // Hibakezelés: ha hiba történik az adatbázis-művelet kezelése során
             return { success: false, message: 'Adatbázis hiba: ' + error.message };
+        }
+    }
+
+    
+    static async getEventById(eventId) {
+        try {
+            const [event] = await db.query('SELECT * FROM esemenyek WHERE RendezvenyId = ?', [eventId]);
+            return event;
+        } catch (error) {
+            console.log(error);
+            throw error;
         }
     }
 
@@ -49,8 +60,8 @@ class Event {
         // Esemény frissítése az adatbázisban
         try {
             const result = await db.query(
-                'UPDATE esemenyek SET RendezvenyNeve = ?, RendeznenyIdőpontja = ?, EloadoNeveTitulusa = ?, RendezvenyTemaja = ?, RendezvenyTipusa = ?, RendezvenyHelyszine = ?, RendezvenyLeirasa = ?, SzabadHelyekSzama = ? WHERE RendezvenyId LIKE ?',
-                [eventData.RendezvenyNeve,eventData.RendeznenyIdopontja,eventData.EloadoNeveTitulusa,eventData.RendezvenyTemaja,eventData.RendezvenyTipusa,eventData.RendezvenyHelyszine,eventData.RendezvenyLeirasa,eventData.SzabadHelyekSzama,eventData.RendezvenyId]
+                'UPDATE esemenyek SET RendezvenyNeve = ?, RendezvenyIdőpontja = ?, EloadoNeveTitulusa = ?, RendezvenyTemaja = ?, RendezvenyTipusa = ?, RendezvenyHelyszine = ?, RendezvenyLeirasa = ?, SzabadHelyekSzama = ? WHERE RendezvenyId LIKE ?',
+                [eventData.RendezvenyNeve,eventData.RendezvenyIdőpontja,eventData.EloadoNeveTitulusa,eventData.RendezvenyTemaja,eventData.RendezvenyTipusa,eventData.RendezvenyHelyszine,eventData.RendezvenyLeirasa,eventData.SzabadHelyekSzama,eventData.RendezvenyId]
             );    
             return { success: (result.changedRows > 0)};
         } catch (error) {
@@ -61,7 +72,7 @@ class Event {
 
     static async getAllEvent() {
         // Összes esemény lekérdezése az adatbázisból
-        const [rows] = await db.query('SELECT * FROM esemenyek');
+        const rows = await db.query('SELECT * FROM esemenyek');
         return { success: true, response: rows };
     }
 }

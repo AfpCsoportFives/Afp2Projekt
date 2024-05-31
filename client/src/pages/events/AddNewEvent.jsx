@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function AddNewEvent() {
   const [formData, setFormData] = useState({
-    rendezvenyNeve: '',
-    rendezvenyIdopontja: '',
-    eloadoNeveTitulusa: '',
-    rendezvenyTemaja: '',
-    rendezvenyTipusa: '',
-    rendezvenyHelyszine: '',
-    rendezvenyLeirasa: '',
-    szabadHelyekSzama: ''
+    RendezvenyNeve: '',
+    RendezvenyIdőpontja: '',
+    EloadoNeveTitulusa: '',
+    RendezvenyTemaja: '',
+    RendezvenyTipusa: '',
+    RendezvenyHelyszine: '',
+    RendezvenyLeirasa: '',
+    SzabadHelyekSzama: ''
   });
 
   const handleChange = (e) => {
@@ -22,25 +23,30 @@ function AddNewEvent() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const updatedFormData = {
+      ...formData,
+      SzabadHelyekSzama: formData.SzabadHelyekSzama ? parseInt(formData.SzabadHelyekSzama) : 0
+    };
+
     try {
-      const response = await fetch('https://api.example.com/events', { // Cseréld ki az API URL-t a megfelelőre
+      const response = await fetch('http://localhost:5000/createevent', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(updatedFormData)
       });
       if (response.ok) {
         alert('Rendezvény sikeresen hozzáadva!');
         setFormData({
-          rendezvenyNeve: '',
-          rendezvenyIdopontja: '',
-          eloadoNeveTitulusa: '',
-          rendezvenyTemaja: '',
-          rendezvenyTipusa: '',
-          rendezvenyHelyszine: '',
-          rendezvenyLeirasa: '',
-          szabadHelyekSzama: ''
+          RendezvenyNeve: '',
+          RendezvenyIdőpontja: '',
+          EloadoNeveTitulusa: '',
+          RendezvenyTemaja: '',
+          RendezvenyTipusa: '',
+          RendezvenyHelyszine: '',
+          RendezvenyLeirasa: '',
+          SzabadHelyekSzama: ''
         });
       } else {
         alert('Hiba történt a rendezvény hozzáadása során.');
@@ -60,9 +66,9 @@ function AddNewEvent() {
           <div className="input-box">
             <input
               type="text"
-              id="rendezvenyNeve"
-              name="rendezvenyNeve"
-              value={formData.rendezvenyNeve}
+              id="RendezvenyNeve"
+              name="RendezvenyNeve"
+              value={formData.RendezvenyNeve}
               onChange={handleChange}
               placeholder="Rendezvény neve"
               required
@@ -72,9 +78,9 @@ function AddNewEvent() {
           <div className="input-box">
             <input
               type="datetime-local"
-              id="rendezvenyIdopontja"
-              name="rendezvenyIdopontja"
-              value={formData.rendezvenyIdopontja}
+              id="RendezvenyIdőpontja"
+              name="RendezvenyIdőpontja"
+              value={formData.RendezvenyIdőpontja}
               onChange={handleChange}
               placeholder="Rendezvény időpontja"
               required
@@ -84,9 +90,9 @@ function AddNewEvent() {
           <div className="input-box">
             <input
               type="text"
-              id="eloadoNeveTitulusa"
-              name="eloadoNeveTitulusa"
-              value={formData.eloadoNeveTitulusa}
+              id="EloadoNeveTitulusa"
+              name="EloadoNeveTitulusa"
+              value={formData.EloadoNeveTitulusa}
               onChange={handleChange}
               placeholder="Előadó neve és titulusa"
               required
@@ -96,9 +102,9 @@ function AddNewEvent() {
           <div className="input-box">
             <input
               type="text"
-              id="rendezvenyTemaja"
-              name="rendezvenyTemaja"
-              value={formData.rendezvenyTemaja}
+              id="RendezvenyTemaja"
+              name="RendezvenyTemaja"
+              value={formData.RendezvenyTemaja}
               onChange={handleChange}
               placeholder="Rendezvény témája"
               required
@@ -108,9 +114,9 @@ function AddNewEvent() {
           <div className="input-box">
             <input
               type="text"
-              id="rendezvenyTipusa"
-              name="rendezvenyTipusa"
-              value={formData.rendezvenyTipusa}
+              id="RendezvenyTipusa"
+              name="RendezvenyTipusa"
+              value={formData.RendezvenyTipusa}
               onChange={handleChange}
               placeholder="Rendezvény típusa"
               required
@@ -120,39 +126,43 @@ function AddNewEvent() {
           <div className="input-box">
             <input
               type="text"
-              id="rendezvenyHelyszine"
-              name="rendezvenyHelyszine"
-              value={formData.rendezvenyHelyszine}
+              id="RendezvenyHelyszine"
+              name="RendezvenyHelyszine"
+              value={formData.RendezvenyHelyszine}
               onChange={handleChange}
               placeholder="Rendezvény helyszíne"
-              required
             />
             <i className="fa-solid fa-map-marker-alt"></i>
           </div>
           <div className="input-box">
             <textarea
-              id="rendezvenyLeirasa"
-              name="rendezvenyLeirasa"
-              value={formData.rendezvenyLeirasa}
+              id="RendezvenyLeirasa"
+              name="RendezvenyLeirasa"
+              value={formData.RendezvenyLeirasa}
               onChange={handleChange}
               placeholder="Rendezvény leírása"
               required
             />
             <i className="fa-solid fa-align-left"></i>
           </div>
+          <br></br>
+          <br></br>
           <div className="input-box">
             <input
               type="number"
-              id="szabadHelyekSzama"
-              name="szabadHelyekSzama"
-              value={formData.szabadHelyekSzama}
+              id="SzabadHelyekSzama"
+              name="SzabadHelyekSzama"
+              value={formData.SzabadHelyekSzama}
               onChange={handleChange}
               placeholder="Szabad helyek száma"
               required
             />
             <i className="fa-solid fa-chair"></i>
           </div>
-          <button type="submit" className="btn-reg">Elküld</button>
+          <div className="buttons">
+            <button type="submit" className="btn-reg">Elküld</button>
+            <Link to="/events" className="btn-back">Vissza</Link>
+          </div>
         </form>
       </div>
     </div>

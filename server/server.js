@@ -1,90 +1,97 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 
-const User = require('./classes/user.js')
-const Event = require('./classes/event.js')
+const Event = require('./classes/event.js');
 
+app.use(cors());
 app.use(express.json());
 
-app.get("/",(req,res)=>{
-    console.log("Server is running")
-    res.end("Server is running")
-})
+app.get("/", (req, res) => {
+    console.log("Server is running");
+    res.end("Server is running");
+});
 
-//Bejelentkezés
-app.post("/login",async (req,res)=>{
-    /*const {email, password}=req.body;
-    const user = new User();
-    const loginRes=await user.login(email,password);
-    if(loginRes.success) res.json({cookie:loginRes.response.cookie,success:loginRes.success});*/
-    res.statusCode=200;
-    res.json({cookie:"asdjkhbashdjkaskdjm",success:true,body:req.body});
-})
+// Bejelentkezés
+app.post("/login", async (req, res) => {
+    // Bejelentkezési logika ide
+    res.statusCode = 200;
+    res.json({ cookie: "asdjkhbashdjkaskdjm", success: true, body: req.body });
+});
 
-//kijelentkezés
-app.post("/logout",async (req,res)=>{
-    /*const {userId}=req.body;
-    const user = new User(userId);
-    const logoutRes=await user.logout();
-    if(logoutRes.success) res.json({cookie:logoutRes.response.cookie,success:logoutRes.success});*/
-    res.statusCode=200;
-    res.json({success:true,body:req.body})
-})
+// Kijelentkezés
+app.post("/logout", async (req, res) => {
+    // Kijelentkezési logika ide
+    res.statusCode = 200;
+    res.json({ success: true, body: req.body });
+});
 
-//Regisztráció
-app.post("/registration",async (req,res)=>{
-    const user = new User();
-    const regRes=await user.register(req.body);
-    res.json({cookie:regRes.response.cookie,success:regRes.success});
-    /*console.log(req.body);
-    res.statusCode=200;
-    res.json({cookie:"asdjkhbashdjkaskdjm",success:true,body:req.body});*/
-})
+// Regisztráció
+app.post("/registration", async (req, res) => {
+    // Regisztrációs logika ide
+    res.json({ cookie: "asdjkhbashdjkaskdjm", success: true, body: req.body });
+});
 
-//Rendezvények listázása
-app.get("/listevents",async (req,res)=>{
-    const getAllEventRes=await Event.getAllEvent()
-    res.json({success:getAllEventRes.success,eventList:getAllEventRes.response});
-})
-
-//Rendezvény létrehozása
-app.post("/createevent",async (req,res)=>{
-    console.log(req.body)
+// Rendezvények listázása
+app.get("/listevents", async (req, res) => {
     try {
-        const createEventRes=await Event.createEvent(req.body);
-        res.json({eventId:createEventRes.eventId,success:createEventRes.success});    
+        const getAllEventRes = await Event.getAllEvent();
+        res.json({ success: getAllEventRes.success, eventList: getAllEventRes.response });
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        res.status(500).json({ success: false, message: error.message });
     }
-})
+});
 
-//Rendezvény frissítése
-app.post("/updateEvent",async (req,res)=>{
-    console.log(req.body)
+// Egy rendezvény lekérdezése ID alapján
+app.get("/listevent/:id", async (req, res) => {
+    const { id } = req.params;
     try {
-        const createEventRes=await Event.updateEvent(req.body);
-        res.json({success:createEventRes.success});    
+        const event = await Event.getEventById(id);
+        res.json({ success: true, event });
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        res.status(500).json({ success: false, message: error.message });
     }
-})
+});
 
-//Rendezvény törlése
-app.delete("/deleteEvent",async (req,res)=>{
-    console.log(req.body)
-    const {RendezvenyId}=req.body;
+// Rendezvény létrehozása
+app.post("/createevent", async (req, res) => {
+    console.log(req.body);
     try {
-        const createEventRes=await Event.deleteEvent(RendezvenyId);
-        
-        res.json({success:createEventRes.success});    
+        const createEventRes = await Event.createEvent(req.body);
+        res.json({ eventId: createEventRes.eventID, success: createEventRes.success });
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        res.status(500).json({ success: false, message: error.message });
     }
-})
+});
 
+// Rendezvény frissítése
+app.post("/updateEvent", async (req, res) => {
+    console.log(req.body);
+    try {
+        const updateEventRes = await Event.updateEvent(req.body);
+        res.json({ success: updateEventRes.success });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
 
+// Rendezvény törlése
+app.delete("/deleteEvent", async (req, res) => {
+    console.log(req.body);
+    const { RendezvenyId } = req.body;
+    try {
+        const deleteEventRes = await Event.deleteEvent(RendezvenyId);
+        res.json({ success: deleteEventRes.success });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: error.message });
+    }
+});
 
-app.listen(5000,()=>{
-    console.log("listening..");
-})
-
+app.listen(5000, () => {
+    console.log("listening on port 5000..");
+});
