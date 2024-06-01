@@ -151,6 +151,7 @@ ALTER TABLE `jelentkezesek`
   ADD KEY `FK_FelhasznalokId` (`felhasznalokId`),
   ADD KEY `FK_RendezvenyId` (`RendezvenyId`);
 
+
 --
 -- A kiírt táblák AUTO_INCREMENT értéke
 --
@@ -181,8 +182,10 @@ ALTER TABLE `jelentkezesek`
 -- Megkötések a táblához `jelentkezesek`
 --
 ALTER TABLE `jelentkezesek`
-  ADD CONSTRAINT `FK_FelhasznalokId` FOREIGN KEY (`FelhasznalokId`) REFERENCES `felhasznalok` (`felhasznalokId`),
-  ADD CONSTRAINT `FK_RendezvenyId` FOREIGN KEY (`RendezvenyId`) REFERENCES `esemenyek` (`RendezvenyId`);
+  ADD CONSTRAINT `FK_FelhasznalokId` FOREIGN KEY (`FelhasznalokId`) REFERENCES `felhasznalok` (`felhasznalokId`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_RendezvenyId` FOREIGN KEY (`RendezvenyId`) REFERENCES `esemenyek` (`RendezvenyId`) ON DELETE CASCADE;
+
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

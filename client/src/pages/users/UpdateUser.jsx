@@ -71,6 +71,7 @@ function UpdateUser() {
       alert('Hiba történt a felhasználó módosítása során.');
     }
   };
+  
   return (
     <div id='registration'>
       <div className="reg-wrapper">
@@ -209,9 +210,10 @@ function UpdateUser() {
               required
             />
           </div>
-          <br />
-          <button type="submit" className="btn-reg">Elküld</button>
-          <Link to="/users" className="btn-back">Vissza</Link>
+          <div className="buttons">
+            <button type="submit" className="btn-reg">Elküld</button>
+            <Link to="/users" className="btn-back">Vissza</Link>
+          </div>
         </form>
       </div>
     </div>
