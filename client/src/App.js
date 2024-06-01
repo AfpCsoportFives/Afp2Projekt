@@ -11,6 +11,7 @@ import UpdateUser from "./pages/users/UpdateUser";
 import AddNewEvent from "./pages/events/AddNewEvent";
 import UpdateEvent from "./pages/events/UpdateEvent";
 import EventDetails from "./pages/events/EventDetails";
+import UserDetail from "./pages/users/UserDetail";
 
 function App() {
     return (
@@ -61,7 +62,8 @@ function App() {
                     <Route path='/main' element={<Main />} />
                     <Route path='/users' element={<Users />} />
                     <Route path='/users/create' element={<AddNewUser />} />
-                    <Route path='/users/update' element={<UpdateUser />} />
+                    <Route path='/users/update/:id' element={<UpdateUser />} />
+                    <Route path='/users/details/:id' element={<UserDetail />} />
                     <Route path='/events' element={<Evets />} />
                     <Route path='/events/create' element={<AddNewEvent />} />
                     <Route path="/events/edit/:id" element={<UpdateEvent />} />

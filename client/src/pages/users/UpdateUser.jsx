@@ -1,56 +1,78 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function UpdateUser() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    Vezeteknev: '',
+    Keresztnev: '',
+    FelhasznaloNev: '',
+    Jelszo: '',
+    Email: '',
+    SzuletesiDatum: '',
+    Neme: '',
+    Iranyitoszam: '',
+    Varos: '',
+    UtcaHazszam: '',
+    Foglalkozasa: '',
+    IskolaiVegzettsege: '',
+    RegisztracioDatuma: '',
+    FelhasznaloStatusza: '',
+    Cookie: '',
+    CookieExpire: ''
+  });
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+        try {
+            const response = await fetch(`http://localhost:5000/listuser/${id}`);
+            const data = await response.json();
+            if (data.success && data.userobj.success) {
+                setFormData(data.userobj.response);
+              } else {
+                console.error('Error fetching user details:', data);
+            }
+          } catch (error) {
+            console.error('Error fetching user details:', error);
+          }
+        };
+    fetchUserData();
+  }, [id]);
+
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(`http://localhost:5000/updateUser`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ ...formData, felhasznaloId: id })
+      });
+      if (response.ok) {
+        alert('A felhasználó sikeresen módosítva!');
+        navigate('/users');
+      } else {
+        alert('Hiba történt a felhasználó módosítása során.');
+      }
+    } catch (error) {
+      console.error('Hiba történt:', error);
+      alert('Hiba történt a felhasználó módosítása során.');
+    }
+  };
+  
   return (
-<<<<<<< Updated upstream
-    <div id='registration'> 
-        <div className="reg-wrapper">
-            <form action="#" method="post">
-                <h1>Adatok módosítása</h1>
-                <p>Kérjük módosítsa az adatait az adatait</p>
-                <div className="input-box">
-                    <input type="text" id="username" name="username" placeholder="Felhasználónév"/>
-                    <i className="fa-solid fa-user"></i>
-                </div>
-                <div className="input-box">
-                    <input type="password" id="password" name="password" placeholder="Jelszó" />
-                    <i className="fa-solid fa-lock"></i>
-                </div>
-                <div class="input-box">
-                    <input type="email" id="email" name="email" placeholder="E-mail" />
-                    <i className="fa-solid fa-envelope"></i>
-                </div>
-                <div className="input-box">
-                    <input type="text" id="habitation" name="habitation" placeholder="Lakóhely" />
-                    <i className="fa-solid fa-home"></i>
-                </div>
-                <div className="input-box-dropdown">
-                    <select name="gender">
-                        <option value="" selected disabled hidden>Válasszon nemet</option>
-                        <option value="male">Férfi</option>
-                        <option value="female">Nő</option>
-                        <option value="other">Egyéb</option>
-                    </select>
-                    <i className="fa-solid fa-chevron-down"></i>
-                </div>
-                <div className="input-box">
-                    <input type="text" id="job" name="job" placeholder="Foglalkozás" />
-                    <i className="fa-solid fa-briefcase"></i>
-                </div>
-                <div className="input-box">
-                    <input type="text" id="scoolar" name="scoolar" placeholder="Iskolai végzettség" />
-                    <i className="fa-solid fa-graduation-cap"></i>
-                </div>
-                <h5>Születési dátum</h5>
-                <div className="input-box-date">
-                    <input type="date" id="dateOfBirth" name="dateOfBirth" placeholder="Születési dátum" />
-                    <i className="fa-solid fa-calendar-alt"></i>
-                </div>
-                <br />
-                <button type="submit" className="btn-reg">Elküld</button>
-            </form>
-        </div>
-=======
     <div id='registration'>
       <div className="reg-wrapper">
         <form onSubmit={handleSubmit}>
@@ -194,9 +216,9 @@ function UpdateUser() {
           </div>
         </form>
       </div>
->>>>>>> Stashed changes
     </div>
-  )
-}
+  );
 
-export default UpdateUser
+
+}
+export default UpdateUser;
