@@ -1,3 +1,4 @@
+
 const mysql = require('mysql');
 const Database = require('../classes/db.js');
 
@@ -48,3 +49,4 @@ describe('Database osztály tesztjei', () => {
     await expect(db.close()).rejects.toThrow('Kapcsolat lezárása sikertelen');
   });
 });
+
