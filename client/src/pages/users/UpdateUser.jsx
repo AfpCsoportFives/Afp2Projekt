@@ -2,6 +2,7 @@ import React from 'react'
 
 function UpdateUser() {
   return (
+<<<<<<< Updated upstream
     <div id='registration'> 
         <div className="reg-wrapper">
             <form action="#" method="post">
@@ -49,6 +50,151 @@ function UpdateUser() {
                 <button type="submit" className="btn-reg">Elküld</button>
             </form>
         </div>
+=======
+    <div id='registration'>
+      <div className="reg-wrapper">
+        <form onSubmit={handleSubmit}>
+          <h1>Adatok módosítása</h1>
+          <p>Kérjük módosítsa az adatait az adatait</p>
+          <div className="input-box">
+            <input
+              type="text"
+              id="Vezeteknev"
+              name="Vezeteknev"
+              placeholder="Vezetéknév"
+              value={formData.Vezeteknev}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input-box">
+            <input
+              type="text"
+              id="Keresztnev"
+              name="Keresztnev"
+              placeholder="Keresztnév"
+              value={formData.Keresztnev}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input-box">
+            <input
+              type="text"
+              id="FelhasznaloNev"
+              name="FelhasznaloNev"
+              placeholder="Felhasználónév"
+              value={formData.FelhasznaloNev}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input-box">
+            <input
+              type="password"
+              id="Jelszo"
+              name="Jelszo"
+              placeholder="Jelszó"
+              value={formData.Jelszo}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input-box">
+            <input
+              type="email"
+              id="Email"
+              name="Email"
+              placeholder="E-mail"
+              value={formData.Email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input-box">
+            <input
+              type="date"
+              id="SzuletesiDatum"
+              name="SzuletesiDatum"
+              placeholder="Születési Dátum"
+              value={formData.SzuletesiDatum}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input-box">
+            <input
+              type="text"
+              id="Neme"
+              name="Neme"
+              placeholder="Nem"
+              value={formData.Neme}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input-box">
+            <input
+              type="text"
+              id="Iranyitoszam"
+              name="Iranyitoszam"
+              placeholder="Irányítószám"
+              value={formData.Iranyitoszam}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input-box">
+            <input
+              type="text"
+              id="Varos"
+              name="Varos"
+              placeholder="Város"
+              value={formData.Varos}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input-box">
+            <input
+              type="text"
+              id="UtcaHazszam"
+              name="UtcaHazszam"
+              placeholder="Utca, Házszám"
+              value={formData.UtcaHazszam}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input-box">
+            <input
+              type="text"
+              id="Foglalkozasa"
+              name="Foglalkozasa"
+              placeholder="Foglalkozás"
+              value={formData.Foglalkozasa}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input-box">
+            <input
+              type="text"
+              id="IskolaiVegzettsege"
+              name="IskolaiVegzettsege"
+              placeholder="Iskolai végzettség"
+              value={formData.IskolaiVegzettsege}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="buttons">
+            <button type="submit" className="btn-reg">Elküld</button>
+            <Link to="/users" className="btn-back">Vissza</Link>
+          </div>
+        </form>
+      </div>
+>>>>>>> Stashed changes
     </div>
   )
 }
